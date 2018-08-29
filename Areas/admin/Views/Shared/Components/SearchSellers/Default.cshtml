@@ -1,0 +1,182 @@
+﻿@model Drossey.PaginatedList<Drossey.Data.Core.Models.Seller>
+@{
+    Layout = null;
+    ViewData["action"] = "Search";
+    ViewData["controller"] = "Countries";
+
+    ViewBag.routeValues = new Dictionary<string, string>
+    {
+        {"keyWord", (ViewBag.KeyWord == null ? "" : ViewBag.KeyWord).ToString()},
+        {"page", ViewBag.page.ToString()},
+        {"pageSize", ViewBag.PageSize.ToString()},
+    };
+}
+
+@if (Model.Count > 0)
+{
+    int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>
+               الاسم
+            </th>
+            <th>
+البريد الالكترونى           
+            </th>
+            <th>
+               رقم الهاتف
+            </th>
+
+            <th>الحالة</th>
+
+
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            counter++;
+            <tr>
+
+                <td>@counter</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td>
+                    @if (item.IsActive)
+                    {
+                        <span class="label label-success">مفعل</span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger">غير مفعل</span>
+
+
+                    }
+
+
+
+
+
+                </td>
+
+
+
+                <td class="actions">
+
+                    <a asp-action="Edit" asp-controller="Sellers" asp-route-id="@item.Id" 
+                       class="on-default edit-row"><i class="fa fa-pencil"></i></a> |
+
+                    @if (item.IsActive)
+                    {
+                        <a asp-action="Approve" asp-controller="Sellers"
+                           asp-route-id="@item.Id" asp-route-IsActive="false" asp-route-keyWord="@ViewBag.KeyWord"
+                           asp-route-PageSize="@ViewBag.PageSize" asp-route-page="@ViewBag.page"
+                           data-ajax-confirm="هل انت متأكد انك تريد ايقاف الموزع ؟"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           data-ajax-success="onsuccessSuspend"
+                           data-ajax-failure="onFailureApprove"
+                           data-ajax-loading="#ajaxLoaderDiv"
+                           class="on-default remove-row"><i class="fa fa-ban"></i></a>
+                    }
+                    else
+                    {
+
+                        <a asp-action="Approve" asp-controller="Sellers"
+                           asp-route-id="@item.Id" asp-route-IsActive="true"  asp-route-keyWord="@ViewBag.KeyWord"
+                           asp-route-PageSize="@ViewBag.PageSize" asp-route-page="@ViewBag.page"
+                           data-ajax-confirm="هل انت متأكد انك تريد تفعيل الموزع ؟"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           data-ajax-success="onsuccessApprove"
+                           data-ajax-failure="onFailureApprove"
+                           data-ajax-loading="#ajaxLoaderDiv"
+                           class="on-default remove-row"><i class="fa fa-check"></i></a>
+
+
+                    }
+
+                    |
+
+                    <a asp-action="Delete" asp-controller="Sellers"
+                       asp-route-id="@item.Id"  asp-route-keyWord="@ViewBag.KeyWord"
+                       asp-route-PageSize="@ViewBag.PageSize" asp-route-page="@ViewBag.page"
+                       data-ajax-confirm="هل انت متأكد انك تريد حذف الموزع ؟"
+                       data-ajax="true"
+                       data-ajax-method="POST"
+                       data-ajax-update="#searchResult"
+                       data-ajax-mode="replace"
+                       data-ajax-success="onsuccessDeletion"
+                       data-ajax-failure="onFailureDeletion"
+                       data-ajax-loading="#ajaxLoaderDiv"
+                       class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+
+
+
+    Html.RenderPartial("_pagerPartial");
+
+
+
+
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+<script>
+    function onsuccessApprove(data) {
+        NotificationService.displaySuccess("تم تفعيل الموزع بنجاح", "تنبية !");
+    }
+    function onsuccessSuspend(data) {
+
+        NotificationService.displaySuccess("تم ايقاف الموزع بنجاح", "تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+        if (jqXHR.statusText === "NotFound")
+            NotificationService.displayError("هذه الموزع غير موجود", " !تحذير");
+        else
+        {
+            NotificationService.displayError("هذة الموزع مستخدم لا يمكن حذفه .", " !تحذير");
+        }
+    }
+    function onsuccessDeletion(data) {
+
+        NotificationService.displaySuccess("تم حذف الموزع بنجاح", "تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+
+        if (jqXHR.statusText === "NotFound")
+            NotificationService.displayError("هذه الموزع غير موجود", " !تحذير");
+        else {
+            NotificationService.displayError("هذة الموزع مستخدم لا يمكن حذفه .", " !تحذير");
+        }
+    }
+
+
+
+</script>

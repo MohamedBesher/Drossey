@@ -1,0 +1,142 @@
+﻿@model LessonViewModel
+
+@{
+    ViewData["Title"] = "اضافة درس";
+    Layout = "../Shared/_Layout.cshtml";
+
+
+}
+
+<h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+
+
+<div class="row">
+
+
+
+
+
+    <div class="col-md-12">
+        <form asp-action="Create">
+
+            <div class="row">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CountryId" class="control-label"></label>
+                    <select asp-for=" CountryId" class="form-control" asp-items="ViewBag.countries">
+                        <option value="">اختر البلد</option>
+
+
+                    </select>
+                    <span asp-validation-for="CountryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="GradeId" class="control-label"></label>
+                    <select asp-for="GradeId" class="form-control" asp-items="ViewBag.grades">
+                        <option value="">----اختر ----</option>
+
+
+                    </select>
+                    <span asp-validation-for="GradeId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="TermId" class="control-label"></label>
+                    <select asp-for="TermId" class="form-control" asp-items="ViewBag.terms">
+                        <option value="">----اختر ----</option>
+
+                    </select>
+                    <span asp-validation-for="TermId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SubjectId" class="control-label"></label>
+                    <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.subjects">
+                        <option value="">----اختر ----</option>
+
+                    </select>
+                    <span asp-validation-for="SubjectId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ModuleId" class="control-label"></label>
+                    <select asp-for="ModuleId" class="form-control" asp-items="ViewBag.books">
+                        <option value="">----اختر ----</option>
+
+                    </select>
+                    <span asp-validation-for="ModuleId" class="text-danger"></span>
+
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox checkbox-primary">
+                        <input asp-for="HasLink" />
+                        <label>
+                            @Html.DisplayNameFor(model => model.HasLink)
+                        </label>
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+            <label asp-for="MeetingLiveLink" class="control-label"></label>
+            <input asp-for="MeetingLiveLink" class="form-control" />
+            <span asp-validation-for="MeetingLiveLink" class="text-danger"></span>
+        </div>*@
+
+                <div class="form-group">
+                    <label asp-for="MeetingRecoredLink" class="control-label"></label>
+                    <input asp-for="MeetingRecoredLink" class="form-control" />
+                    <span asp-validation-for="MeetingRecoredLink" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="checkbox checkbox-primary">
+                        <input asp-for="HasQuizLink" />
+                        <label>
+                            @Html.DisplayNameFor(model => model.HasQuizLink)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox checkbox-primary">
+                        <input asp-for="IsPuplished" />
+                        <label>
+                            @Html.DisplayNameFor(model => model.IsPuplished)
+                        </label>
+                    </div>
+                </div>
+               
+
+                
+                </div>
+                    
+                    <div class="form-group">
+                        <input type="submit" value="حفظ" class="btn btn-primary" />
+                    </div>
+
+
+
+        </form>
+    </div>
+</div>
+
+<div class="pull-right">
+    <a asp-action="Index" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الدروس>></a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ Html.RenderPartial("_FileInputPartial");}
+
+
+<script src="~/js/app/Lessons.js"></script>
+
+}
+

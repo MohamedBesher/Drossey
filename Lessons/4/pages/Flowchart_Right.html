@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drag Cards</title>
+    <!--bootstrap links-->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl-theme.min.css">
+    <!--tark css graid  links-->
+    <link type="text/css" rel="stylesheet" href="css/new_grid.css">
+    <!--font-awesome links-->
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/animate.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    
+    <link type="text/css" rel="stylesheet" href="css/style-s.css">
+    <link type="text/css" rel="stylesheet" href="css/style-Flowchart_Right.css">
+    
+    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <!--js files-->
+    <script src="js/jquery-2.0.3.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    
+    <script src="js/Flowchart_Right.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            new WOW().init();
+                ///////
+            $('.close_msg').click(function() {
+                $(".notification_msg").remove();
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="alhaytham_head">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="title_font" id="lesson_title">أنماط القسمة</h1><!--end lesson_title-->
+<!--                    <a href="#" id="repeat_btn"><i class="fa fa-repeat fa-2x"></i></a>-->
+                    <div class="clearfix"></div>
+                </div><!--end col-xs-12-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div><!--end alhaytham_head-->
+    
+<div class="container ttitle" id="main_container">
+    <div class="row allrows">
+        <div class="contents">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="temp_255_chart">
+                    <h1></h1>
+                    <ul></ul>
+                </div>               
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8">  
+                <div class="blue_bg">
+                    <div class="row"></div>
+                </div>
+            </div>
+        </div><!--end contents-->
+    </div><!--end row-->
+    
+    
+    
+    <div class="notification_msg wow rubberBand"><a class="close_msg" href="javascript:void(0)"><i class="fa fa-close"></i></a>
+        <p id="noti_msg">احتر حرف </p>
+    </div><!--end notification_msg-->
+</div>
+
+<audio id="noise"></audio>
+<audio id="narration"></audio>
+</body>
+</html>

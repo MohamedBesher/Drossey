@@ -1,0 +1,182 @@
+﻿@model QuizViewModel
+
+@{
+    ViewData["Title"] = "اضافة اختبار";
+    Layout = "../Shared/_Layout.cshtml";
+
+
+}
+
+<h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+
+            <div class="row">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="col-lg-12">
+
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="CountryId" class="control-label"></label>
+                        <select asp-for=" CountryId" class="form-control" asp-items="ViewBag.countries">
+                            <option value="">اختر البلد</option>
+
+
+                        </select>
+                        <span asp-validation-for="CountryId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="GradeId" class="control-label"></label>
+                        <select asp-for="GradeId" class="form-control">
+                            <option value="">----اختر ----</option>
+
+
+                        </select>
+                        <span asp-validation-for="GradeId" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="TermId" class="control-label"></label>
+                        <select asp-for="TermId" class="form-control" >
+                            <option value="">----اختر ----</option>
+
+                        </select>
+                        <span asp-validation-for="TermId" class="text-danger"></span>
+                    </div>
+
+                    @switch (ViewBag.type)
+                    {
+                        case 1:
+                            <div class="form-group">
+                                <label asp-for="SubjectId" class="control-label"></label>
+                                <select asp-for="SubjectId" class="form-control" >
+                                    <option value=""> ----اختر---- </option>
+                                </select>
+                                <span asp-validation-for="SubjectId" class="text-danger"></span>
+                            </div>
+                            break;
+
+
+
+                        case 2:
+                            <div class="form-group">
+                                <label asp-for="SubjectId" class="control-label"></label>
+                                <select asp-for="SubjectId" class="form-control" >
+                                    <option value=""> ----اختر---- </option>
+                                </select>
+                                <span asp-validation-for="SubjectId" class="text-danger"></span>
+                            </div>
+                           
+
+                            <div class="form-group">
+                                <label asp-for="BookId" class="control-label"></label>
+                                <select asp-for="BookId" class="form-control">
+                                    <option value="">----اختر ----</option>
+                                </select>
+                                <span asp-validation-for="BookId" class="text-danger"></span>
+                            </div>
+                            break;
+
+
+                        case 3:
+                            <div class="form-group">
+                                <label asp-for="SubjectId" class="control-label"></label>
+                                <select asp-for="SubjectId" class="form-control">
+                                    <option value=""> ----اختر---- </option>
+                                </select>
+                                <span asp-validation-for="SubjectId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="BookId" class="control-label"></label>
+                                <select asp-for="BookId" class="form-control">
+                                    <option value="">----اختر ----</option>
+                                </select>
+                                <span asp-validation-for="BookId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="LessonId" class="control-label"></label>
+                                <select asp-for="LessonId" class="form-control">
+                                    <option value="">----اختر ----</option>
+
+                                </select>
+                                <span asp-validation-for="LessonId" class="text-danger"></span>
+                            </div>
+
+                            
+
+
+
+                            break;
+
+
+
+
+
+
+
+
+                        default:
+                            break;
+                    }
+                    
+
+                    
+                    
+
+                 
+                    <div class="form-group">
+                        <label asp-for="ChooseCount" class="control-label"></label>
+                        <input asp-for="ChooseCount" class="form-control" />
+                        <span asp-validation-for="ChooseCount" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TrueFalseCount" class="control-label"></label>
+                        <input asp-for="TrueFalseCount" class="form-control" />
+                        <span asp-validation-for="TrueFalseCount" class="text-danger"></span>
+                    </div>
+               
+                    <div class="form-group">
+                        <label asp-for="CompeleteCount" class="control-label"></label>
+                        <input asp-for="CompeleteCount" class="form-control" />
+                        <span asp-validation-for="CompeleteCount" class="text-danger"></span>
+                    </div>
+
+                    
+
+                    
+                    </div>
+
+                
+                </div>
+                    
+                    <div class="form-group">
+                        <input type="submit" value="حفظ" class="btn btn-primary" />
+                    </div>
+
+
+
+        </form>
+    </div>
+</div>
+
+<div class="pull-right">
+    <a asp-action="Index" asp-controller="Quiz" asp-area="admin" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الأختبارات>></a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ Html.RenderPartial("_FileInputPartial");}
+
+
+<script src="~/js/app/Lessons.js"></script>
+
+}
+

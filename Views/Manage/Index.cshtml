@@ -1,0 +1,109 @@
+﻿@model IndexViewModel
+@{
+    Layout = "_ProfileLayout";
+    ViewData["Title"] = "تعديل الملف الشخصى";
+    ViewData["Active"] = "user_Data";
+
+}
+<style>
+    .SelectOption {
+        width: 100%;
+        background: transparent;
+        border-color: #e8e8e8;
+    }
+    .item-meeting .data-meeting, .btn-file {
+        width: 100%;
+    } 
+</style>
+<form class="control-group EditInfo" method="post">
+    <div >
+        <div id="errorBlock" class="help-block"></div>
+        @Html.HiddenFor(m => m.PhotoUrl, new {id = "txtImgUrl"})
+        <div>
+            <input id="input-700" name="kartik-input-700[]" type="file" accept="image/*" class="file-loading">
+        </div>
+    </div>
+
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="icon-custom icon-connect flaticon-profile-2"></i>
+            الاسم الاول:
+        </span>
+        <input type="text" class="input-item" asp-for="FirstName" value="@Model.FirstName">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="icon-custom icon-connect flaticon-profile-2"></i>
+            الاسم الاخير:
+        </span>
+
+        <input type="text" class="input-item" asp-for="LastName" value="@Model.LastName">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="glyphicon glyphicon-envelope icon-custom icon-connect"></i>
+            البريد الالكتروني:
+        </span>
+
+        <input type="email" class="input-item" asp-for="Email" value="@Model.Email">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="glyphicon glyphicon-phone icon-custom icon-connect"></i>
+            الجوال :
+        </span>
+
+
+        <input type="text" class="input-item" asp-for="PhoneNumber" value="@Model.PhoneNumber">
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+    </div>
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="glyphicon glyphicon-map-marker icon-custom icon-connect"></i>
+            العنوان :
+        </span>
+
+        <input type="text" class="input-item" asp-for="Address" value="@Model.Address">
+        <span asp-validation-for="Address" class="text-danger"></span>
+
+    </div>
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="glyphicon glyphicon-map-marker icon-custom icon-connect"></i>
+            البلد :
+        </span>
+        <select asp-for="CountryId" asp-items="@Model.CountryList"
+                 class="SelectOption input-item">
+            <option value="">-- اختر البلد --</option>
+        </select>
+        <span asp-validation-for="CountryId" class="text-danger"></span>
+
+    </div>
+    <div class="form-group col-md-12 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="glyphicon glyphicon-education icon-custom icon-connect"></i>
+            الصف :
+        </span>
+        <select asp-for="GradeId" asp-items="@Model.Grades" class="SelectOption input-item">
+            <option value="">-- اختر الصف --</option>
+        </select>
+        <span asp-validation-for="GradeId" class="text-danger"></span>
+
+    </div>
+    <div class="controls col-md-6">
+        <button class="edit btn button-default design-sprint__item__button"  style="width: 100%" type="submit">تعديل بياناتى</button>
+    </div>
+    <div class="controls col-md-6">
+        <a class=" btn button-default design-sprint__item__button Edit__password__button" asp-controller="Manage" asp-action="ChangePassword">تغير كلمة المرور</a>
+    </div>
+</form>
+
+
+
+
+

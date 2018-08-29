@@ -1,0 +1,73 @@
+.row div div img {
+    border-style: solid;
+    border: 2px solid white;
+/*    box-shadow: 3px 3px 5px #888888;*/
+}
+.badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 1px;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #BE3829;
+    border-radius: 4px; 
+}
+.tooltip.top .tooltip-arrow{
+    border-top-color: #BE3829;
+}
+.tooltip div
+{
+    border-radius:4px;
+    box-shadow: 5px 5px 8px #CCC;
+    background: white;
+    color: black;
+    font-size: 17px;
+}
+.tooltip{
+    opacity: 1;
+}
+.notification_msg {
+    bottom: 5px;
+}
+h2{
+    margin-top: 5px;
+}
+p{
+    line-height: 30px;
+}
+
+@media (max-height:768px){
+}
+@media (max-height:600px) {
+    .row div{
+        padding-right: 5px;
+        padding-left: 0px;
+    }
+    .contents{
+        margin: 0 0;
+    }
+    .carousel-inner .item img, .row div div img{
+        max-height: 320px;
+        width: 100%;
+    }
+}
+@media (max-height:768px) and (max-width:900px){
+}
+@media (max-height:600px) and (max-width:1024px){
+}
+@media (max-height:992px) and (min-height:769px){	
+
+}
+.carousel-control.right {
+    right: 20px;
+    left: auto;
+}
+.carousel-control.left {
+   
+    left: -10px;
+}

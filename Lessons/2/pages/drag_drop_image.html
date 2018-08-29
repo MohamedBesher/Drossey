@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drag Cards</title>
+<!--bootstrap links-->
+<link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap-rtl-theme.min.css">
+<link type="text/css" rel="stylesheet" href="css/new_grid.css">
+<!--font-awesome links-->
+<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="css/animate.css">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<link type="text/css" rel="stylesheet" href="css/style-a.css">
+<link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+<link type="text/css" rel="stylesheet" href="css/style-responsive-a.css">
+<!--js files-->
+<script src="js/jquery-2.0.3.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.ui.touch-punch.min.js"></script>        
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+ <script src="js/custom_function.js"></script>
+    <script src="js/custom_drag_drop_image.js"></script>
+<script>
+$(document).ready(function() {
+	new WOW().init();
+    start(0)
+	///////
+	
+});
+</script>
+
+</head>
+<body>
+<!--=========Modal=========-->
+<div class="modal fade bs-example-modal-sm" id="card_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+  	<div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">تأكيد</h4>
+          </div>
+          <div class="modal-body"><div class="alert alert-success"> تمت جميع الإختيارات بنجاح   </div></div>
+          
+     </div>
+  </div>
+</div>
+
+</body>
+</html>

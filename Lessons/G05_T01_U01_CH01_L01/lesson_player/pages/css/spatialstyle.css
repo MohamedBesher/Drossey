@@ -1,0 +1,101 @@
+.container{
+       margin:4% auto;
+    margin-right:9%;
+  background-color:#E6F4FF;
+    min-height: 500px;
+    padding: 0;
+}
+
+#question{
+    width:85%;
+    min-height: 500px;
+    float: right;
+}
+
+#choices{
+    width:15%;
+    background-color:#cce9ff;
+    float: right;
+    min-height: 500px;
+    padding: 5% 1%;
+}
+
+
+hr {
+   height: 1px;
+    color: #cc0000;
+    background: #cc0000;
+    font-size: 0;
+    border: 0;
+}
+
+h4{
+      color:#cc0000;
+}
+
+.choice{
+    min-height: 50px;   
+    margin: 7% 1%;
+    background-color:#23A2DB;
+    color:white;
+    padding:8% 18%;
+    font-size:large;
+    
+    text-align: center;
+}
+
+.part{
+    min-height: 500px;
+    width:17%;
+    display: inline-block;
+    color:white;
+    font-size:large; 
+    margin-right:0.5%;
+   /* padding: 1%; */
+}
+
+.top{
+    min-height:400px;
+    width:100%;
+}
+
+.define{
+    min-height: 50px;   
+    margin: 7% 0;
+    margin-top:0;
+    background-color:#23A2DB;
+    color:white;
+    padding:8% 18%;
+    font-size:large;
+    text-align: center;
+}
+
+
+.choice:hover{
+  /*   background-color:#2091c5;*/
+    cursor: pointer; 
+}
+
+svg{
+    
+    margin-top: 70%;
+    margin-bottom: -5%;
+}
+
+.selected{
+    background-color:#b30000;
+}
+
+
+a:hover{
+    text-decoration: none;
+}
+.correct{
+     background-color:#39ac39;
+}
+
+.footer{
+	               width: 100%;
+	               min-height: 30px;
+	               background-color: #1A1A1A;
+                }

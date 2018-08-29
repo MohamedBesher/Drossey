@@ -1,0 +1,145 @@
+﻿@model IEnumerable<Drossey.Data.Core.Models.TransactionDetails>;
+
+@{
+    ViewData["Title"] = "تفاصيل العملية";
+    Layout = "../Shared/_Layout.cshtml";
+
+    var transaction = Model.FirstOrDefault().Transaction;
+}
+
+<div class="header-title m-t-0 m-b-30">
+
+    @ViewBag.Title
+    <div class="pull-right">
+
+       
+    </div>
+
+</div>
+
+    <div class="row m-b-20">
+        <div class="col-sm-12">
+
+            <div class="form-group">
+
+                <div class="col-xs-2">
+
+اسم المستخدم :
+                </div>
+
+                <div class="col-xs-2">
+                    <label>                   
+                    @transaction.User.FirstName
+                    @transaction.User.LastName
+ 
+                    </label>
+
+                </div>
+
+                <div class="col-xs-2">
+                    تاريخ العملية :
+                </div>
+
+                <div class="col-xs-4">
+                    <label>
+                        @transaction.CreationDate
+                        
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+
+<div id="searchResult">
+    
+   @if (Model.Any())
+   {
+       int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    اسم الوحدة الدراسية
+                </th>
+
+                <th>
+                  المبلغ قبل الخصم
+                </th>
+
+                <th>
+
+مبلغ الخصم                </th>
+
+                <th>
+
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                counter++;
+                <tr>
+
+                    <td>@counter</td>
+
+                    <td>
+                        <a asp-action="Details" asp-controller="Subjects" asp-area="Admin" asp-route-id="@item.Subject.Id">
+                            @Html.DisplayFor(modelItem => item.Subject.Name)
+                        </a>
+                    </td>
+
+
+                
+                    <td>
+                       
+                        @{decimal price = item.Price + item.DisCountPertcentage;}
+                          @price
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DisCountPertcentage)  $
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)  $
+
+                    </td>
+
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="row m-t-20">
+    <div class="col-sm-6"></div>
+        <div class="col-sm-6">
+            <div class="dataTables_paginate paging_simple_numbers">
+
+                <label> مجموع المشتريات</label> :
+                @Model.FirstOrDefault().Transaction.Total   $
+            </div>
+           
+
+
+        </div>
+
+    </div>
+   }
+   else
+   {
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+   }
+</div>

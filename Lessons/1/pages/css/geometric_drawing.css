@@ -1,0 +1,79 @@
+ .geo_drawing_temp #drawing_menu{
+     align-items: center;
+    
+    
+    justify-content: center;
+     transition: all 0.2s ease-in 0s;}
+
+#drawing_menu ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+#drawing_menu ul li {
+    padding: 0;
+    margin-left: 2px;
+    padding-left:2px;
+    
+}
+#drawing_menu ul li >a {
+    background:#BF3A2B none repeat scroll 0 0;
+       color: #fff;
+    display: block;
+    font-size: 20px;
+    height: 40px;
+    line-height: 36px;
+    text-align: center;
+    width: 40px;
+    padding: 2px;
+}
+#drawing_menu ul li.check a {
+    background: #3169AA none repeat scroll 0 0;
+}
+#drawing_menu ul li a:hover {
+    background: #AA2C1E;
+}
+
+#drawing_menu ul li img {
+    max-width: 70%;
+}
+
+.geo_drawing_temp .drawing_area{
+    position: relative;
+    border: 2px solid #BF3A2B;
+   }
+.geo_drawing_temp .tool{
+    position: absolute;
+    right: calc(100% - 50%);
+    top: 10%;
+   /* background-color: aqua;*/
+}
+.geo_drawing_temp .drawing_area div#conterols {
+    position: absolute;
+    bottom: 0px;
+    font-size: 22px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.geo_drawing_temp .drawing_area div#conterols >span{
+    
+    color: #070;
+    right: calc(50% - 15px);
+    font-size: 22px;
+    cursor: pointer;
+}
+.geo_drawing_temp .drawing_area div#conterols >span:hover{
+    color: #0c0;
+     font-size: 23px;
+}
+/*not work why */
+.drawing_tool .dropdown-menu{
+        width: 100px;
+}
+.drawing_tool .dropdown-menu>li{
+    color: #050;
+    padding: 2px;
+
+    
+}

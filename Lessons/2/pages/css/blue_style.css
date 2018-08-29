@@ -1,0 +1,34 @@
+body {
+	background: #fff;
+
+}
+
+.notification_msg,
+.cross_menu > li > a:focus,
+.gloss_menu> ul> li a:hover,
+.gloss_menu> ul> li a.current_lesson,
+.hotspot_slider_btn,
+#cardPile .card_number.correct
+{
+	background: #3169AA;
+}
+.lesson_title,
+.lesson_list ul li,
+.contents,
+.digits_value,
+.gloss_menu> ul> li a,
+.gloss_content section,
+.map_content,
+.hotspot_text,
+.hotspot_zoomin {
+	/*background: #E6F4FF;*/
+}
+.hotspot_slider_btn,
+.hotspot_slider_control > a ,.image_title a {
+    background-color: #149FD3;
+}
+.hotspot_slider_btn:hover,
+.curr_hotspot,.gloss_menu> ul> li a:hover,
+.gloss_menu> ul> li a.current_lesson{
+	background: #BF3A2B;
+}

@@ -1,0 +1,206 @@
+﻿@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    var actionName = "";
+    var controllerName = "";
+    var routeValues = ViewBag.routeValues;
+    if (ViewData["action"] != null && !string.IsNullOrEmpty((string)ViewData["action"]))
+    {
+        actionName = (string)ViewData["action"];
+    }
+    if (ViewData["controller"] != null && !string.IsNullOrEmpty((string)ViewData["controller"]))
+    {
+        controllerName = (string)ViewData["controller"];
+    }
+}
+
+<style>
+    li[class*="hide"] {
+        display: none !important;
+    }
+</style>
+@*<div class="pagination-wrapper">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pagination__list">
+                <li class="page-item pagination__item">
+                    <a class="page-link pagination__link " href="#">السابق</a>
+                </li>
+                <li class="page-item pagination__item">
+                    <a class="page-link pagination__link active" href="#">1</a>
+                </li>
+                <li class="page-item pagination__item">
+                    <a class="page-link pagination__link " href="#">2</a>
+                </li>
+                <li class="page-item pagination__item">
+                    <a class="page-link pagination__link " href="#">3</a>
+                </li>
+                <li class="page-item pagination__item">
+                    <a class="page-link pagination__link " href="#">...</a>
+                </li>
+                <li class="page-item pagination__item">
+                    <a class="page-link pagination__link " href="#">التالي</a>
+                </li>
+            </ul>
+        </nav>
+    </div>*@
+
+@{
+    if (ViewBag.ResultCount > ViewBag.PageSize)
+    {
+
+<div class="pagination-wrapper">
+   
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination__list">
+            @{
+                var _i = ViewBag.ResultCount / ViewBag.PageSize;
+                int interval = (int)_i / 10;
+                int num = Model.PageIndex / 10;
+                int end = (((int)(Model.PageIndex / 10)) * 10) + 10;
+                int start = end - 10;
+                if (ViewBag.ResultCount % ViewBag.PageSize > 0)
+                {
+                    _i = _i + 1;
+                }
+                if (Model.PageIndex != 1)
+                {
+                    routeValues["page"] = (Model.PageIndex - 1).ToString();
+                    <li class="page-item pagination__item">
+                        <a asp-action="@actionName"
+                           asp-controller="@controllerName"
+                           asp-all-route-data="@routeValues"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           class="@prevDisabled page-link pagination__link">
+
+                            السابق
+                            @*<i class="icon-angle-left"></i>*@
+                        </a>
+                    </li>
+                }
+
+
+                if (interval != 0 && num != 0)
+                {
+                    routeValues["page"] = (start - 1).ToString();
+                    <li class="page-item pagination__item">
+                        <a class="page-link pagination__link"
+                           asp-action="@actionName"
+                           asp-controller="@controllerName"
+                           asp-all-route-data="@routeValues"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           >
+                            @*<i class="icon-angle-double-left"></i>*@
+                            الصفحات السابقة
+
+                        </a>
+
+                    </li>
+                }
+
+
+
+
+                for (var i = 1; i <= _i; i++)
+                {
+                    var className = "";
+                    if (interval != 0)
+                    {
+
+                        className = (i >= start && i <= end) ? "show" : "hide";
+
+                    }
+
+                    @if (i == Model.PageIndex)
+                    {
+
+                        routeValues["page"] = i.ToString();
+                        <li class="active @className-@num page-item pagination__item">
+                            <a asp-action="@actionName"
+                               asp-controller="@controllerName"
+                               asp-all-route-data="@routeValues"
+                               data-ajax="true"
+                               data-ajax-method="POST"
+                               data-ajax-update="#searchResult"
+                               data-ajax-mode="replace"
+                              class="page-link pagination__link">
+                                @i
+                            </a>
+
+                        </li>
+                    }
+                    else
+                    {
+                        routeValues["page"] = i.ToString();
+                        <li class="@className-@num page-item pagination__item">
+                            <a asp-action="@actionName"
+                               asp-controller="@controllerName"
+                               asp-all-route-data="@routeValues"
+                               data-ajax="true"
+                               data-ajax-method="POST"
+                               data-ajax-update="#searchResult"
+                               data-ajax-mode="replace"
+                              class="page-link pagination__link ">
+                                @i
+                            </a>
+
+                        </li>
+                    }
+                }
+
+                if (interval != 0 && num != interval)
+                {
+                    routeValues["page"] = end.ToString();
+                    <li class="page-item pagination__item">
+                        <a class="page-link pagination__link "
+                           asp-action="@actionName"
+                           asp-controller="@controllerName"
+                           asp-all-route-data="@routeValues"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace">
+                            @*<i class="icon-angle-double-right"></i>*@
+                            الصفحات التالية
+                        </a>
+
+                    </li>
+                }
+
+                if (_i != Model.PageIndex)
+                {
+                    routeValues["page"] = (Model.PageIndex + 1).ToString();
+                    <li class="page-item pagination__item">
+                        <a asp-action="@actionName"
+                           asp-controller="@controllerName"
+                           asp-all-route-data="@routeValues"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           class="@nextDisabled page-link pagination__link">
+                            @*<i class="icon-angle-right"></i>*@
+                            التالي
+                        </a>
+
+                    </li>
+                }
+
+
+            }
+
+
+        </ul>
+
+</nav>
+</div>
+
+    }
+}
+
+

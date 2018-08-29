@@ -1,0 +1,113 @@
+﻿@model  Drossey.PaginatedList<Drossey.Data.Core.Models.Transaction>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+
+    //Pager Parameter
+    ViewData["action"] = "Search";
+    ViewData["controller"] = "Transactions";
+    ViewBag.routeValues = new Dictionary<string, string>
+            {
+                {"Keyword", (ViewBag.Keyword== null?"" : ViewBag.Keyword).ToString()},
+                {"page",ViewBag.page== null?"" :(ViewBag.page).ToString()},
+                {"pageSize",ViewBag.PageSize== null?"" : (ViewBag.PageSize).ToString()},
+                {"userId",ViewBag.userId== null?"" : (ViewBag.userId).ToString()}        
+            };
+}
+@if (Model.Any())
+{
+    int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>
+               اسم المستخدم
+            </th>
+           
+            <th>
+                المبلغ
+  </th>
+       
+            <th>
+تاريخ العملية         </th>
+           
+            <th>
+                
+            </th>
+
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                counter++;
+                <tr>
+
+                    <td>@counter</td>
+                  
+                    <td>
+                        <a asp-action="Details" asp-controller="Users" asp-route-id="@item.User.Id">
+                            @Html.DisplayFor(modelItem => item.User.FirstName)
+                            @Html.DisplayFor(modelItem => item.User.LastName)
+                        </a>
+                    </td>
+                   
+                 
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Total)
+                    </td>
+                  
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreationDate)
+                    </td>
+                    <td>
+                        <a data-toggle="tooltip" title="تفاصيل العملية" asp-area="Admin" asp-action="Details" asp-controller="Transactions" asp-route-id="@item.Id">
+                      <i class="fa fa-book text-primary"></i>
+                        </a>
+
+                    </td>
+                
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    Html.RenderPartial("_pagerPartial");
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+
+
+<script>
+    function onsuccessDeletion(data) {
+
+        NotificationService.displaySuccess("تم الحذف بنجاح","تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+
+        if (jqXHR.responseText === "NotFound")
+            NotificationService.displayError("هذه المدينة غير موجوده"," !تحذير");
+        else if (jqXHR.responseText === "Error")
+            NotificationService.displayError("هذة المدينة مستخدمة لا يمكن حذفها .", " !تحذير");
+
+        else if (jqXHR.responseText === "UserUsedCity") {
+            NotificationService.displayError("يوجد مستخدمين داخل هذة المدينة.", " !تحذير");
+
+        }
+
+
+
+    }
+
+
+
+</script>

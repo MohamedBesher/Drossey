@@ -1,0 +1,65 @@
+.container{
+       margin:4% auto;
+    margin-right: 13%;
+/*  background-color:#E6F4FF;*/
+   /*padding-right:8%;
+    */
+}
+@media(max-width:768px)
+{
+  .container
+  {
+    margin-right: 0;
+  }
+#content input
+{
+width: 100% !important;
+}
+
+}
+
+hr {
+   height: 1px;
+    color: #cc0000;
+    background: #cc0000;
+    font-size: 0;
+    border: 0;
+}
+
+h4{
+      color:#cc0000;
+}
+input{
+    font-size: medium;
+    color: #cc0000;
+    text-decoration: underline;
+    border: none;
+    background: none;
+  
+}
+
+
+
+p {
+    font-size: medium;
+    line-height: 200%;
+    text-align: center;
+}
+
+/*input{
+    border: none;
+    background: none;
+    width: 150px;
+    text-align: center;
+    text-align: right;
+    color: #428bca;
+}*/
+
+
+button {
+  
+    margin: 20px 0;
+    background: #3dc8fc;
+    color: #FFF;
+   
+}

@@ -1,0 +1,190 @@
+﻿@model List<BookLessonViewModel>
+
+@{
+    ViewData["Title"] = "تفاصيل الوحدة الدراسية";
+    Layout = "../Shared/_Layout.cshtml";
+    Drossey.Data.Core.Dto.BookDto book = ViewBag.Book;
+
+}
+
+
+<h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+<div class="row">
+    <div class="col-md-12">
+
+
+
+
+        <div class="profile-info-name">
+
+            @*<img src="/uploads/@book.PhotoUrl" class="img-thumbnail" alt="@book.Name" asp-append-version="true" onerror="this.src='/images/default.png'" />*@
+            <div class="profile-info-detail">
+                <div class="form-group">
+                    <label asp-for="@book.Name" class="control-label"></label> :
+                    @book.Name
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@book.SubjectName" class="control-label"></label> :
+                    @book.SubjectName
+                </div>
+                <div class="form-group">
+                    <label asp-for="@book.TermName" class="control-label"></label> :
+                    @book.TermName
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@book.GradeName" class="control-label"></label> :
+                    @book.GradeName
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@book.CountryName" class="control-label"></label> :
+                    @book.CountryName
+
+                </div>
+
+
+
+              
+
+                <div class="form-group">
+
+
+                    <label asp-for="@book.IsPublished" class="control-label"></label> :
+
+                    @if (book.IsPublished)
+                    {
+                        <span class="label label-success">مفعل</span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger">غير مفعل</span>
+
+
+                    }
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+
+        <a asp-action="Create"
+           asp-controller="Lessons"
+           asp-area="admin" asp-route-moduleId="@book.Id"
+           class="btn btn-primary waves-effect w-md waves-light pull-right m-b-20">
+            اضف درس
+        </a>
+    </div>
+    <div class="col-md-12">
+        @if (Model.Count > 0)
+        {
+            <form asp-action="Details">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th> اسم الدرس</th>
+                            <th>
+                                ترتيب الدرس
+                            </th>
+                            <th>
+شرح الدرس
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Count(); i++)
+                {
+                    int n = i + 1;
+                            <tr>
+                                <input type="hidden" asp-for="@Model[i].BookId" />
+
+                                <input type="hidden" asp-for="@Model[i].Id" />
+                                <input type="hidden" asp-for="@Model[i].Name" />
+
+                                <td>@n</td>
+                                <td>
+                                    <a asp-action="Edit" asp-controller="Lessons" asp-area="admin" asp-route-id="@Model[i].Id">
+                                        @Model[i].Name
+
+
+                                    </a>
+                                </td>
+                                <td>
+                                    <input asp-for="@Model[i].Order" type="number" min="1" max="@Model.Count()">
+                                    <span asp-validation-for="@Model[i].Order" class="text-danger"></span>
+                                </td>
+
+                                <td>
+                                    <a asp-action="Index" asp-controller="MyLessons"
+                                       asp-area="" asp-route-id="@Model[i].Id"
+                                       class="on-default edit-row"
+                                       data-toggle="tooltip" data-placement="top"
+                                       title="شرح الدرس"><i class="fa fa-file"></i></a> |
+
+
+
+                                    <a asp-action="GetQuizById" asp-controller="Quiz"
+                                       asp-area="" asp-route-id="@Model[i].Id"
+                                       class="on-default edit-row"
+                                       data-toggle="tooltip" data-placement="top"
+                                       title="شرح الاختبار"><i class="fa fa-question-circle"></i></a>
+                                </td>
+                            </tr>
+
+
+                        }
+
+
+                    </tbody>
+                </table>
+                <div class="form-group m-t-10">
+                    <div class="col-lg-5">
+                        <p class="pull-right text-muted font-13 m-b-30"> اعد ترتيب الوحدات </p>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <input type="submit" value="حفظ" class="btn btn-primary" />
+                    </div>
+
+                </div>
+            </form>
+        }
+
+        else
+        {
+            <div class="alert alert-success">
+                <strong></strong> لا يوجد نتائج.
+            </div>
+        }
+
+    </div>
+</div>
+
+<div class="pull-right m-t-30">
+    <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-primary btn-rounded waves-effect waves-light m-b-5">تعديل</a>
+
+    <a asp-action="Index" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الوحدات  >></a>
+</div>

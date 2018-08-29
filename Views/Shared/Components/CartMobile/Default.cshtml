@@ -1,0 +1,44 @@
+﻿
+@using Drossey.Data.Core.Models
+@inject SignInManager<ApplicationUser> SignInManager
+
+
+@{
+    var logged = SignInManager.IsSignedIn(User);
+
+}
+
+
+    @if (logged)
+    {
+       
+        <div class="header-top">
+            <div class="container">
+                <div class="nav-right--notlogin nav-right--notlogin--mobile pull-right">
+                    <div class="nav-right__notifications">
+                        <a class="nav-right__item favoriteDiv" asp-action="Index" asp-controller="WishList" asp-area="">
+                            <i class="glyph-icon flaticon-shapes nav-right__item__icon"></i>
+                            <span class="nav-right__item__notification favoriteCount">@ViewData["favorite-items-count"]
+                            </span>
+                        </a>
+                        <a class="nav-right__item cartDiv" asp-action="Index" asp-controller="Cart" asp-area="">
+                            <i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i>
+                            <span class="nav-right__item__notification itm-cont">@ViewData["cart-items-count"]</span>
+                        </a>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    }
+   
+
+
+
+
+
+
+
+

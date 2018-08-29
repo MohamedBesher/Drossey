@@ -1,0 +1,170 @@
+﻿@model TeacherViewModel
+
+@{
+    ViewData["Title"] = "اضافة مدرس";
+    Layout = "../Shared/_Layout.cshtml";
+
+
+}
+
+<h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+
+<div class="row">
+
+
+
+
+
+    <div class="col-md-12">
+        <form asp-action="Create">
+            @Html.AntiForgeryToken()
+
+
+            <div class="row">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="col-lg-8">
+
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="form-group" style="direction:ltr">
+                                <label asp-for="Phone_number" class="control-label"></label>
+                                <input asp-for="Phone_number" class="form-control" placeholder="رقم الهاتف مثلا 1234567891" />
+                                <span asp-validation-for="Phone_number" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group" style="direction:ltr">
+                                <label asp-for="PhoneCountryCode" class="control-label"></label>
+                                <input asp-for="PhoneCountryCode" class="form-control" placeholder="كود البلد +44" />
+                                <span asp-validation-for="PhoneCountryCode" class="text-danger"></span>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="form-group" style="direction:ltr">
+                                <label asp-for="Mobile_number" class="control-label"></label>
+
+                                <input asp-for="Mobile_number" class="form-control" placeholder="رقم الهاتف مثلا 1234567891" />
+                                <span asp-validation-for="Mobile_number" class="text-danger"></span>
+                            </div>
+                            </div>
+                        <div class="col-md-3">
+                            <div class="form-group" style="direction:ltr">
+                                <label asp-for="MobileCountryCode" class="control-label"></label>
+
+                                <input asp-for="MobileCountryCode" class="form-control" placeholder="كود البلد +44" />
+                                <span asp-validation-for="MobileCountryCode" class="text-danger"></span>
+
+                            </div>
+                            </div>
+                        </div>
+                            
+
+                          
+
+                            <div class="form-group">
+                                <label asp-for="Time_zone" class="control-label"></label>
+                                <select asp-for="Time_zone" class="form-control" asp-items="ViewBag.timeZones">
+                                    <option value="">----اختر ----</option>
+                                </select>
+                                <span asp-validation-for="Time_zone" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="About_the_teacher" class="control-label"></label>
+                                <textarea asp-for="About_the_teacher" class="form-control" rows="5" cols="10">
+
+</textarea>
+                                <span asp-validation-for="About_the_teacher" class="text-danger"></span>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="checkbox checkbox-primary">
+                                    <input asp-for="Is_active" />
+                                    <label>
+                                        @Html.DisplayNameFor(model => model.Is_active)
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox checkbox-primary">
+                                    <input asp-for="Can_schedule_class" />
+                                    <label>
+                                        @Html.DisplayNameFor(model => model.Can_schedule_class)
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="form-group">
+                                    <label class="col-md-3">الصورة <span class="required">*</span></label>
+                                    <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+                                    <input id="input-700" name="kartik-input-700[]" type="file" accept="image/*" class="file-loading">
+                                    <div id="errorBlock" class="help-block"></div>
+                                    @Html.HiddenFor(m => m.PhotoUrl, new { id = "txtImgUrl" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="form-group">
+                        <input type="submit" value="حفظ" class="btn btn-primary" />
+                    </div>
+
+
+
+</form>
+    </div>
+</div>
+
+<div class="pull-right">
+    <a asp-action="Index" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل المدرسين>></a>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ Html.RenderPartial("_FileInputPartial");}
+
+
+<script src="~/js/app/lessons.js"></script>
+
+}
+

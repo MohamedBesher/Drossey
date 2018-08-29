@@ -1,0 +1,163 @@
+body{
+    font-family: "Droid_Naskh",Arial,Helvetica,sans-serif;
+}
+/* Style for grid cells */
+.rf-tgrid {
+    
+
+    background: #149FD3 none repeat scroll 0% 0%;
+border-radius: 4px;
+color: #FFF;
+display: block;
+float: right;
+font-size: 24px;
+height: 55px;
+line-height: 55px;
+margin-bottom: 1px;
+margin-left: 1px;
+text-align: center;
+width: 55px;
+cursor: cell;
+
+}
+/* Style for the grid */
+.rf-tablestyle {
+/*
+    border: 2px solid;
+    border-color: gold;
+    background-color: ghostwhite;
+*/
+    cursor: pointer;
+
+}
+#theGrid{
+    width:100%;
+    margin: 0;
+}
+/* Style for the div containing the grid */
+#rf-searchgamecontainer {
+    margin:40px auto 0;
+	display:table;
+    /*padding-right: 50px; */
+    
+}
+/* Style for the div containing the word list */
+#rf-wordcontainer {
+    
+    float :right;
+    cursor: default;
+	margin : 1em 1em 1em 0;
+	
+  /*border: 2px solid;
+    border-color: gold;*/
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;	
+	cursor: pointer;	
+}
+/* Style for the words that have been found */
+.rf-foundword {
+    /*font-family: Verdana,Arial,Helvetica,sans-serif;*/
+	text-decoration : line-through;
+	color : #3169AA;
+	font-style : italic;
+    display: block;
+    padding: 10px 15px;
+    line-height: 26px;
+    
+
+}
+.rf-pundefined{
+    display: block;
+padding: 10px 15px;
+color: #3169AA;
+text-decoration: none;
+line-height: 26px;
+}
+#rf-tablegrid .rf-armed {
+/*	background: lightcyan;*/
+}
+#rf-tablegrid .rf-highlight {
+    background: #036B92;
+}
+#rf-tablegrid .rf-glowing {
+	background:#FF9F49;
+   color:  #4F4F4F;
+        
+}
+#rf-tablegrid .rf-selected {
+	background: #BF3A2B none repeat scroll 0% 0%;
+color: #fff;
+}
+/* style for words that didn't make it on the grid */
+.rf-pfalse {
+    color: gray;
+    visibility: hidden; 
+}
+#onWordSearchComplete{
+   width:40%;
+    background:white;	
+	border-radius:5px;
+	margin-bottom:2px;
+	display:block;
+   /* padding:10px 15px;*/
+	color:#BF3A2B;
+    font-size: 20;
+	text-decoration:none;
+	line-height:26px;
+}
+#onWordSearchComplete p{
+    font-size: 25;
+     padding:10px 15px;
+    text-align: center;
+   /* color:#149FD3 ;*/
+}
+#onWordFound{
+    width:40%;
+    background:white;	
+	border-radius:5px;
+	margin-bottom:2px;
+	display:block;
+    color:#149FD3 ;
+	
+    font-size: 20;
+	text-decoration:none;
+	line-height:26px;
+}
+#onWordFound span {
+    padding: 5px;
+	color:#036B92;
+}
+#onWordFound p {
+    padding:10px 15px;
+    
+}
+/**/
+.cross_menu{
+	padding:0;
+	margin:40px 0 0;
+	list-style:none;
+}
+.cross_menu > li{
+	background:white;	
+	border-radius:4px;
+	margin-bottom:2px;
+	display:block;
+    padding:10px 15px;
+	color:#2f5d65;
+    font-size: 20;
+	text-decoration:none;
+	line-height:26px;
+}
+.cross_menu > li:focus{
+	color:#FFF;
+}
+.retry_btn{
+	display:table;
+	text-align:center;
+	background:#E9F5F6;
+	margin:15px auto;
+	border-radius:4px;
+	padding:15px 60px;
+}

@@ -1,0 +1,285 @@
+﻿@model Drossey.PaginatedList<Drossey.Data.Core.Dto.SubjectDto>
+
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container-fluid">
+    <div class="row">
+        <form asp-action="Index" method="get">
+            <div class="form-actions no-color">
+                <p>
+                    Find by name: <input type="text" name="SearchString" value="@ViewData["currentFilter"]" />
+                    <input type="submit" name="search" value="Search" class="btn btn-default" /> |
+                    <a asp-action="Index">Back to Full List</a>
+                </p>
+            </div>
+            @*</form>
+                <form asp-action="Index" method="get">*@
+
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                اختر البلد
+                <select id="country" name="CountryId" asp-items="ViewBag.countries" class="form-control" onchange="onSelectChange($(this))">
+                    <option value="0">All</option>
+                </select>
+
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                Choose Year
+                <select id="grade" name="GradeId" asp-items="ViewBag.grades" class="form-control" onchange="onSelectChange($(this))">
+                    <option value="0">All</option>
+
+                </select>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                Choose Term
+                <select id="term" name="TermId" asp-items="ViewBag.terms" class="form-control" onchange="onSelectChange($(this))">
+                    <option value="0">All</option>
+                </select>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                Choose Subject
+                <select id="subject" name="SubjectId" asp-items="ViewBag.subjects" class="form-control">
+                    <option value="0">All</option>
+                </select>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-6">
+                <input type="submit" name="filter" value="Filter" class="btn btn-default" />
+            </div>
+
+            <div class="clearfix"></div>
+        </form>
+    </div><!--end row-->
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Id)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].CountryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CountryName)
+                </td>
+                <td>
+
+                    @if (item.Favorite)
+                    {
+                        <a class="fav" id="@("wish"+item.Id)" onclick="RemoveWishlist(@item.Id)">Favourite|</a>
+                    }
+                    else
+                    {
+                        <a id="@("wish"+item.Id)" onclick="addToWishlist(@item.Id)">Add To WishList |</a>
+                    }
+                    @if (item.Cart)
+                    {
+                        <a class="fav" id="@("cart"+item.Id)" onclick="removeCart(@item.Id)">added | </a>
+                    }
+                    else if (item.Transactions)
+                    {
+                        <a class="fav" id="@("cart"+item.Id)" >bought|</a>
+                    }
+                    else
+                    {
+                    <a id="@("cart"+item.Id)" onclick="addToCart(@item.Id)">Add To Cart|</a>
+                    }
+                  
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                </td>
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Index"
+   asp-route-pageIndex="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["currentFilter"]"
+   asp-route-Country="@ViewData["CountryId"]"
+   asp-route-Grade="@ViewData["GradeId"]"
+   asp-route-Term="@ViewData["TermId"]"
+   asp-route-Subject="@ViewData["SubjectId"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Index"
+   asp-route-pageIndex="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["currentFilter"]"
+   asp-route-Country="@ViewData["CountryId"]"
+   asp-route-Grade="@ViewData["GradeId"]"
+   asp-route-Term="@ViewData["TermId"]"
+   asp-route-Subject="@ViewData["SubjectId"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>
+@section Scripts {
+    <script>
+    $(function () {
+        $(".fav").css("color", "pink");
+        $("#country").val(@ViewData["CountryId"]);
+        $("#grade").val(@ViewData["GradeId"]);
+        $("#term").val(@ViewData["TermId"]);
+        $("#subject").val(@ViewData["SubjectId"]);
+
+    });
+    function onSelectChange(element) {
+        id = $(element).attr("id");
+        value = $(element).val();
+
+        $.ajax({
+            type: "GET",
+            url: "/Library/FilterSelect/" + id + "/" + value ,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (id == "country")
+                    select = "grade";
+                else if (id == "grade")
+                    select = "term";
+                else if (id == "term")
+                    select = "subject";
+
+                $("#" + select).html('<option value="0">All</option>');
+                $(response).each(function (i, v) {
+
+                    $("#" + select).append('<option value="' + v.id + '">' + v.name + '</option>');
+                });
+
+            },
+            error: function (response) {
+
+                console.log(response);
+            }
+        });
+
+
+    }
+    function addToWishlist(id) {
+
+        $.ajax({
+            type: "GET",
+            url: "/WishList/Create/" + id,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                $("#wish" + id).text("Favourite | ").css("color", "pink");
+                $("#wish" + id).attr("onclick","RemoveWishlist(" + id + ")");
+                console.log(response);
+            },
+            error: function (response) {
+
+                console.log(response);
+            }
+        });
+
+
+    }
+    function addToCart(id) {
+
+        $.ajax({
+            type: "GET",
+            url: "/Cart/Create/" + id,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                $("#cart" + id).text("added | ").css("color", "pink");
+                $("#cart" + id).attr("onclick", "removeCart(" + id + ")");
+                console.log(response);
+            },
+            error: function (response) {
+
+                console.log(response);
+            }
+        });
+
+
+        }
+    function RemoveWishlist(id) {
+            debugger;
+        $.ajax({
+            type: "POST",
+            url: "/WishList/Delete/" + id,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                $("#wish" + id).text("Add To WishList | ").removeClass("fav");
+                console.log(response);
+            },
+            error: function (response) {
+                if (response.readyState == 4) {
+                    $("#wish" + id).text("Add To WishList | ").removeClass("fav").css("color", "#337ab7");
+                    $("#wish" + id).attr("onclick","addToWishlist(" + id + ")");
+                    console.log(response);
+
+                }
+                console.log(response);
+            }
+        });
+
+    }
+    function removeCart(id) {
+        debugger;
+        $.ajax({
+            type: "POST",
+            url: "/Cart/Delete/" + id,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                $("#wish" + id).text("Add To WishList | ").removeClass("fav");
+                console.log(response);
+            },
+            error: function (response) {
+                if (response.readyState == 4) {
+                    $("#cart" + id).text("Add To Cart | ").removeClass("fav").css("color", "#337ab7");
+                    $("#cart" + id).attr("onclick", "addToCart(" + id + ")");
+                    console.log(response);
+
+                }
+                console.log(response);
+            }
+        });
+
+    }
+    </script>
+}
+
+

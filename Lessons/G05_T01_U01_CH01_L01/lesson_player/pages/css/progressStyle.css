@@ -1,0 +1,66 @@
+.container{
+       margin:4% auto;
+    margin-right: 13%;
+  background-color:#E6F4FF;
+   /*padding-right:8%;
+    */
+}
+
+
+hr {
+   height: 1px;
+    color: #cc0000;
+    background: #cc0000;
+    font-size: 0;
+    border: 0;
+}
+
+h4{
+      color:#cc0000;
+}
+
+
+.step{
+     min-height: 110px;
+     width:25%; 
+    display: inline-block;    
+    margin: 1.5% 0;
+    color:white;
+    padding:2% 1%;
+    font-size:large;
+    text-align: center;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.step_blue{ 
+    background-color:#23A2DB;
+}
+
+.step_white{ 
+    background-color:white;
+    color:black;
+}
+
+.step_red{ 
+    background-color:#BF3A2B;
+}
+
+.canvas{
+    display: inline-block;
+    width:6%;
+    margin-bottom:3%;
+    visibility: hidden;
+    
+}
+
+customCanvas{
+    width:7%;
+    
+}
+
+
+
+
+
+

@@ -1,0 +1,335 @@
+﻿@model Drossey.Data.Core.Dto.MySubjectDto
+
+
+@{
+    ViewData["Title"] = "تفاصيل الوحدة الدراسية";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@section BannerSlider{
+
+
+<!-- Inner Banner -->
+<div class="inner-banner detail" data-enllax-ratio="-.3" style="background: url(/assets/images/inner-banners/img-03.jpg) 50% 0% no-repeat fixed;">
+</div>
+<!-- Inner Banner -->
+}
+
+
+
+
+
+
+
+<!-- Class Detail -->
+<section class="gray-bg tc-padding-bottom">
+    <div class="container">
+        <div class="class-detail">
+            <!-- Class Pattren -->
+            <div class="class-pattren">
+                <div class=" center-curve-h">
+                    <!-- Page Heading -->
+                    <div class="class-detail-heading" style="background: url(/assets/images/class-detail/heading-bg.jpg) no-repeat;">
+                        <div class="page-heading">
+
+                            <h2>تفاصيل المادة الدراسية</h2>
+                            <span>@Model.Name </span>
+                        </div>
+                    </div>
+                    <!-- Page Heading -->
+                </div>
+            </div>
+            <!-- Class Pattren -->
+            <!-- Per Session Rate -->
+            <div class="session-rates">
+                <div class="row no-gutters">
+
+                    <div class="col-sm-2 col-xs-12 margintop">
+                        <img src="/uploads/@Model.PhotoUrl" alt="@Model.Name" onerror="this.src ='/images/default.png'" style="width:200px;height:250px"
+                             class="img-responsive">
+                    </div>
+                    <div class="col-sm-7 col-xs-12">
+                        <div class="class-detail-content-1 has-layout">
+                            <!-- Article -->
+                            <div class="class-article">
+                                <h2>@Model.Name</h2>
+                                <span>@Model.TermName - @Model.GradeName</span>
+                                <p>
+                                    @Html.Raw(Model.Description)
+                                </p>
+                            </div>
+                            <!-- Article -->
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="class-detail-aside">
+                            <!-- Related Trainer -->
+                            <div class="related-trainer">
+                                <ul>
+                                    @{string teacherNames = ""; }
+                                    @if (Model.TeacherSubjects.Any())
+                                    {
+                                    foreach (var TeacherSubject in Model.TeacherSubjects)
+                                    {
+                                    teacherNames += TeacherSubject.Teacher.Name + "/";
+                                    <li>
+                                        <a href="#">
+                                            <img src="/uploads/@TeacherSubject.Teacher.PhotoUrl" alt="@TeacherSubject.Teacher.Name" onerror="this.src ='/images/default.png'" style="width:60px;height:60px">
+                                        </a>
+                                    </li>
+                                    }
+                                    }
+                                    else
+                                    {
+
+                                    <li>
+                                        <a href="#">
+                                            <img src="/images/default.png" alt="" style="width:60px;height:60px">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="/images/default.png" alt="" style="width:60px;height:60px">
+                                        </a>
+                                    </li>
+                                    }
+
+                                </ul>
+                                <h5>
+                                    @if (!string.IsNullOrEmpty(teacherNames))
+                                    {
+
+                                    @teacherNames.Substring(0, (teacherNames.Length - 1))
+
+                                    }
+                                    else
+                                    {
+                                    @Html.Raw("غير معرف");
+
+                                    }
+                                </h5>
+                                <span>
+                                    مدرس  @Model.Name
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Per Session Rate -->
+            <!-- Class Detail Content -->
+            <div class="aside-content">
+                <div class="row no-gutters">
+                    <!-- content -->
+                    <div class="col-sm-10 col-xs-12 col-sm-offset-1">
+                        <div class="class-detail-content has-layout">
+                            <!-- <div class="center-curve-h">
+                                    <h4 style="    padding-left: 30px;"> المحتوى </h4>
+
+                                </div> -->
+                            <!-- Accordians -->
+                            <div class="aside-widget faq style-2 has-layout PT-7">
+                                <!-- <h3>الوحدات الدراسيه </h3> -->
+                                <div class="tc-accordians" id="accordion">
+                                    <div class="panel">
+
+                                        @if (Model.Books.Any())
+                                        {
+                                        int count = 0;
+                                        foreach (var item in Model.Books)
+                                        {
+                                        count++;
+                                        string collapse = count == 1 ? "collapse in" : "collapse";
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@count">
+                                                    @item.Name
+                                                    <i class="icon-plus pull-left" style="padding-left: 15px; padding-top: 5px;"></i>
+                                                </a>
+                                            </h4>
+                                        </div>
+
+                                        <div id="collapse-@count" class="panel-collapse @collapse">
+                                            <div class="panel-body">
+                                                <div class="ClassStyle">
+                                                    @foreach (var lesson in item.Lessons)
+                                                    {
+                                                    <div class=" links-les">
+                                                        <span href="" class="pull-right"> <i class="icon-open-book"></i> @lesson.Name</span>
+                                                        <ul class="list-inline pull-left">
+                                                            <li>
+                                                                <a href="#" target="_blank" class="tc-btn-2 shadow-0">
+                                                                    <i class="icon-file-text2"></i> الشرح
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                @if (!string.IsNullOrEmpty(lesson.MeetingRecoredLink))
+                                                                {
+                                                                <a href="#" class="tc-btn-2 shadow-0 "><i class="icon-file-play"></i> درس مسجل</a>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                if (lesson.LiveLesson != null)
+                                                                {
+                                                                if (lesson.LiveLesson.Start_time >= DateTime.Now)
+                                                                {
+                                                                @if (lesson.LiveLesson.UserLiveLesson != null)
+                                                                {
+                                                                <a href="#" class="tc-btn-2 shadow-0">
+                                                                    <i class="icon-file-play"></i> درس مباشر
+                                                                </a>
+
+                                                                }
+
+                                                                }
+                                                                }
+                                                                }
+                                                            </li>
+
+                                                            @if (lesson.Quiz.Any())
+                                                            {
+                                                            var quiz = lesson.Quiz.FirstOrDefault();
+                                                            <li><a href="#" target="_blank" class="tc-btn-2 shadow-0"><i class="icon-copy"></i> اختبار</a></li>
+
+                                                            }
+
+
+
+
+                                                        </ul>
+
+                                                    </div>
+
+                                                    }
+
+                                                    @if (item.Quiz.Any())
+                                                    {
+                                                    foreach (var quiz in item.Quiz)
+                                                    {
+                                                    count++;
+
+                                                    <div class=" links-les">
+                                                        <span href="#" class="pull-right"> <i class="icon-open-book"></i> @quiz.Description</span>
+                                                        <ul class="list-inline pull-left">
+                                                            <li>
+                                                                <a href="#" target="_blank" class="tc-btn-2 shadow-0">
+                                                                    <i class="icon-file-text2"></i> اختبر الآن
+                                                                </a>
+                                                            </li>
+
+
+
+                                                        </ul>
+                                                    </div>
+
+                                                    }
+                                                    }
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        }
+
+                                        }
+                                        @if (Model.Quiz.Any())
+                                        {
+                                        int count = 0;
+                                        foreach (var item in Model.Quiz)
+                                        {
+                                        count++;
+                                        string collapse = "collapse";
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-@Model.Id">
+                                                    اختبارات المادة
+                                                    <i class="icon-plus pull-left" style="padding-left: 15px; padding-top: 5px;"></i>
+                                                </a>
+                                            </h4>
+                                        </div>
+
+                                        <div id="collapse-@Model.Id" class="panel-collapse @collapse">
+                                            <div class="panel-body">
+                                                <div class="ClassStyle">
+                                                    @foreach (var quiz in Model.Quiz)
+                                                    {
+                                                    <div class=" links-les">
+                                                        <span href="" class="pull-right"> <i class="icon-open-book"></i> @quiz.Description</span>
+                                                        <ul class="list-inline pull-left">
+                                                            <li>
+                                                                <a href="#" target="_blank" class="tc-btn-2 shadow-0">
+                                                                    <i class="icon-file-text2"></i> اختبر الآن
+                                                                </a>
+                                                            </li>
+
+
+
+                                                        </ul>
+                                                    </div>
+
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        }
+
+                                        }
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end container -->
+                            <!-- Teacher Quotes -->
+                            <div class="teacher-quotes has-layout">
+                                <div class="quotes">
+
+                                    <div class="col-xs-6">
+                                        <img src="/assets/images/Share.png" class="img-responsive ShareImg">
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <h5>شارك الكتاب</h5>
+                                        <p>يمكنك مشاركة الدرس عبر</p>
+                                        <ul class="share-btn btn-list">
+                                            <li>
+                                                <a class="tc-btn shadow-0 facebook" href="#">
+                                                    <i class="icon-facebook-official"></i>الفبيس بوك
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="tc-btn shadow-0 twitter" href="#">
+                                                    <i class="icon-twitter"></i>تويتر
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img class="girl-layer" src="/assets/images/girl-1.png" alt="">
+                            </div>
+                            <!-- Teacher Quotes -->
+                        </div>
+                    </div>
+                    <!-- content -->
+                    <!-- Aside -->
+                    <aside class="col-sm-3 col-xs-12"></aside>
+                    <!-- Aside -->
+
+                </div>
+            </div>
+            <!-- Class Detail Content -->
+        </div>
+    </div>
+</section>
+<!-- Class Detail -->

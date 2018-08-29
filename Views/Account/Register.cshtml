@@ -1,0 +1,79 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "سجل الآن";
+    Layout = "../Shared/_LoginLayout.cshtml";
+}
+
+
+
+<div class="Sign__in">
+    <h3 class="signin-form__body__title">تسجيل الدخول إلى حسابك</h3>
+    <p class="signin-form__body__sub">
+        حساب الطالب الخاص بك هو بوابتك لجميع خدمات دروسي: الفصول الدراسية ، والمشاريع ، والمنتديات
+        ، والموارد الوظيفية ، وأكثر!
+    </p>
+
+    <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post" class="signin-form__form">
+
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="signin-form__form__inputs">
+            <input class="input-item" type="text" placeholder="الاسم الاول" asp-for="FirstName">
+            <span asp-validation-for="FirstName" class="text-danger Validate__text"></span>
+
+            <input class="input-item" type="text" placeholder="الاسم الاخير" asp-for="LastName">
+            <span asp-validation-for="LastName" class="text-danger Validate__text"></span>
+
+            <input class="input-item" type="email" placeholder="البريد الالكتروني" asp-for="Email">
+            <span asp-validation-for="Email" class="text-danger Validate__text"></span>
+
+            <input class="input-item" type="tel" placeholder=" الجوال" asp-for="PhoneNumber">
+            <span asp-validation-for="PhoneNumber" class="text-danger Validate__text"></span>
+
+            <input class="input-item" type="text" placeholder=" العنوان" asp-for="Address">
+            <span asp-validation-for="Address" class="text-danger Validate__text"></span>
+
+            <select class="input-item" asp-for="CountryId" asp-items="@Model.CountryList">
+                <option value="">البلد</option>
+            </select>
+            <span asp-validation-for="CountryId" class="text-danger Validate__text"></span>
+
+            <select class="input-item" asp-for="GradeId" asp-items="@Model.Grades" value="true">
+                <option value="">الصف الدراسي</option>
+            </select>
+            <span asp-validation-for="GradeId" class="text-danger Validate__text"></span>
+
+
+
+            <div class="radio Gender__radio">
+                <label>
+                    <input type="radio" value="false" asp-for="Gender" id="Male"> طالب
+                </label>
+            </div>
+            <div class="radio Gender__radio">
+                <label>
+                    <input type="radio" value="true" asp-for="Gender" id="female">طالبه
+                </label>
+            </div>
+
+            <input class="input-item" type="password" placeholder="كلمة المرور " asp-for="Password">
+            <span asp-validation-for="Password" class="text-danger Validate__text"></span>
+
+            <input class="input-item" type="password" placeholder="تاكيد كلمة المرور" asp-for="ConfirmPassword">
+            <span asp-validation-for="ConfirmPassword" class="text-danger Validate__text"></span>
+
+        </div>
+
+        <button type="submit" class="btn-green list-link__btn">سجل</button>
+
+        <a asp-action="login" asp-route-returnurl="@ViewData["ReturnUrl"]" class="signin-form__link"> لديك حساب ؟! تسجيل الدخول </a>
+
+
+    </form>
+
+    </div>
+    @section Scripts {
+        @await Html.PartialAsync("_ValidationScriptsPartial")
+        <script src="~/js/app/Register.js"></script>
+
+    }

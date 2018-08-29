@@ -1,0 +1,232 @@
+body{ direction: rtl;}
+body{ background: #fff; font-size: 16px; color: #464a5a; font-family: 'Mirza', cursive;}
+body h1, body h2, body h3, body h4, body h5, body h6{ margin: 0 0 20px; font-family: 'Katibeh', cursive;}
+
+div{ outline: none;}
+p a{ color: #999;}
+p a:hover{ text-decoration:underline; outline: none;}
+p{ letter-spacing: normal; margin: 0 0 20px; line-height: 22px; font-size: 16px; color: #999;}
+
+/****** Float Right Elements ***********************************************************
+*********************************************************** Float Right Elements ******/
+.check-list li::before,
+.logo,
+.navigation ul li,
+.alert-1 p,
+.meta-post ul li,
+.meta-post ul li i,
+.meta-post ul li i,
+.announcements,
+.announcements p span,
+.alert-1 p i,
+.check-list li::before,
+.quick-links ul li a,
+.quick-links ul li::before,
+.enroll-now p,
+.aside-widget h3::before,
+.blog-catagories ul li a::before,
+.class-size-detail li i,
+.tc-accordians .panel-heading h4::before,
+.teacher-quotes .share-btn.btn-list,
+.class-detail-btm p,
+.address-figures .tc-social-icons,
+.gallery-panel .btn-nd-shares ul,
+.gallery-panel .btn-nd-shares ul li,
+.sceduled-tab-nav li .date,
+.name-nd-location,
+.name-with-img,
+.location,
+.sale-nd-rete .sale-batch,
+.sale-nd-rete .product-rate,
+.product-alerts ul,
+.product-alerts > ul > li,
+.quantity-box,
+.select-color,
+.btn-nd-shares .tc-btn,
+.btn-nd-shares .share-btn li,
+.shop-grid-column .detail .rating-stars,
+.tc-social-icons ul li,
+.dot-heading h3::before,
+.share-btn.btn-list li,
+.tag-nd-categories ul li i,
+.comment-form .form-group
+{ float: right;}
+
+/****** Float Left Elements ***********************************************************
+*********************************************************** Float Left Elements ******/
+.navigation,
+.alert-1 .tc-btn,
+.topbar-address,
+.language-drop,
+.addmissions-open,
+.enroll-now .tc-btn,
+.class-detail-btm .tc-btn,
+.event-location .tc-btn,
+.btn-nd-shares .share-btn
+{ float: left;}
+
+/****** Position Left ***********************************************************
+*********************************************************** Position Left ******/
+.testimonial-slider .img,
+.slide-menu li a.drop-icon::before,
+.testimonial-slider .img,
+.total-comment
+{ left: 0; right: auto;}
+
+/****** Position Right ***********************************************************
+*********************************************************** Position Right ******/
+.nav-list > li ul,
+.address-list li i,
+.s-related-product img,
+.name-with-img img,
+.location::before,
+.rating-container .filled-stars,
+.see-also-list li::before
+{ right: 0; left: auto;}
+
+/****** Custome css For Rtl ***********************************************************
+*********************************************************** Custome css For Rtl ******/
+.check-list li::before{ margin: 0 0 0 20px;}
+.about-img{ margin: 0 -150px 0 0;}
+.banner-slider .sp-thumbnails-container{ left: auto; right: 100px;}
+.alert-1 p i{ margin: 0 0 0 20px;}
+.testimonial-slider .text{ padding: 0 0 0 170px;}
+.testimonial-slider .slick-prev{ right: auto; left: 105px;}
+.testimonial-slider .slick-next{ right: auto; left: 157px;}
+.meta-post ul li{ margin: 0 0 0 10px!important;}
+.meta-post ul li:last-child{ margin: 0!important;}
+.meta-post ul li i{ margin: 0 0 0 10px;}
+.announcements p span{ margin: 0 0 0 10px;}
+.language-drop{ margin: 0 10px 0 0;}
+.addmissions-open i{ margin: 0 0 0 10px; vertical-align: middle;}
+.topbar-address p{ margin: 0 0 0 20px;}
+.topbar-address p span{ margin: 0 0 0 10px;}
+.addmissions-open{ line-height: 15px;}
+.nav-list > li ul li a{ text-align: right!important;}
+.nav-list > li > a{ padding: 14px 28px;}
+.alert-1 p{ line-height: 32px;}
+.banner-caption h1{ letter-spacing: 0;}
+.school-area-heading h3{ font-size: 38px; line-height: 45px;}
+.school-area-heading p{ font-size: 20px;}
+.scho-services-figure p{ font-size: 18px; line-height: 30px;}
+.check-list li{ margin: 4px 0; font-size: 24px; font-family: 'Katibeh', cursive;}
+.facts-lsit li strong{ font-size: 24px;}
+.about-text h4{ font-size: 33px; line-height: 40px;}
+.about-text p{ font-size: 20px;}
+.testimonial-slider .text p,
+.testimonial-slider .aurthor-name,
+.featured-box p{ text-align: right;}
+.testimonial-slider .text p{ font-size: 24px; font-family: 'Katibeh', cursive; line-height: 40px;}
+.testimonial-slider .text .aurthor-name h3{ font-size: 30px;}
+.testimonial-slider .text .aurthor-name span{ font-size: 22px;}
+.check-list li{ text-align: right!important;}
+.featured-box p,
+.featured-box .check-list li{ font-size: 16px;}
+.address-list li{ padding: 0 56px 0 0;}
+.quick-links ul li::before{ margin: 0 0 0 10px; content: "\f0d9";}
+.footer-widget h4::before{ left: auto; right: 100%;}
+.footer-widget h4{ padding: 0 0 0 20px;}
+.slide-menu li a{ font-size: 22px;}
+.slide-menu li ul{ margin: 0 20px 0 0;}
+.about-text.style-2 h3{ line-height: 30px; margin: 0 0 30px;}
+.about-text.style-2 h5 { font-size: 25px; margin: 0 0 5px;}
+.about-text.style-2{ padding: 91px 60px 0 0;}
+.our-mission-holder h3{ line-height: 36px;}
+.school-area-heading.style-2{ padding: 50px 0 30px;}
+.school-area-heading.style-2::before,
+.school-area-heading.style-2::after{ display: none;}
+.about-text.style-3 h4{ font-size: 31px; line-height: 43.3px;}
+.breadcrumbs li:last-child i{ margin: 0 0 0 10px;}
+.breadcrumbs li:last-child::after{ display: none;}
+.breadcrumbs li::after{ content: "\f104"!important;}
+.breadcrumbs ul li{ line-height: 10px;}
+.post-widget .meta-post ul li i{ margin: 0 0 0 10px;}
+.post-detail p{ font-size: 26px;}
+.slider-post .slick-arrow.slick-prev{ left: 0; right: auto;}
+.slider-post .slick-arrow.slick-next{ left: 41px; right: auto;}
+.aside-widget h3::before{ margin: 0 0 0 10px;}
+.aside-widget h3{ font-size: 28px;}
+.blog-catagories ul li a::before{ margin: 0 0 0 10px; content: "\ea44";}
+.blog-catagories ul li a{ font-size: 18px;}
+.s-related-product{ padding: 0 80px 0 0;}
+.class-size-detail li i{ margin: 0 0 0 10px;}
+.class-figure .class-detail{ padding: 0 20px 0 0;}
+.class-trainer{ margin: 0 -20px 20px 0;}
+.tc-accordians .panel-heading h4::before{ margin: 0 0 0 10px;}
+.testimonial-slider .text{ padding: 0 0 0 170px;}
+.testimonial-detail .testimonial-slider .slick-prev{ left: 35px; right: auto;}
+.testimonial-detail .testimonial-slider .slick-next{ left: 85px; right: auto;}
+.teacher-quotes .girl-layer{ left: 30px; right: auto;}
+.teacher-quotes .quotes p{ font-size: 24px;}
+.teacher-quotes .share-btn.btn-list li a i{ margin: 0 0 0 10px;}
+.class-detail-btm p{ font-size: 28px;}
+.class-detail-content .class-article p:first-child{ font-size: 26px;}
+.class-detail-content .class-article p{ font-size: 21px;}
+.comment-form.contact .form-group i{ left: 40px; right: auto;}
+.comment-form .form-group label{ font-size: 18px;}
+.address-list.style-2 li span{ font-size: 20px;}
+.gallery-panel .btn-nd-shares ul li .tc-btn i{ margin: 0 0 0 10px;}
+.sceduled-title > h3 span{ margin: 0 0 0 10px;}
+.sceduled-tab-nav li .date{ margin: 0 0 0 10px;}
+.name-nd-location span i{ margin: 0 0 0 8px;}
+.name-nd-location h3{ line-height: 24px; margin: 0 0 8px;}
+.event-lineup-list::before{ right: 50%;}
+.event-aurthor .btn-nd-shares{ float: left!important;}
+.event-aurthor .btn-nd-shares li{ float: right;}
+.event-aurthor .btn-nd-shares li .tc-btn i{ margin: 0 0 0 10px;} 
+.name-with-img{ padding: 10px 90px 0 0;}
+.event-time i{ margin: 0 0 0 15px;}
+.location{ padding: 0 30px 0 0;}
+.location::before{ margin: 0;}
+.submit-btns img{ float: right!important;}
+.submit-btns .tc-btn{ float: left!important;}
+.sale-nd-rete .sale-batch{ margin: 0 0 0 10px; font-size: 12px!important;}
+.product-rate span{ margin: 0 10px 0 0; font-size: 20px;}
+.product-alerts .search-lable{ left: 20px; right: auto;}
+.availibilty-lable i{ margin: 0 0 0 10px; vertical-align: middle;}
+.availibilty-lable{ font-size: 16px;}
+.product-alerts > ul > li{ line-height: 10px; margin: 0 0 0 30px;}
+.product-alerts > ul > li:last-child{ margin: 0;}
+.single-product-detail > p{ font-size: 20px;}
+.quantity-box{ margin: 0 0 0 30px;}
+.quantity-box span,
+.select-color > span{ font-size: 22px;},
+.btn-nd-shares .share-btn.btn-list li .tc-btn i{ margin: 0 0 0 10px;}
+.detail-tabs-nav li a{ font-size: 18px;}
+.product-description article p:first-child{ font-size: 28px;}
+.sale-batch{ line-height: 16px;}
+.team-figure .on-hover{ right: 50%; margin: 0 -140px 0 0;}
+.team-figure.list-view .team-detail{ padding: 50px 20px 0 50px; text-align: right;}
+.team-figure.list-view .team-detail p{ font-size: 22px;}
+.tc-social-icons ul li{ margin: 0 0 0 10px!important;}
+.tc-social-icons ul li:last-child{ margin: 0!important;}
+.team-figure.list-view figure{ border-left: 1px solid #e9e9e9;}
+.dot-heading h3::before{ margin: 0 0 0 10px;}
+.share-btn.btn-list li .tc-btn i,
+.tag-nd-categories ul li i{ margin: 0 0 0 10px; vertical-align: middle;}
+.tag-nd-categories ul li a{ line-height: 10px;}
+.tag-nd-categories a i{ margin: 0 0 0 10px; vertical-align: middle;}
+.see-also-list li{ padding: 0 20px 0 0;}
+.see-also-list li::before{ content: "\f0d9";}
+.comment p{ font-size: 18px;}
+.share-btn.btn-list li{ margin: 0 0 0 10px;}
+.single-blog-detail p{ font-size: 20px;}
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

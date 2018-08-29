@@ -1,0 +1,145 @@
+﻿
+@model Drossey.PaginatedList<Drossey.Data.Core.Models.Subject>
+@{
+    ViewData["Title"] = "المادة الدراسية";
+    Layout = null;
+    //Pager Parameter
+    ViewData["action"] = "Search";
+    ViewData["controller"] = "Subjects";
+
+    ViewBag.routeValues = new Dictionary<string, string>
+    {
+        {"keyWord", (ViewBag.KeyWord == null ? "" : ViewBag.KeyWord).ToString()},
+        {"page", ViewBag.page.ToString()},
+        {"pageSize", ViewBag.PageSize.ToString()},
+        {"countryId", ViewBag.countryId.ToString()},
+        {"gradeId", ViewBag.gradeId.ToString()},
+        {"termId", ViewBag.termId.ToString()}
+    };
+}
+
+@if (Model.Count > 0)
+{
+    int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    اسم المادة
+                </th>
+                <th>
+الترم الدراسى
+                </th>
+                <th>
+                    الصف الدراسى
+                </th>
+                <th> البلد</th>
+                <th>السعر</th>
+                <th>نسبة الخصم</th>
+                <th> الحالة</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                counter++;
+                <tr>
+
+                    <td>@counter</td>
+
+                    <td>
+                        <a asp-action="Details" asp-controller="Subjects" asp-route-id="@item.Id">@item.Name</a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Term.Name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Term.Grade.Name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Term.Grade.Country.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DiscountPercentage)
+                    </td>
+                    <td>
+
+
+                        @if (item.IsPuplished)
+                    {
+                            <span class="label label-success">مفعل</span>
+                        }
+                        else
+                        {
+                            <span class="label label-danger">غير مفعل</span>
+
+
+                        }
+
+
+                    </td>
+                    <td class="actions">
+
+                        <a asp-action="Edit" asp-controller="Subjects" asp-route-id="@item.Id" class="on-default edit-row"><i class="fa fa-pencil"></i></a> |
+                        <a asp-action="Delete" asp-controller="Subjects" asp-route-id="@item.Id"
+                               asp-route-keyWord="@ViewBag.KeyWord" 
+                             asp-route-PageSize="@ViewBag.PageSize" 
+                              asp-route-page="@ViewBag.page"
+                             asp-route-countryId="@ViewBag.countryId" 
+                             asp-route-gradeId="@ViewBag.gradeId" 
+                              asp-route-termId="@ViewBag.termId"
+                           data-ajax-confirm="هل انت متأكد انك تريد حذف المادة الدراسية ؟"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           data-ajax-success="onsuccessDeletion"
+                           data-ajax-failure="onFailureDeletion"
+                           data-ajax-loading="#ajaxLoaderDiv" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    Html.RenderPartial("_pagerPartial");
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+<script>
+    function onsuccessDeletion(data) {
+
+        NotificationService.displaySuccess("تم الحذف بنجاح", "تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+
+        if (jqXHR.responseText === "NotFound")
+            NotificationService.displayError("هذا المادة الدراسية غير موجودة", " !تحذير");
+
+        else if (jqXHR.responseText === "Error")
+            NotificationService.displayError("هذا المادة الدراسية مستخدمة لا يمكن حذفها .", " !تحذير");
+
+        else if (jqXHR.responseText === "BooksUsedSubjects") {
+            NotificationService.displayError("يوجد كتب داخل هذة المادة الدراسية.", " !تحذير");
+
+        }
+
+
+
+    }
+
+</script>

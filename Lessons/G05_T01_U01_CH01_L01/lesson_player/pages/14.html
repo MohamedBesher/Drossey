@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dictionary</title>
+<!--bootstrap links-->
+<link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap-rtl-theme.min.css">
+<!--font-awesome links-->
+<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="css/animate.css">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+ <link type="text/css" rel="stylesheet" href="css/style-responsive.css">   
+<link type="text/css" rel="stylesheet" href="css/style-responsive-a.css">
+<!--js files-->
+<script src="js/jquery-2.0.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/custom_function.js"></script>
+<script src="js/custom_14.js"></script>
+<script>
+$(document).ready(function() {
+    
+	new WOW().init();
+	///////
+   
+//    console.log( pages['14'][0].name)
+    
+   start(0)
+    
+   $(".gallery .item").each(function(i,item){
+       
+       $(this).css("margin-right","30%");
+   })
+	$('.close_msg').click(function(){
+		$(".notification_msg").remove();
+	});
+	
+});
+</script>
+</head>
+<body>
+<p class="text-justify"></p>
+</body>
+</html>

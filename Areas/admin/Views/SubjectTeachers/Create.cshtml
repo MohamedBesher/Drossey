@@ -1,0 +1,86 @@
+﻿@model SubjectTeacherViewModel
+@using Drossey.Data.Core.Enum
+
+@{
+    ViewData["Title"] = "اضافة مدرس";
+    Layout = "../Shared/_Layout.cshtml";
+   
+
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+
+                <div class="ui-widget">
+                    <input type="hidden" asp-for="SubjectId" />
+
+                    <input type="hidden"  asp-for="TeacherId" />
+                    <input asp-for="Name" class="form-control">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox checkbox-primary">
+                    <input asp-for="IsMajor" />
+                    <label>
+                        @Html.DisplayNameFor(model => model.IsMajor)
+                    </label>
+                </div>
+            </div>
+              
+                <div class="form-group">
+                    <input type="submit" value="حفظ" class="btn btn-primary" />
+                </div>
+</form>
+    </div>
+</div>
+
+    <div class="pull-right">
+        <a asp-action="Index" asp-controller="Teachers" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل المدرسين >></a>
+    </div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#Name").autocomplete({
+                    source: function (request, response) {
+                        $.ajax({
+                            url: '/admin/SubjectTeachers/getTeachers',
+                            data: { term:  request.term,subjectId:@Model.SubjectId},
+                            dataType: "json",
+                            traditional: true,
+
+                            type: "POST",
+                            //contentType: "application/json; charset=utf-8",
+                            success: function (data) {
+                                response($.map(data, function (item) {
+                                    return item;
+                                }))
+                            },
+                            error: function (response) {
+                                alert(response.responseText);
+                            },
+                            failure: function (response) {
+                                alert(response.responseText);
+                            }
+                        });
+                    },
+                    select: function (e, i) {
+                        $("#TeacherId").val(i.item.id);
+                    },
+                    minLength: 3
+                });
+            });
+        </script>
+    }
+
+    @{ Html.RenderPartial("_FileInputPartial");}

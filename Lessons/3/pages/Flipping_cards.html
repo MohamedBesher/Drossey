@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dictionary</title>
+<!--bootstrap links-->
+<link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap-rtl-theme.min.css">
+<!--font-awesome links-->
+<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="css/animate.css">
+<link type="text/css" rel="stylesheet" href="css/style.css">
+<link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+
+<link type="text/css" rel="stylesheet" href="css/style-s.css">
+<link type="text/css" rel="stylesheet" href="css/style-Flipping_cards.css">
+
+<!--js files-->
+<script src="js/jquery-2.0.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/Flipping_cards.js"></script>
+
+<script>
+$(document).ready(function() {
+	new WOW().init();
+	///////
+	$('.close_msg').click(function(){
+		$(".notification_msg").remove();
+	});
+});
+</script>
+    <style>
+        a.refresh_page{
+            padding-left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="alhaytham_head">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 id="lesson_title" class="title_font"></h1>
+<!--                end lesson_title<a id="repeat_btn" href="#"><i class="fa fa-repeat fa-2x"></i></a>-->
+                <div class="clearfix"></div>
+            </div>
+            <!--end col-xs-12-->
+        </div>
+        <!--end row-->
+    </div>
+    <!--end container-->
+</div>
+<div class="container ttitle">
+     <div class="row">
+        <div class="col-xs-12">
+        	<div id="box_slider" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+              <div class="carousel-inner" role="listbox">              	
+                <div class="item item1">
+                </div><!--end item-->
+                <div class="item item2">
+                </div><!--end item-->
+                
+              </div><!--end carousel-inner-->
+            
+              <!-- Controls -->
+              <div class="hotspot_slider_control">
+              
+              <a class="right carousel-control" href="#box_slider" role="button" data-slide="next">
+                <span class="fa fa-chevron-right myrightt" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+              <a class="left carousel-control" href="#box_slider" role="button" data-slide="prev">
+                <span class="fa fa-chevron-left myleftt" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              </div>
+            </div><!--end hotspot_slider-->
+        </div><!--end col-xs-12-->
+     </div><!--end row-->
+     <div class="notification_msg wow rubberBand">
+     	<a href="javascript:void(0)" class="close_msg"><i class="fa fa-close"></i></a>
+        <p></p>
+     </div><!--end notification_msg-->
+</div><!--end container-->
+<!--/////////////////////////////-->
+<audio id="narration"></audio>
+    <audio id="noise"></audio>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alhaytham Lab</title>
+<!--bootstrap links-->
+<link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link type="text/css" rel="stylesheet" href="css/bootstrap-select.min.css">
+<!--font-awesome links-->
+<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+<link type="text/css" rel="stylesheet" href="css/flat/blue.css">
+<link type="text/css" rel="stylesheet" href="css/quiz_style.css">
+<!--js files-->
+<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/icheck.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="js/quiz.js"></script>
+<script type="text/javascript" src="js/jquery.bootpag.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {	
+    
+	    start()
+});
+</script>
+</head>
+<body>
+<div class="frame_content">
+    <div class="frame_head">
+        <div class="head_img"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAAH5FsI7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTEyNERGM0ZDOUE1MTFFNUE1ODNDMzk1OTJDRTE2QTAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTEyNERGNDBDOUE1MTFFNUE1ODNDMzk1OTJDRTE2QTAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTI0REYzREM5QTUxMUU1QTU4M0MzOTU5MkNFMTZBMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTI0REYzRUM5QTUxMUU1QTU4M0MzOTU5MkNFMTZBMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv7ho8UAAA+ASURBVHjaYvz//z8D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" alt=""/></div>
+        <h1 id="q_head">اختر الإجابة الصحيحة</h1>
+        <a href="quiz.html" class="pull-right frame_refresh"><i class="fa fa-repeat fa-2x"></i></a>
+        <span class="clearfix"></span>
+    </div><!--end frame_head-->
+    <div class="frame_body">
+       <!-- start quiz-body-->
+<div id="quiz_body">
+                <!-- quiz-Body-->
+</div>
+<!-- end quiz-body-->
+       
+        <nav class="quiz_nav">
+            <ul class="pagination">
+                <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&raquo;</a></li>
+            </ul>
+                </nav>
+    </div><!--end frame_body-->
+    
+</div><!--end frame_content-->
+<!-- true Modal -->
+<div class="modal fade" id="true_modal" tabindex="-1" >
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body bg-info">
+          <p class="text-center text-success"><i class="fa fa-check-circle fa-5x"></i></p>
+          <br/>
+          <h5 class="alert bg-primary">أحسنت , الإجابة بالفعل صحيحة</h5>
+      </div><!--end modal-body-->
+      
+    </div>
+  </div>
+</div><!--end true_modal-->
+<!-- wrong Modal -->
+<div class="modal fade" id="wrong_modal" tabindex="-1" >
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body bg-danger">
+          <p class="text-center text-danger"><i class="fa fa-times-circle fa-5x"></i></p>
+          <br/>
+          <h5 class="alert bg-primary">للأسف الإجابة خاطئة , حاول مرة اخري</h5>
+      </div><!--end modal-body-->
+      
+    </div>
+  </div>
+</div><!--end wrong_modal-->
+<!-- text Modal -->
+<div class="modal fade" id="text_modal" tabindex="-1" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" ><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">الإجابة الصحيحة</h4>
+        </div>
+
+      <div class="modal-body">
+          <h4 class="frame_text text-primary"></h4>
+      </div><!--end modal-body-->
+      
+    </div>
+  </div>
+</div><!--end text_modal-->
+    <div class="modal fade" tabindex="-1" id="report_modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">تفاصيل التقرير</h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr class="active">
+                    <td>رقم السؤال</td>
+                    <td>إجابتك</td>
+                    <td>الإجابة الصحيحة</td> 
+                    <td>درجة السؤال</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>السؤال الإول</td>
+                    <td>كل ما سبق</td>
+                    <td>مبتدأ مرفوع</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>السؤال الإول</td>
+                    <td>كل ما سبق</td>
+                    <td>مبتدأ مرفوع</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>السؤال الإول</td>
+                    <td>كل ما سبق</td>
+                    <td>مبتدأ مرفوع</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>السؤال الإول</td>
+                    <td>كل ما سبق</td>
+                    <td>مبتدأ مرفوع</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="bg-primary">
+                    <td colspan="3" class="text-center">الإجمالى</td>
+                    <td>30/5</td>
+                </tr>
+            </tfoot>
+        </table>
+      </div>
+      
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    <!-- Creates the bootstrap modal where the image will appear -->
+<div class="modal fade" id="previewmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Image preview</h4>
+      </div>
+      <div id="preview_location" class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">إغلاق</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

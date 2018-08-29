@@ -1,0 +1,82 @@
+﻿<link href="~/lib/bootstrap-fileinput/css/fileinput.css" rel="stylesheet" />
+<link href="~/lib/bootstrap-fileinput/css/fileinput-rtl.css" rel="stylesheet" />
+<script src="~/lib/bootstrap-fileinput/js/fileinput.js"></script>
+
+
+@{
+    string photoUrl = "//images//default.png";
+    if (ViewData["PhotoUrl"]!=null && !string.IsNullOrEmpty((string)ViewData["PhotoUrl"]))
+    {
+
+        photoUrl = (string) ViewData["PhotoUrl"];
+    }
+}
+
+<style>
+    .kv-avatar .krajee-default.file-preview-frame, .kv-avatar .krajee-default.file-preview-frame:hover {
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    .btn-kv, .btn-default {
+        color: #000;
+    } 
+    .kv-avatar {
+        display: inline-block;
+    }
+
+        .kv-avatar .file-input {
+            display: table-cell;
+            width: 213px;
+        }
+
+    .kv-reqd {
+        color: red;
+        font-family: monospace;
+        font-weight: normal;
+    }
+</style>
+<script>
+    //Photo
+    $(document).ready(function() {
+
+        $("#input-700").fileinput({
+                uploadUrl: "/Uploade/SaveFile", // server upload action
+                overwriteInitial: true,
+                maxFileSize: 1500,
+                language: 'ar',
+                showClose: false,
+                showCaption: false,
+                browseLabel: '',
+                removeLabel: '',
+                browseIcon: '<i class="glyphicon glyphicon-folder-open"></i>',
+                removeIcon: '<i class="glyphicon glyphicon-remove"></i>',
+                removeTitle: 'Cancel or reset changes',
+                elErrorContainer: '#kv-avatar-errors-1',
+                msgErrorClass: 'alert alert-block alert-danger',
+                allowedFileExtensions: ['jpg', 'png', 'gif', 'jpeg'],
+                maxFileCount: 1,
+                defaultPreviewContent: `<img src="@photoUrl"  class="img-thumbnail"  onerror="this.src='/images/default.png'" >`
+
+    
+            }).on('filebatchpreupload',
+                function(event, data, id, index) {
+                    console.log("filebatchpreupload" + data);
+                })
+            .on('fileuploaded',
+                function(event, data, id, index) {
+                    console.log(data.response);
+                    //document.getElementById("linkPhoto").href = "/" + data.response;
+                    //document.getElementById("imgPhoto").src = "/" + data.response.replace("uploads", "uploads/Thumbnails");
+                    document.getElementById("txtImgUrl").value = data.response;
+
+                }).on('fileuploaderror',
+                function(event, data, id, index) {
+                    console.log("ERROR" + JSON.stringify( data));
+                });
+
+    });
+
+</script>

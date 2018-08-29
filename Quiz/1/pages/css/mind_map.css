@@ -1,0 +1,32 @@
+.text-wrap {
+  white-space: normal;
+}
+.blue_bg{
+    background: #E6F4FF;
+    padding: 15px;
+    margin: 15px;
+}
+/*.active{
+    background-color: #c9302c;
+    border-color: #b92c28;
+}
+
+.notActive
+{
+    background-color: #419641;
+    border-color: #3e8f3e;
+}*/
+#flowchart_maintitle{
+    width: 19%; 
+}
+
+h4{
+  color: #cc0000;
+}
+hr{
+    height: 1px;
+    color: #cc0000;
+    background: #cc0000;
+    font-size: 0;
+    border: 0;
+}

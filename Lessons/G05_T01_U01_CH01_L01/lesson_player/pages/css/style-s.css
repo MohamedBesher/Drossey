@@ -1,0 +1,77 @@
+.contents{
+    text-align: center;
+}
+p{
+    text-align: start;
+    font-size: 18px;
+    font-family: "Cocon-en","Cocon",Arial,Helvetica,sans-serif !important
+}
+video{
+    max-height: 460px;
+  vertical-align: middle;
+    padding: 5px 2px;
+}
+#links{
+    margin-top: 30px;
+}
+.row div img{
+    max-height: 375px;
+    padding: 5px 0;
+}
+.nav-tabs div{
+    padding-right: 0px;
+    padding-left: 0px;    
+}
+a.lesson_link{
+    padding: 8px 0px;
+    font-family: "Cocon-en","Cocon",Arial,Helvetica,sans-serif !important;
+}
+.page_title {
+    font-size: 20px;
+    border-bottom: 1px solid #BF3A2B;
+    color: #BF3A2B;
+    text-indent: 15px;
+/*    text-align: right;*/
+    padding-bottom: 5px;
+}
+.title_font {
+    font-family: "Cocon-en","Cocon",Arial,Helvetica,sans-serif !important;
+/*    text-align: right;*/
+/*    font-family: ;*/
+}
+h2, .h2 {
+    font-size: 30px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+
+.page_desc {
+    display: block;
+    padding: 15px;
+    line-height: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.text-justify {
+    text-align: justify;
+    font-family: "Cocon-en","Cocon",Arial,Helvetica,sans-serif !important;
+}
+#links div:not(:last-child){
+    border-left: 0px solid #959595
+}
+.icon{
+    max-height: 40px;
+    max-width: 40px;
+}
+.fa-chevron-right{
+    right:3px;
+}

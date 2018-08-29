@@ -1,0 +1,100 @@
+var quiz_body={
+    "header_arb":' الغلاف الجوي والطقس',
+    "question_tag":'سيظهر في الشاشة مجموعة من الدبابات قم بتحريك المدفع باتجاه الدبابة التي تحمل الإجابات إلى اليمين واليسار. أطلق الصاروخ في اتجاه الدبابة التي تحمل الإجابة الصحيحة.'
+};
+
+var cannon_tank = [
+    {
+		"questionsTxt":" ........ هو طبقة الغازات المحيطة بالأرض، وتزود الأرض بجميع الغازات اللازمة للحياة.",
+		"answers": [
+			{
+				"trueAnswer": false,
+				"answerTxt": "الستراتوسفير",
+			},
+			{
+				"trueAnswer": true,
+				"answerTxt": "الغلاف الجوي",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "الهباء الجوي",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "التروبوسفير",
+			}
+		]		
+	},
+
+
+    {
+		"questionsTxt":"........  يتكون من مواد صلبة مثل الغبار والأملاح وحبوب اللقاح، ومواد سائلة مثل القطيرات الحمضية.",
+		"answers": [
+			{
+				"trueAnswer": true,
+				"answerTxt": "الهباء الجوي",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "الغلاف الجوي",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "التروبوسفير",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "الستراتوسفير",
+			}
+		]		
+	},
+
+
+    {
+		"questionsTxt":"........ هي مقدار بخار الماء في الغلاف الجوي.",
+		"answers": [
+			{
+				"trueAnswer": false,
+				"answerTxt": "الرطوبة النسبية",
+			},
+			{
+				"trueAnswer": true,
+				"answerTxt": "الرطوبة",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "درجة الندى",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "الغيوم ",
+			}
+		]		
+	},
+	
+    {
+		"questionsTxt":"...... تكون على ارتفاعات تتراوح بين 2000 م - 8000 م، وتتكون من خليط من ماء سائل وبلورات جليدية، وقد تسبب أمطارًا خفيفة.",
+		"answers": [
+			{
+				"trueAnswer": false,
+				"answerTxt": "الغيوم المرتفعة",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "الغيوم المنخفضة",
+			},
+			{
+				"trueAnswer": true,
+				"answerTxt": "الغيوم المتوسطة",
+			},
+			{
+				"trueAnswer": false,
+				"answerTxt": "الطبقات العليا",
+			}
+		]		
+	},	
+
+   
+
+    
+]	

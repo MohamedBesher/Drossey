@@ -1,0 +1,103 @@
+﻿@model CodeAddViewModel
+
+@{
+    ViewData["Title"] = "كارت الشحن";
+    ViewData["nav-list-Active"] = "Codes";
+
+}
+
+
+
+
+
+<section class="Profile__breadcrumbs  overlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul class="bread-list">
+                    <li>
+                        <a asp-controller="Home" asp-action="Index">
+                            الرئيسية
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href=""> /  اشحن الآن</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- charge_now -->
+<main>
+    <div class="container">
+        <div class="row Charge__now">
+            <div class="col-md-6  col-xs-12 Charge__form ">
+
+                <h3>اشحن الكارت</h3>
+                <div class="card__total card--padding fill-bg ">
+                    <form  asp-action="add" method="post">
+
+                        <div class="form-group">
+                            <label>
+رقم الكارت                                <sup>*</sup>
+                            </label>
+
+                            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+
+                            <input class=" input-item" asp-for="Code"  placeholder="12345678912345">
+                            <span asp-validation-for="Code" class="text-danger"></span>
+
+                        </div>
+                        <button type="submit" class="btn btn-common btn-full" >  ارسال
+                            <span class="icon-action-redo"></span>
+                            </button>
+
+                        @*<a href="#" class="btn btn-common btn-full">
+                            ارسال
+                            <span class="icon-action-redo"></span>
+                        </a>*@
+                    </form>
+                </div>
+
+
+
+            </div>
+            <div class="col-md-6  col-xs-12">
+                <img src="~/assets/img/charge.png" class="img-responsive center-block ChargeImg">
+
+            </div>
+
+
+        </div>
+
+    </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

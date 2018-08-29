@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MotleyFlash.Message>
+
+    @foreach (var message in Model)
+    {     
+        <script>
+            $(function () {
+                toastr.clear();
+                if ("@message.Type.ToLower()" === "success") {
+                    toastr.success("@message.Text", "@message.Title");
+
+                } else if ("@message.Type.ToLower()" === "danger"){
+                    toastr.error("@message.Text", "@message.Title");
+
+                } else if ("@message.Type.ToLower()" === "information") {
+                    toastr.warning("@message.Text", "@message.Title");
+
+                }
+                toastr.options.closeButton = true;
+                toastr.options.closeHtml = '<button><i class="icon-off"></i></button>';
+                toastr.options.showDuration = 300;
+                toastr.options.hideDuration = 300;
+            });
+
+
+        </script>
+        
+    }
+
+<script>
+
+    function NotificationService() { }
+
+    NotificationService.displaySuccess = function (message, title) {
+        toastr.clear();
+        toastr.success(message, title);
+        toastr.options.closeButton = true;
+        toastr.options.closeHtml = '<button><i class="icon-off"></i></button>';
+        toastr.options.showDuration = 300;
+        toastr.options.hideDuration = 300;
+
+    }
+    NotificationService.displayError = function (message, title) {
+        toastr.clear();
+        toastr.error(message, title);
+        toastr.options.closeButton = true;
+        toastr.options.closeHtml = '<button><i class="icon-off"></i></button>';
+        toastr.options.showDuration = 300;
+        toastr.options.hideDuration = 300;
+    }
+</script>
+
+

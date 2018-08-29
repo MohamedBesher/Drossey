@@ -1,0 +1,423 @@
+﻿<!-- saved from url=(0014)about:internet -->
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+<!--bootstrap links-->
+    <link type="text/css" rel="stylesheet" href="css/animate.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/acornmediaplayer.base.css">
+    <link type="text/css" rel="stylesheet" href="css/access/acorn.access.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/_js.css">
+    <link type="text/css" rel="stylesheet" href="css/responsive.css">
+    
+    
+    <style>
+        @font-face {
+            font-family: 'cocon';
+            src: local('☺'), url('fonts/cocon.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+}
+        
+        @font-face {
+            font-family: 'cocon_en';
+            src: local('☺'), url('fonts/cocon_en.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .site_contents{
+            overflow: hidden;
+        }
+    </style>
+    <!--js files-->
+    <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min-1.11.4.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.acornmediaplayer.js"></script>
+    <script type="text/javascript" src="js/bootstrap-confirmation.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/swip.js"></script>
+    <script type="text/javascript" src="js/Page_Script.js"></script>
+     <!--  <!--  <script type="text/javascript" src="js/redundant.js"></script>
+    <script type="text/javascript" src="/js/load_lesson_content.js"></script>-->
+    
+
+    <!--    under tags small_menu js - markers -->
+ <style>
+     
+     #ViewBookmarks table tr>td, #ViewNotes table tr>td{
+    padding-bottom: 1em;
+     }
+    
+    </style>
+</head>
+
+<body class="player_header">
+    
+<!--
+    <header class="hidden-xs hidden-sm">
+        <div class="top_head">
+            <div class="container-fluid">
+-->
+<!--                <a href="#" class="top_logo"><img src="../images/logo.png" alt="" /></a>-->
+<!--                <p class="lesson_title">تصنيف المخلوقات الحية</p>-->
+         <!--   <a href="#" class="top_close" data-toggle="modal" data-target="#myCloseApp"><i class="fa fa-times-circle"></i></a> -->
+               
+<!--            </div>end container-fluid-->
+
+<!--
+        </div>end top_head
+
+    </header>
+-->
+    <!-- cnavas to draw on screen-->
+<!--    <canvas id="can"  style="border:2px solid #d3d3d3;" ></canvas> -->
+
+    <section class="site_contents" id="test">
+        <div class="page_load"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+    </section>
+    <aside id="small_menu" class="side_nav">
+        <ul>
+
+<!--
+            <li class="submenu">
+                <span title="القائمة"><i class="fa fa-bars"></i></span>
+                <ul>
+                    <li><a href="">الدروس التعليمة</a></li>
+                    <li><a href="">الفيديوهات التعليمة</a></li>
+                    <li><a href="">مقاطع الصور التعليمة</a></li>
+                    <li><a href="">الوحدات التعليمة</a></li>
+                </ul>
+            </li>
+-->
+<!--
+ <li> <a href="../index.html" class="top_back"><i class="fa fa-reply"></i></a>
+                <span class="clearfix"></span></li>
+            <li><a id="m_search" href="#" data-target="#modaleSearch" data-toggle="modal" title="إبدأ البحث" onclick="clearAllModalsText();checkClasss(this);"><i class="fa fa-search"></i></a></li>
+-->
+
+           
+<!--			<li><a  href="#" data-toggle="modal" data-target="#help" title="مساعدة "><i class="fa fa-info"></i></a></li>-->
+<!--			<li><a  href="#" data-toggle="modal" data-target="#revision" title="مراجع " onclick="clearAllModalsText();checkClasss(this);"><i class="fa fa-book"></i></a></li>-->
+           
+<!--
+            <li><a id="m_mark" href="#" data-toggle="modal" data-target="#openBookmark" title="أضف مفضلتك" onclick="clearAllModalsText();checkClasss(this);"><i class="fa fa-star"></i></a></li>
+            <li><a id="m_note" href="#" data-toggle="modal" data-target="#openNote" title="أضف مذكرتك" onclick="clearAllModalsText();checkClasss(this);"><i class="fa fa-file-text"></i></a></li>
+            <li><a id="m_bookmark" href="#" data-toggle="modal" data-target="#tabBookNote" title="تصفح مذكراتك ومفضلاتك" ><i class="fa fa-list-alt"></i></a></li>
+-->
+            
+            
+        </ul>
+    </aside>
+    <!------------------------------------------------------------------------>
+    <!-- Modal for search menu on screen -->
+    <div class="modal fade" id="modaleSearch" role="dialog">
+        <div class="modal-dialog modal-md">
+             Modal content
+            <div class="modal-content">
+                <div id="searchpart">
+                    <div class="searchead">
+                        <h1 class="boxtitle searchicontitle"><i class="fa fa-search"></i>إبدأ البحث
+</h1>
+                        <a class="closebox close" data-dismiss="modal" ><i class="fa fa-times-circle"></i></a>
+
+                        
+                    </div>
+                    <input type="text" name="keywords" id="keywords" value="" class="searchbox">
+                                                                                 
+                    <div class="submitcont" >
+                        <input id="btn2" class="submitbutton" type="submit" value="إبحث" onclick="search()" />
+                    </div>
+                    </br>
+                    <ul class="search_list" id="search_list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------- ------ -->
+    
+    <!--moodal code for bookmark-->
+    <div class="modal fade" id="openBookmark" role="dialog">
+        <div class="modal-dialog modal-sm">
+             Modal content
+            <div class="modal-content boxbody">
+                <div class="searchead">
+ <a class="closebox" data-dismiss="modal" ><i class="fa fa-times-circle"></i></a>
+                    <h1 class="boxtitle bookicontitle"><i class="fa fa-star"></i>
+أضف مفضلتك</h1>
+                </div>
+                <input type="text" id="b_mark_words" class="searchbox"  />
+                <div class="submitcont">
+                    <input type="button" class="submitbutton" id="savebookmark_btn" value="إضافة" data-dismiss="modal" />
+                </div>
+                </br>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------->
+    <!--moodal code for note-->
+    <div class="modal fade" id="openNote" role="dialog">
+        <div class="modal-dialog modal-sm">
+             Modal content
+            <div class="modal-content boxbody">
+                <div class="searchead">
+                    <a class="closebox" data-dismiss="modal" ><i class="fa fa-times-circle"></i></a>
+                    <h1 class="boxtitle noteicontitle"><i class="fa fa-sticky-note"></i>أضف مذكرتك</h1>
+                </div>
+                <textarea rows="5" cols="5" id="b_note_words" class="searchbox" ></textarea>
+                <div class="submitcont">
+                    <input type="button" class="submitbutton" value="إضافة"  id="saveNotebtn"  data-dismiss="modal" />
+                </div>
+                </br>
+            </div>
+        </div>
+    </div>
+    <!-- Modal to show bookmark and notes on screen-->
+    <div class="modal fade" id="tabBookNote" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content modal-tranperant">
+                
+                
+                <div id="bookNoteNav">
+                    <ul id="nav-tabs" class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#bookkk"><i class="fa fa-star"></i>
+ قائمة المفضلات</a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#noteee"><i class="fa fa-sticky-note"></i>
+ قائمة المذكرات</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="tab-content">
+                       <a class="closebox close" data-dismiss="modal" ><i class="fa fa-times-circle"></i></a>
+                        <div id="bookkk" class="tab-pane fade in active">
+                            <ul id="result1"></ul>
+                            <div class="modal-footer"><h1 class="add-item" data-toggle="modal" data-target="#openBookmark" data-dismiss="modal"  onclick="clearAllModalsText();">
+<i class="fa fa-plus"></i>
+اضف مفضلة
+</h1></div>
+                           
+
+                            <div id="ViewBookmarks" style="width:90%; margin:2% auto;">
+                            </div>
+
+
+                        </div>
+                        <div id="noteee" class="tab-pane fade">
+                            <ul id="result2"></ul>
+                            <div class="modal-footer">
+                                <h1 class="add-item " data-toggle="modal" data-target="#openNote" data-dismiss="modal"  onclick="clearAllModalsText();" >
+<i class="fa fa-plus"></i>
+
+اضف مذكرة
+</h1> 
+                            </div>
+                            
+                            <div id="ViewNotes" style="width:90%; margin:2% auto;">
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-------------------------------------------------------------------->
+    <!-- Modal to close application window -->
+    <div class="modal fade" id="myCloseApp" role="dialog">
+        <div class="modal-dialog modal-sm">
+             Modal content
+            <div class="modal-content">
+                <div class="closeurapp">هل تريد بالفعل إغلاق البرنامج ؟</div>
+                <div class="submitcont2">
+                    <input type="button" class="submitbutton2" value="لا" data-dismiss="modal" />
+                    <input type="button" class="submitbutton2" onclick="closemyapp()" value="نعم" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------->
+  <!-- Modal to delete bookmark  -->
+
+
+<div id="myDeleteMark" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">هل أنت متأكد من مسح هذه المفضلة ؟</h4>
+        </div>
+        <div class="modal-body">
+        <input type="button" class="btn"  value="نعم" id="deletebtn"/>
+        <input type="button" class="btn" value="لا" data-dismiss="modal" />
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+<!------------------ Delete Note ------->
+
+<div id="myDeleteNote" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">هل أنت متأكد من مسح هذه المذكرة ؟</h4>
+        </div>
+        <div class="modal-body">
+        <input type="button" class="btn"  value="نعم" id="deleteNotebtn"/>
+        <input type="button" class="btn" value="لا" data-dismiss="modal" />
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+    <!-------------------------------------------------------------------->
+   <!--modal code for Edit -->
+    <div class="modal fade" id="edit_modal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content boxbody">
+                <div class="searchead">
+ <a class="closebox" data-dismiss="modal" ><i class="fa fa-times-circle"></i></a>
+                    <h1 class="boxtitle bookicontitle"><i class="fa fa-star"></i>
+ تعديل</h1>
+                </div>
+                <input type="text" id="e_mark_words" class="searchbox"  />
+                <div class="submitcont">
+                    <input type="button" class="submitbutton" value="تعديل" id="editmarkbtn" data-dismiss="modal" />
+                </div>
+                </br>
+            </div>
+        </div>
+    </div>
+
+<!----------------------------------------------------------------------->
+  <!--modal code for Edit -->
+    <div class="modal fade" id="edit_Nodemodal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <!-- Modal content-->
+            <div class="modal-content boxbody">
+                <div class="searchead">
+ <a class="closebox" data-dismiss="modal" ><i class="fa fa-times-circle"></i></a>
+                    <h1 class="boxtitle bookicontitle"><i class="fa fa-star"></i>
+ تعديل</h1>
+                </div>
+                <input type="text" id="e_note_words" class="searchbox"  />
+                <div class="submitcont">
+                    <input type="button" class="submitbutton" value="تعديل" id="editnotebtn" data-dismiss="modal" />
+                </div>
+                </br>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------->
+    <div class="custom_footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12 hidden-xs" id="soundPlayer">
+                    <audio class="audio_player" width="100%" height="100%" controls autoplay>
+                        <source type="audio/ogg" src="" />
+                    </audio>
+                </div><!--end col-md-4-->
+             
+                <div class="col-md-8  col-sm-6 col-xs-12">
+                    <ul class="footer_nav">
+                        <li id="prev"><a href="#" id="prevLink"><i class="fa fa-chevron-right"></i></a></li>
+                        <li><span></span></li>
+                        <li id="next"><a href="#" id="nextLink"><i class="fa fa-chevron-left"></i></a></li>
+                    </ul>
+                </div><!--end col-md-4-->
+               
+            </div><!--end row-->
+        </div><!--end container-fluid-->
+    </div><!--end custom_footer-->
+    <!------------------------------------------------------------------------>
+    <!-- Modal for help menu on screen -->
+    <div class="modal fade" id="help" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div id="searchpart">
+                    <div class="searchead">
+            <h1 class="boxtitle searchicontitle"><i class="fa fa-info"></i>المساعدة  
+</h1>
+                        <a class="closebox close" data-dismiss="modal" ><i class="fa fa-times-circle"></i></a>
+
+                        
+                    </div>
+                    <ul style="font-size:18px;">
+                        <li>الزر التالي يمكنك من التنقل إلى الصفحة التالية.</li>
+                        <li>الزر السابق يمكنك من التنقل للصفحة السابقة.</li>
+                        <li>زر المراجع يفتح لك قائمة بالمراجع المساعدة للمادة.</li>
+                        <li>زر إضافة ملاحظة يمكنك من إضافة ملاحظات للصفحة.</li>
+                        <li>زر البحث يمكنك من البحث عن أي كلمات داخل الدرس.</li>
+                        <li>زر قائمة المحتويات يمكنك من عرض مواضيع الدرس والتنقل إليها.</li>
+                    </ul>
+                    </br>
+                    <ul class="search_list" id="search_list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------->
+    <!-- Modal for revision menu on screen -->
+    <div class="modal fade" id="revision" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div id="searchpart">
+                    <div class="searchead">
+            <h1 class="boxtitle searchicontitle"><i class="fa fa-book"></i>المراجع 
+</h1>
+                        <a class="closebox close" data-dismiss="modal" ><i class="fa fa-times-circle"></i></a>
+
+                        
+                    </div>
+                    <ol class="help_list">
+                        <li>Hewett P. Beyond first aid :a skills- based guide to ambulance practice
+London. 1992.</li>
+                   <li>Dresser A. A. &Hazelton R. L. Industerial first aid: a reference and training
+manual. 1991.</li>
+                   <li>Indrani Tk. First aid for nurses. 2003.</li>
+                   <li>Bhushan T. V. & Amin C. First aid for the words. 1998.</li>
+                   <li>Abbott J. & Gifford M. J. . Pre hospital emergency care. 1996.</li>
+                   <li>Edwared T. Dickinson. Fire Services Emergency Care. New Jersy. 1999.</li>
+                   <li>National Saftey Council. First aid Institute. First aid & CPR, 2 nd edit., Boston.
+1992.</li>
+                   <li>Julia  Becker  and  Daina  Lieberman.  Rescue.<a href="">http://Liberary.thinquest.org/10624/index.html.</a></li>
+                    </ol>
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------------------------------->
+
+<!--  
+<script type="text/javascript" src="js/small_menu.js">
+</script>-->
+
+</body>
+
+</html>

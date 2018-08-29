@@ -1,0 +1,109 @@
+﻿@model Drossey.Data.Core.Dto.BookDto
+
+@{
+    ViewData["Title"] = "تفاصيل الوحدة الدراسية";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+<div class="row">
+    <div class="col-md-12">
+
+
+
+
+        <div class="profile-info-name">
+
+            <img src="/uploads/@Model.PhotoUrl" class="img-thumbnail" alt="@Model.Name" asp-append-version="true" onerror="this.src='/images/default.png'" />
+            <div class="profile-info-detail">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label> :
+                    @Html.DisplayFor(model => model.Name)
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SubjectName" class="control-label"></label> :
+                    @Html.DisplayFor(model => model.SubjectName)
+                </div>
+                <div class="form-group">
+                    <label asp-for="TermName" class="control-label"></label> :
+                    @Html.DisplayFor(model => model.TermName)
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="GradeName" class="control-label"></label> :
+                    @Html.DisplayFor(model => model.GradeName)
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CountryName" class="control-label"></label> :
+                    @Html.DisplayFor(model => model.CountryName)
+
+                </div>
+
+
+
+                @*<div class="form-group">
+                    <label asp-for="Price" class="control-label"></label> :
+                    @Html.DisplayFor(model => model.Price) $
+
+                </div>
+
+
+
+                <div class="form-group">
+                    <label asp-for="DiscountPercentage" class="control-label"></label> :
+                    @Html.DisplayFor(model => model.DiscountPercentage)
+
+                </div>
+                <div class="form-group">
+                    <label  class="control-label"> المبلغ النهائى</label> :
+                    @((Model.Price - ((Model.Price * Model.DiscountPercentage) / 100)).ToString("0.00"))  $
+
+                </div>*@
+
+                <div class="form-group">
+
+
+                    <label asp-for="IsPublished" class="control-label"></label> :
+
+                    @if (Model.IsPublished)
+                    {
+                        <span class="label label-success">مفعل</span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger">غير مفعل</span>
+
+
+                    }
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+</div>
+
+
+<div class="pull-right m-t-30">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary btn-rounded waves-effect waves-light m-b-5">Edit</a>
+
+    <a asp-action="Index" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الكتب  >></a>
+</div>

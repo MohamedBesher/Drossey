@@ -1,0 +1,35 @@
+/* Theme transition Effect */
+*:after,
+*:before,
+a,
+p,
+h1,h2,h3,h4,h5,h6,
+button,
+.search-bar,
+.classes-column,
+.on-hover,
+.overlay,
+.shop-grid-column figure img,
+.blog-center-slider li > img,
+.slick-arrow,
+.nav-list > li ul,
+.nav-list > li,
+.scho-service-icon,
+.team-figure figure
+{-webkit-transition: all 0.5s ease-in-out;
+-moz-transition: all 0.5s ease-in-out;
+-ms-transition: all 0.5s ease-in-out;
+-o-transition: all 0.5s ease-in-out;
+transition: all 0.5s ease-in-out;}
+
+.scrollup
+{-webkit-transition: all 0.7s ease-in-out;
+-moz-transition: all 0.7s ease-in-out;
+-ms-transition: all 0.7s ease-in-out;
+-o-transition: all 0.7s ease-in-out;
+transition: all 0.7s ease-in-out;}
+
+
+
+
+

@@ -1,0 +1,29 @@
+@media ( max-width : 480px)
+{
+    a.lesson_link
+    {
+        width: auto;
+    }
+    .temp_255_chart h1
+    {
+        padding: 0;
+        right: 22px;
+    }
+    .temp_255_chart ul {
+    margin-right: 40px;
+}
+    
+}
+@media (min-width:490px) and (max-width:760px)
+{
+    .temp_255_chart h1
+    {
+        right: 29px;
+    }
+    .temp_255_chart ul
+    {
+      right: 17px;
+      top: 2px;
+    }
+    
+}

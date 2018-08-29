@@ -1,0 +1,172 @@
+﻿@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    var actionName = "";
+    var controllerName = "";
+    var routeValues = ViewBag.routeValues;
+    if (ViewData["action"] != null && !string.IsNullOrEmpty((string) ViewData["action"]))
+    {
+        actionName = (string) ViewData["action"];
+    }
+    if (ViewData["controller"] != null && !string.IsNullOrEmpty((string) ViewData["controller"]))
+    {
+        controllerName = (string) ViewData["controller"];
+    }
+}
+
+@{
+    if (ViewBag.ResultCount > ViewBag.PageSize)
+    {
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <div class="dataTables_paginate paging_simple_numbers">
+
+                    <ul class="pagination">
+                        @{
+                            var _i = ViewBag.ResultCount / ViewBag.PageSize;
+                            int interval = (int)_i / 10;
+                            int num = Model.PageIndex / 10;
+                            int end = (((int)(Model.PageIndex / 10)) * 10) + 10;
+                            int start = end - 10;
+                            if (ViewBag.ResultCount % ViewBag.PageSize > 0)
+                            {
+                                _i = _i + 1;
+                            }
+                            if (Model.PageIndex != 1)
+                            {
+                                routeValues["page"] = (Model.PageIndex - 1).ToString();
+                                <li class="paginate_button previous">
+                                    <a asp-action="@actionName"
+                                       asp-controller="@controllerName"
+                                       asp-all-route-data="@routeValues"
+                                       data-ajax="true"
+                                       data-ajax-method="POST"
+                                       data-ajax-update="#searchResult"
+                                       data-ajax-mode="replace"
+                                       class="btn btn-default @prevDisabled" data-toggle="tooltip" title="الصفحة السابقة">
+                                       
+
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </li>
+                            }
+
+
+                            if (interval!= 0 && num != 0)
+                            {
+                                routeValues["page"] = (start-1).ToString();
+                                <li class="paginate_button">
+                                    <a asp-action="@actionName"
+                                       asp-controller="@controllerName"
+                                       asp-all-route-data="@routeValues"
+                                       data-ajax="true"
+                                       data-ajax-method="POST"
+                                       data-ajax-update="#searchResult"
+                                       data-ajax-mode="replace"
+                                       class="btn btn-default" data-toggle="tooltip" title="الصفحات السابقة">
+                                        <i class="fa fa-angle-double-right"></i>
+
+                                    </a>
+
+                                </li>
+                            }
+
+                            
+
+
+                            for (var i = 1; i <= _i; i++)
+                            {
+                                var className = "";
+                                if (interval != 0)
+                                {
+
+                                    className = (i >= start && i <= end) ? "show" : "hide";
+
+                                }
+
+                                @if (i == Model.PageIndex)
+                                {
+
+                                    routeValues["page"] = i.ToString();
+                                    <li class="paginate_button active @className-@num">
+                                        <a asp-action="@actionName"
+                                           asp-controller="@controllerName"
+                                           asp-all-route-data="@routeValues"
+                                           data-ajax="true"
+                                           data-ajax-method="POST"
+                                           data-ajax-update="#searchResult"
+                                           data-ajax-mode="replace"
+                                           class="btn btn-default" data-toggle="tooltip" title="الصفحة @i">
+                                            @i
+                                        </a>
+
+                                    </li>
+                                }
+                                else
+                                {
+                                    routeValues["page"] = i.ToString();
+                                    <li class="paginate_button @className-@num">
+                                        <a asp-action="@actionName"
+                                           asp-controller="@controllerName"
+                                           asp-all-route-data="@routeValues"
+                                           data-ajax="true"
+                                           data-ajax-method="POST"
+                                           data-ajax-update="#searchResult"
+                                           data-ajax-mode="replace"
+                                           class="btn btn-default" data-toggle="tooltip" title="الصفحة @i">
+                                            @i
+                                        </a>
+
+                                    </li>
+                                }
+                            }
+
+                            if (interval != 0 && num!=interval)
+                            {
+                                routeValues["page"] = end.ToString();
+                                <li class="paginate_button">
+                                    <a asp-action="@actionName"
+                                       asp-controller="@controllerName"
+                                       asp-all-route-data="@routeValues"
+                                       data-ajax="true"
+                                       data-ajax-method="POST"
+                                       data-ajax-update="#searchResult"
+                                       data-ajax-mode="replace"
+                                       class="btn btn-default"  data-toggle="tooltip" title="الصفحات التالية">
+                                        <i class="fa fa-angle-double-left"></i>
+                                    </a>
+
+                                </li>
+                            }
+
+                            if (_i != Model.PageIndex)
+                            {
+                                routeValues["page"] = (Model.PageIndex + 1).ToString();
+                                <li class="paginate_button next">
+                                    <a asp-action="@actionName"
+                                       asp-controller="@controllerName"
+                                       asp-all-route-data="@routeValues"
+                                       data-ajax="true"
+                                       data-ajax-method="POST"
+                                       data-ajax-update="#searchResult"
+                                       data-ajax-mode="replace"
+                                       class="btn btn-default @nextDisabled" data-toggle="tooltip" title="الصفحة التالية">
+                                        <i class="fa fa-angle-left"></i>
+
+                                    </a>
+
+                                </li>
+                            }
+
+                           
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    }
+}

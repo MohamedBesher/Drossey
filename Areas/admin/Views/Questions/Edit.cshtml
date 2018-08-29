@@ -1,0 +1,185 @@
+﻿@model QuestionViewModel
+
+@{
+    ViewData["Title"] = "تعديل السؤال";
+    Layout = "../Shared/_Layout.cshtml";
+
+
+}
+
+<div id="UpdateDiv">
+    <h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+
+
+    <div class="row">
+
+
+
+
+
+        <div class="col-md-12">
+            <form asp-action="Edit">
+
+                <div class="row">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="col-lg-12">
+                        <input asp-for="Id" type="hidden" />
+
+                        <div class="form-group">
+                            <label asp-for="@Model.Body" class="control-label"></label>
+                            <input asp-for="@Model.Body" class="form-control" />
+                            <span asp-validation-for="@Model.Body" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="CountryId" class="control-label"></label>
+                            <select asp-for=" CountryId" value="@Model.CountryId" class="form-control" asp-items="ViewBag.countries">
+                                <option value="">اختر البلد</option>
+
+
+                            </select>
+                            <span asp-validation-for="CountryId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="GradeId" class="control-label"></label>
+                            <select asp-for="GradeId" class="form-control" asp-items="ViewBag.grades">
+                                <option value="">----اختر ----</option>
+
+
+                            </select>
+                            <span asp-validation-for="GradeId" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="TermId" class="control-label"></label>
+                            <select asp-for="TermId" class="form-control" asp-items="ViewBag.terms">
+                                <option value="">----اختر ----</option>
+
+                            </select>
+                            <span asp-validation-for="TermId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SubjectId" class="control-label"></label>
+                            <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.subjects">
+                                <option value=""> ----اختر---- </option>
+                            </select>
+                            <span asp-validation-for="SubjectId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BookId" class="control-label"></label>
+                            <select asp-for="BookId" class="form-control" asp-items="ViewBag.books">
+                                <option value="">----اختر ----</option>
+                            </select>
+                            <span asp-validation-for="BookId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LessonId" class="control-label"></label>
+                            <select asp-for="LessonId" class="form-control" asp-items="ViewBag.lessons">
+                                <option value="">----اختر ----</option>
+
+                            </select>
+                            <span asp-validation-for="LessonId" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="Type" class="control-label"></label>
+                            <input asp-for="Type" class="form-control" />
+                            <span asp-validation-for="Type" class="text-danger"></span>
+                        </div>
+                        @if (Model.Type == Drossey.Data.Core.Enum.QuestionType.Choose)
+                        {
+                            @for (int i = 0; i < Model.Answers.Count; i++)
+                            {
+                                int count = i + 1;
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="control-label"> الاجابة @count</label>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-1">
+                                            <div class="">
+                                                <input asp-for="Answers[i].IsCorrect" class="checkbox-circle" />
+                                                @*<input type="radio" class="IsCorrect" name="IsCorrect" asp-for="Answers[i].IsCorrect"  value="flase">*@
+                                                <span asp-validation-for="Answers[i].IsCorrect" class="text-danger"></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-11">
+                                            <input asp-for="Answers[i].Answer" class="form-control" />
+                                            <span asp-validation-for="Answers[i].Answer" class="text-danger"></span>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            }
+
+                        }
+
+                        else if (Model.Type == Drossey.Data.Core.Enum.QuestionType.TrueFalse)
+                        {
+                            <div class="form-group">
+                                <label asp-for="IsCorrect" class="control-label"></label>
+                                <select asp-for="IsCorrect" class="form-control">
+
+                                    <option value="true">اجابة صحيحة</option>
+                                    <option value="false">اجابة خاطئة</option>
+
+                                </select>
+                            </div>
+
+                        }
+                        else if (Model.Type == Drossey.Data.Core.Enum.QuestionType.Complete)
+                        {
+                            <div class="form-group">
+                                <label asp-for="Answers[0].Answer" class="control-label"></label>
+                                <input asp-for="Answers[0].Answer" class="form-control" />
+
+
+
+                            </div>
+
+                        }
+
+                        <div class="form-group">
+                            <label asp-for="grade" class="control-label"></label>
+                            <input asp-for="grade" class="form-control" />
+                            <span asp-validation-for="grade" class="text-danger"></span>
+                        </div>
+
+                        @*<div class="form-group">
+                                <label asp-for="CompeleteCount" class="control-label"></label>
+                                <input asp-for="CompeleteCount" class="form-control" />
+                                <span asp-validation-for="CompeleteCount" class="text-danger"></span>
+                            </div>*@
+
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="حفظ" class="btn btn-primary" />
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+        <script src="~/js/app/question.js"></script>
+
+    }
+

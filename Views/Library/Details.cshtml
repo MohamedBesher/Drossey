@@ -1,0 +1,215 @@
+﻿@model Drossey.Data.Core.Dto.MySubjectDto
+@{
+    ViewData["Title"] = "تفاصيل الوحدة الدراسية";
+    Layout = "_Layout";
+}
+
+
+<main>
+
+    @section BannerSlider{
+
+        <section class="Profile__breadcrumbs  overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="bread-list">
+                            <li>
+                                <a asp-controller="Home" asp-action="Index">
+                                    الرئيسية
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href=""> / تفاصيل الدوره</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    <!-- Course details -->
+    <main>
+        <div class="container">
+            <div class="review-course">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="review-course__item review-course__item-left">
+                            <div class="review-course__item-left__title">@Model.Name  </div>
+                            <div class="review-course__item-left__content">
+                                <div class="review-course__item-left__info">
+                                    <span class="glyph-icon flaticon-black review-course__item-left__icon"></span>
+                                    <div class="review-course__item-left__sub">@Model.GradeName     </div>
+                                </div>
+                                <div class="review-course__item-left__info">
+                                    <span class="glyph-icon flaticon-web review-course__item-left__icon"></span>
+                                    <div class="review-course__item-left__sub">
+
+                                        @{string teacherNames = ""; }
+                                        @if (Model.TeacherSubjects.Any())
+                                        {
+                                            foreach (var TeacherSubject in Model.TeacherSubjects)
+                                            {
+                                                teacherNames += TeacherSubject.Teacher.Name + "/";
+
+
+                                                @TeacherSubject.Teacher.Name
+
+
+                                            }
+                                        }
+
+
+                                        ( مدرس @Model.Name )
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <div class="review-course__item review-course__item-right">
+                            <video class="review-course__item-right__video" id="video-bundle-detail" preload="none" poster="~/assets/img/bundle-details/Video.png"
+                                   width="570" height="343">
+                                <source src="https://educhain.rubikthemes.com/wp-content/uploads/2017/08/sample-video.mp4" type="video/mp4">
+                            </video>
+                            <div class="review-course__item-right__content" id="video-content">
+                                <div class="review-course__item-right__wapper">
+                                    <div class="glyph-icon flaticon-arrows-6 review-course__item-right__icon-video" id="button-vieo-bd"></div>
+                                    <div class="review-course__item-right__review"> معاينة  الدوره</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-course">
+                <div class="info-course__title">   تعرف علي تفاصيل الدوره</div>
+                <div class="row">
+                    <div class="info-course__list">
+                        <div class="col-lg-12 col-md-5">
+                            <div class="info-course__item text-center">
+
+                                @Html.Raw(Model.Description)
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="brief-course">
+
+                @{int index = -1;}
+                @{string className = ""; }
+                @foreach (var book in Model.Books)
+                {
+                    index++;
+
+
+                    if (index == 0)
+                    {
+                        className = "";
+
+
+                    }
+                    else
+                    {
+                        className = "brief-course__item--hide";
+
+                    }
+
+
+
+                    <div class="brief-course__item @className">
+
+
+
+                        <div class="brief-course__top">
+                            <!-- <div class="tag-bunle brief-course__top__bundle">bundle</div> -->
+                            <div class="IconCourse  brief-course__top__bundle"> <img src="~/assets/img/languages.png"> </div>
+                            <div class="brief-course__top__title ">@book.Name</div>
+                        </div>
+
+
+                        <div class="list-brief">
+
+                            @foreach (var item in book.Lessons)
+                            {
+
+                                <div class="list-brief__item">
+                                    <div class="row">
+                                        <div class="col-md-9 col-sm-12">
+                                            <div class="list-brief__top">
+                                                <a class="list-brief__top__section" href="#"> @item.Name </a>
+                                                <a class="list-brief__top__title" href="#"> نبذه عن الدرس.</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-12 list-brief__btn-enroll">
+                                            <a href="#" target="_blank" class="btn-green">الشرح</a>
+
+                                            @if (!string.IsNullOrEmpty(item.MeetingRecoredLink))
+                                            {
+                                                <a href="#" class="btn-green"> درس مسجل</a>
+
+                                            }
+                                            else
+                                            {
+                                                if (item.LiveLesson != null)
+                                                {
+                                                    if (item.LiveLesson.Start_time >= DateTime.Now)
+                                                    {
+                                                        if (item.LiveLesson.UserLiveLesson != null)
+                                                        {
+                                                            <a href="#" class="btn-green">
+                                                                <i class="icon-file-play"></i> درس مباشر
+                                                            </a>
+
+                                                        }
+
+                                                    }
+                                                }
+                                            }
+
+
+
+                                            @if (item.Quiz.Any())
+                                            {
+                                                var quiz = item.Quiz.FirstOrDefault();
+                                                <a href="#" target="_blank" class="btn-green"> اختبار</a>
+
+                                            }
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            }
+
+                        </div>
+                        <div class="brief-course__buton">
+                            <span class="glyph-icon flaticon-arrows-5 brief-course__buton__icon"></span>
+                        </div>
+                    </div>
+
+
+                }
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </main>
+</main>
+

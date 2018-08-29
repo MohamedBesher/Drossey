@@ -1,0 +1,186 @@
+﻿
+@model List<Drossey.Data.Core.Dto.SubjectDto>
+<!-- Classes Figure -->
+@if (Model.Count > 0)
+{
+
+
+    <div class="section-specializationsl CoursesSlider">
+        <div class="container">
+            <div class="card-slide">
+                <div class="specializations card-slide-top">
+                    <div class="special courses__list ">
+
+                        @foreach (var item in Model)
+                        {
+
+                            <!-- Classes Figure -->
+
+
+
+                            <div class="undefined courses__item">
+                                <div class="courses__wapper">
+                                    <div class="col-equal courses__top">
+                                        <div class="courses__top__wapper">
+                                            <img class="courses__top__image" src="/uploads/@item.PhotoUrl" alt="@item.Name" onerror="this.src ='/images/default.png'">
+                                        </div>
+                                        @if (item.IsPuplished)
+                                        {
+                                            <div class="courses__top__bundle">متاح</div>
+
+                                        }
+                                        else
+                                        {
+                                            <div class="courses__top__bundle">غير متاح</div>
+
+                                        }
+
+                                        @if (ViewBag.user != null)
+                                        {
+
+                                            <div class="courses__hover">
+                                                <div class="courses__hover-content">
+                                                    @if (item.Favorite)
+                                                    {
+
+                                                        <span class="courses__hover-content__item" id="@("wish"+item.Id)" onclick="RemoveWishlist(@item.Id)">
+                                                            <img src="assets/img/removeFavourite.png" class="img-responsive center-block">
+                                                        </span>
+
+
+                                                    }
+                                                    else
+                                                    {
+
+                                                        <span class="courses__hover-content__item" id="@("wish"+item.Id)" onclick="addToWishlist(@item.Id)">
+                                                            <img src="assets/img/heart-2.png" class="img-responsive center-block">
+
+                                                            @*<span class="glyph-icon flaticon-shapes courses__hover-content__icon"></span>*@
+                                                        </span>
+
+
+                                                    }
+                                                    @if (item.Cart)
+                                                    {
+
+
+                                                        <span class="courses__hover-content__item" id="@("cart" + item.Id)" onclick="removeCart(@item.Id)">
+                                                            <img src="assets/img/rubbish-bin.png" class="img-responsive center-block">
+                                                        </span>
+
+                                                    }
+                                                    else if (item.Transactions)
+                                                    {
+                                                        <span class="courses__hover-content__item">
+
+                                                            <a class=" shadow-0" asp-action="Details" asp-controller="MyBooks" asp-route-id="@item.Id">
+                                                                <img src="assets/img/view.png" class="img-responsive center-block">
+                                                            </a>
+                                                        </span>
+
+                                                    }
+                                                    else
+                                                    {
+
+                                                        <span class="courses__hover-content__item" id="@("cart" + item.Id)" onclick="addToCart(@item.Id)">
+                                                            <span class="glyph-icon flaticon-interface courses__hover-content__icon"></span>
+                                                        </span>
+                                                    }
+
+
+                                                </div>
+                                            </div>
+
+                                        }
+
+                                    </div>
+                                    <div class="col-equal courses__content">
+
+                                        @if (item.Transactions)
+                                        {
+                                            <a class="courses__content__title" asp-action="Details" asp-controller="MyBooks" asp-route-id="@item.Id">@item.Name  </a>
+                                        }
+                                        else
+                                        {
+
+                                            <a class="courses__content__title" asp-action="Details" asp-controller="Library" asp-route-id="@item.Id" asp-area=""> @item.Name </a>
+
+                                        }
+                                        @*<a class="courses__content__title" href="#">مادة العلوم</a>*@
+                                        <div class="courses__content__author">
+
+                                            @if (string.IsNullOrEmpty(item.TeacherName))
+                                            {
+                                                <div class="courses__col-left" href="#">
+                                                    <span class="courses__content__avatar">
+                                                        <img class="courses__content__image" src="/uploads/@item.TeacherPhotoUrl" onerror="this.src ='/images/default.png'" alt="@item.TeacherName">
+                                                    </span>
+                                                    <span class="courses__content__author-name">
+                                                        غير متوفر
+                                                    </span>
+
+                                                </div>
+
+
+
+                                            }
+                                            else
+                                            {
+
+                                                <a class="courses__col-left" href="#">
+                                                    <span class="courses__content__avatar">
+                                                        <img class="courses__content__image" src="/uploads/@item.TeacherPhotoUrl" onerror="this.src ='/images/default.png'" alt="@item.TeacherName">
+                                                    </span>
+                                                    <span class="courses__content__author-name">
+                                                        @item.TeacherName
+                                                    </span>
+
+                                                </a>
+
+
+                                            }
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                @Html.Raw(item.Description)
+
+                                            </p>
+                                        </div>
+
+                                        <div class="courses__content__info">
+                                            <div class="courses__col-left">
+                                                <div class="col-left__item">
+                                                    <span class="courses__content__icon">
+                                                        <span class="glyphicon glyphicon-usd"></span>
+                                                    </span>
+                                                    <span class="courses__content__number">@item.Price ر.س</span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        }
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+
+<!-- Classes Figure -->

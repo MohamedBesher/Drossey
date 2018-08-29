@@ -1,0 +1,232 @@
+﻿@{
+    ViewData["Title"] = "الدفع";
+}
+
+
+@if (!string.IsNullOrEmpty(ViewBag.message))
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.message
+    </div>
+
+}
+else
+{
+
+    <!-- User Checkout -->
+    @*<div id="content">
+            <div class="container">
+
+                <div class="row">
+
+
+                    <div class="col-xs-12">
+
+                        <div class="bs-example" action="">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <label for='r11' style='width: 350px;'>
+                                                <input type='radio' id='r11' name='occupation' value='Working' required checked /> خصم من الرصيد
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"></a>
+                                            </label>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <h2>رصيدك الحالي @ViewBag.balance ريال</h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default" style="pointer-events: none;opacity: 0.4;">
+                                    <div class="panel-heading">
+                                        <h4 class=panel-title>
+                                            <label for='r12' style='width: 350px;'>
+                                                <input type='radio' id='r12' name='occupation' value='Not-Working' required />
+                                                <i class="icon-credit-card"></i> الدفع عن طريق بطاقه الائتمان
+
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"></a>
+                                            </label>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label>
+                                                    الاسم على البطاقة
+                                                    <sup>*</sup>
+                                                </label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    نوع بطاقة الائتمان
+                                                    <sup>*</sup>
+                                                </label>
+                                                <select class="selectpicker">
+                                                    <option selected="selected" value="menu-order">النوع</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    رقم بطاقة الائتمان
+                                                    <sup>*</sup>
+                                                </label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    رقم التحقق من البطاقة
+                                                    <sup>*</sup>
+                                                </label>
+                                                <input class="form-control" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card--padding fill-bg text-center">
+
+                                <h4>المبلغ الإجمالي: <span>@ViewBag.totalafter ريال</span></h4>
+
+                                <form asp-action="Pay" asp-controller="Payment">
+                                    <input type="submit" value="تأكيد العملية" class="btn btn-common btn-full" />
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="mb-50"></div>
+            </div>
+        </div>*@
+    <!-- End User Checkout -->
+
+
+    <main>
+        <section class="Profile__breadcrumbs  overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <ul class="bread-list">
+                            <li>
+                                <a asp-controller="Home" asp-action="Index">
+                                    الرئيسية
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href=""> / استكمال الدفع</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- My CheckOut -->
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-xs-12 Check__out ">
+                        @*<form class="bs-example" action="">*@
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <label for="r11" style="width: 350px;">
+                                                <input type="radio" id="r11" name="occupation" value="Working" required="" checked> خصم من الرصيد
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" class=""></a>
+                                            </label>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in" aria-expanded="true" style="">
+                                        <div class="panel-body">
+                                            <h2 class="Style__charge">رصيدك الحالي @ViewBag.balance ريال</h2>
+
+                                            @*<input id="checkBox" type="checkbox">*@ خصم @ViewBag.totalafter  ريال من الرصيد
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <label for="r12" style="width: 350px;" disabled="true">
+                                                <input type="radio" id="r12" name="occupation" value="Not-Working" required=""  disabled>
+                                                <i class="icon-credit-card"></i> الدفع عن طريق بطاقه الائتمان
+
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed" aria-expanded="false"></a>
+                                            </label>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label>
+                                                    الاسم على البطاقة
+                                                    <sup>*</sup>
+                                                </label>
+                                                <input class=" input-item" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    نوع بطاقة الائتمان
+                                                    <sup>*</sup>
+                                                </label>
+                                                <select class="input-item">
+                                                    <option value="volvo">Volvo</option>
+                                                    <option value="saab">Saab</option>
+                                                    <option value="mercedes">Mercedes</option>
+                                                    <option value="audi">Audi</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    رقم بطاقة الائتمان
+                                                    <sup>*</sup>
+                                                </label>
+                                                <input class=" input-item" type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>
+                                                    رقم التحقق من البطاقة
+                                                    <sup>*</sup>
+                                                </label>
+                                                <input class=" input-item" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card__total card--padding fill-bg text-center">
+                                <h4>المبلغ الإجمالي: <span>@ViewBag.totalafter ريال</span></h4>
+
+
+                                <form asp-action="Pay" asp-controller="Payment">
+                                    <input type="submit" value="تأكيد الطلب"  class="btn btn-common btn-full" />
+
+                                </form>
+                                @*<a href="#" class="btn btn-common btn-full">
+                                    تاكيد الطلب
+                                    <span class="icon-action-redo"></span>
+                                </a>*@
+                            </div>
+                        @*</form>*@
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+    </main>
+}
+
+
+
+
+
+

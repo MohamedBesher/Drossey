@@ -1,0 +1,138 @@
+﻿@model Drossey.PaginatedList<Drossey.Data.Core.Models.ContactUs>
+@{
+    ViewData["Title"] = "اتصل بنا";
+    Layout = null;
+    //Pager Parameter
+    ViewData["action"] = "Search";
+    ViewData["controller"] = "ContactUs";
+
+    ViewBag.routeValues = new Dictionary<string, string>
+    {
+        {"keyWord", (ViewBag.KeyWord == null ? "" : ViewBag.KeyWord).ToString()},
+        {"page", ViewBag.page.ToString()},
+        {"pageSize", ViewBag.PageSize.ToString()},
+    };
+}
+
+@if (Model.Count > 0)
+{
+    int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>
+              الاسم
+            </th>
+            <th>
+الهاتف            </th>
+            <th>الايميل</th>
+
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            counter++;
+            <tr>
+
+                <td>@counter</td>
+                <td>
+
+                    @if (string.IsNullOrEmpty(item.UserId))
+                    {
+                        @Html.DisplayFor(modelItem => item.Name)
+
+
+                    }
+                    else
+                    {
+
+                        <a asp-action="Details" asp-controller="Users" asp-area="admin" asp-route-id="@item.UserId">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </a>
+                    }
+                 
+
+
+                </td>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+
+
+                </td>
+                <td class="actions">
+
+
+                    @*{"keyWord", (ViewBag.KeyWord == null ? "" : ViewBag.KeyWord).ToString()},
+                    {"page", ViewBag.page.ToString()},
+                    {"pageSize", ViewBag.PageSize.ToString()},*@
+                    <a asp-action="Details" asp-controller="ContactUs" asp-route-id="@item.Id" 
+                       class="on-default edit-row"   data-toggle="tooltip" title="تفاصيل"><i class="fa fa-file"></i></a> |
+                    <a asp-action="Delete" asp-controller="ContactUs" 
+                       asp-route-id="@item.Id" asp-route-keyWord="@ViewBag.KeyWord" 
+                       asp-route-PageSize="@ViewBag.PageSize" asp-route-page="@ViewBag.page"
+                        data-toggle="tooltip" title="حذف"
+                       data-ajax-confirm="هل انت متأكد انك تريد حذف الرسالة ؟"
+                       data-ajax="true"
+                       data-ajax-method="POST"
+                       data-ajax-update="#searchResult"
+                       data-ajax-mode="replace"
+                       data-ajax-success="onsuccessDeletion"
+                       data-ajax-failure="onFailureDeletion"
+                       data-ajax-loading="#ajaxLoaderDiv" 
+                       class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+
+
+
+    Html.RenderPartial("_pagerPartial");
+
+
+
+
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+
+
+
+
+
+}
+<script>
+    function onsuccessDeletion(data) {
+
+        NotificationService.displaySuccess("تم الحذف بنجاح", "تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+
+        if (jqXHR.responseText === "NotFound")
+            NotificationService.displayError("هذه المدينة غير موجوده", " !تحذير");
+        else if (jqXHR.responseText === "error")
+            NotificationService.displayError("هذة المدينة مستخدمة لا يمكن حذفها .", " !تحذير");      
+
+
+
+    }
+
+
+
+</script>

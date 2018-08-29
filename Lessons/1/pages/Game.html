@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Game</title>
+    <!--bootstrap links-->
+    
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl-theme.min.css">
+    <!--tark css graid  links-->
+    <link type="text/css" rel="stylesheet" href="css/new_grid.css">
+    <!--font-awesome links-->
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/animate.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <link type="text/css" rel="stylesheet" href="css/PhysicsExperimentStyle.css.css">
+    <style>
+     
+.footer{
+	width: 100%;
+	min-height: 30px;
+	background-color: #1A1A1A;
+}
+
+
+</style>
+
+    
+    <!--js files-->
+    <script src="js/jquery-2.2.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>   
+    <script src="js/jsPlumb-2.1.4.js"></script>
+    <script src="js/PhysicsExperimentScript.js.js"></script>
+
+       
+  </head>
+
+<body>
+<div class="alhaytham_head">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="title_font" id="lesson_title">تجربة: التوصيلية الكهربائية </h1><!--end lesson_title-->
+                  <a href="#" id="repeat_btn" onclick="history.go(0)"><i class="fa fa-repeat fa-2x"></i></a>
+                     <a href="#"  id="question_btn"><i class="fa fa-question fa-flip-horizontal fa-2x"></i></a>
+                    <div class="clearfix"></div>
+              
+                </div><!--end col-xs-12-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div><!--end alhaytham_head-->
+<div class="container col-md-12">
+    
+    <div id="mytools" class="col-md-1">
+        <div id="diagramContainer">
+        
+        <div id="item_left" class="item"  data-toggle="tooltip" data-placement="left" title="بطارية كهربائية" >      
+      <img src="../Data/Lessons/0/images/battery.png"    id="battery"/> 
+        
+        </div>   
+            <br><br>
+         <div id="item_right" class="item"  data-toggle="tooltip" data-placement="left" title="مفتاح كهربائي" >
+           <img src="../Data/Lessons/0/images/switch%20off.png"  width="80%" id="switch" />
+        </div>   
+            <br><br><br><br>
+         <div id="third_item" class="item"  data-toggle="tooltip" data-placement="left" title="قطعة من الحديد" >
+             <img src="../Data/Lessons/0/images/iron.png" width="70%" id="iron" />
+         </div> <br><br>
+         <div id="fourth_item" class="item"  data-toggle="tooltip" data-placement="left" title="قطعة من الألمونيوم">
+          <img src="../Data/Lessons/0/images/amlinum.png" width="70%" id="alminum" />
+         </div> <br><br>
+         <div id="fifth" class="item" data-toggle="tooltip" data-placement="left" title="قطعة بلاستيك">
+                 
+           <img src="../Data/Lessons/0/images/plastic.png" width="70%" id="plastic" />
+         </div> <br><br>
+         <div id="six" class="item"  data-toggle="tooltip" data-placement="left" title="قطعة من الخشب" >
+                 
+               <img src="../Data/Lessons/0/images/wood.png" width="80%" id="wood" />
+         </div> <br><br>
+         <div id="lampdiv" class="item" data-toggle="tooltip" data-placement="left" title="مصباح" >
+                    <img src="../Data/Lessons/0/images/lamp%20off.png" width="60%" id="lamp" />
+         </div>
+        
+            
+        
+          
+        
+        </div>
+    </div>
+    <div class="col-md-10" id="drop_here">
+         
+    </div>
+     
+
+    </div>
+<div class="notification_msg wow rubberBand" style="margin-right:15%; margin-bottom:5%;"><a class="close_msg" href="javascript:void(0)"><i class="fa fa-close"></i></a>
+        <p id="noti_msg">اسحب كل أداة من اليمين لتكون دائرة كهربية تختبر بها التوصيلية الكهربية لكل مادة من المواد المختلفة.  </p>
+    </div> 
+<audio id="noise"></audio>
+<audio id="narration"></audio>
+ 
+    
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"> إرشادات </h4>
+      </div>
+      <div class="modal-body">
+        <p>
+            <b style="color:maroon">
+            لديك الأدوات التالية: 
+                </b>
+            <ul>
+                 <li>قطعة بلاستيك</li>
+                
+                 <li>قطعة من الألمونيوم</li>
+
+                 <li>قطعة من الحديد</li>
+                
+                <li>قطعة من الخشب</li>
+                
+                 <li>مفتاح</li>
+
+                 <li>بطارية كهربية</li>
+
+</ul> <b style="color:maroon">
+المطلوب منك :
+          </b> 
+          <br>
+          أن تجرب التوصيلية الكهربية لكل مادة من المواد التي لديك، لترى هل سيضيء المصباح معك في كل مرة أم لا ؟ 
+ <br><br>
+           <b style="color:#149fd3">
+ملاحظة: 
+          </b>
+          <br>
+تستطيع سحب أي أداة من الأدوات التي على اليمين، وتفلتها في المكان الذي تريد التوصيل فيه. 
+تستطيع أيضا مد الأسلاك من أي أداة بالنقر على إحدى النقطتين جانب كل أداة لتمد السلك منها.
+          
+<p style="color:#3169AA;">
+حتى تضيء المصباح يجب عليك أن تضغط عليه مرتين متتاليتين. 
+</p>
+</p>
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+
+        #dividercontent{
+            background-color:#e6f3ff;
+            min-height: 400px;
+            margin:2% 0%;
+            padding: 7% 0;
+            text-align: center;
+        }
+        
+        #questiondiv{
+            width:100%;
+            min-height: 250px;
+            /*padding:5%;*/
+            text-align:center;
+            font-size:x-large;
+          font-weight:bold;
+             margin-top:5%;
+            margin:5% auto;
+          color: white;
+        }
+        
+        .staticfield{
+            background-color:#66b5ff;                     
+            padding:16% 30%;
+              
+        }
+        
+         .inputfield{
+            background-color:  #cc3300 ;
+             width:20%;
+            padding:16% 20%;
+              
+        }
+        
+        .item{
+          float: right;      
+          height: 250px;
+          padding: 3%;
+            width: 30% ;
+        }
+        
+        .operation{
+          float: right;
+          height: 250px;
+            color: black;
+            padding:9% 1%;
+            
+            font-weight:bolder;
+        }
+        .operation span{
+              height: auto;
+         
+        }
+        input{
+            border:0;
+            background-color:transparent;
+           width: 30%;
+         
+        }
+        hr{
+    border: 0;
+    height: 1px;
+    background-color: black;
+    padding: 0.5% 0;
+    margin: 25% 0;
+        }
+        
+         .wrong{
+        border: 3px solid  #cc0000;
+        background-color:  #ff9999 ;
+    }
+     
+    ::-webkit-input-placeholder {
+   color: white;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
+}

@@ -1,0 +1,85 @@
+a.refresh_page{
+    padding-left: 87px;
+}
+.prot_img h2,.prot_img p,.sub_cntent p{
+    font-family: 'GESS_Two_Bold';
+}
+.title_font{
+    text-align: right;
+}
+.notification_msg{
+    bottom: 0px;
+}
+.contents{
+    margin: 0 0;
+}
+.btn_list a{
+    border-radius: 4px;
+    box-shadow: inset 0 -3px rgba(0,0,0,0.25);
+}
+video {
+    max-height: 330px;
+    vertical-align: middle;
+     padding: 0px 0px; 
+}
+.ticon{
+    max-height: 50px;
+    max-width: 40px;
+}
+
+@media (max-height:768px){
+}
+@media (max-height:600px) {
+    .sub_desc{
+        padding: 0 0;
+    }
+    .btn_list a{
+        margin-bottom: 5px;
+        line-height: 46px;
+    }
+    .title_font{
+        margin-top: 10px;
+    }
+    .col-xs-12{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .row div img{
+        padding: 0 0;
+        max-height: 320px;
+    }
+    .media_cont{
+        padding: 0px;
+    }
+    .contents article{
+        padding: 2px;
+        line-height: 30px;
+    }
+    .sub_cntent{
+        padding: 5px;
+        padding-top: 5px;
+    }
+    .sub_cntent div{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .container{
+        padding-top: 5px;
+    }
+}
+@media (max-height:768px) and (max-width:900px){
+}
+@media (max-height:600px) and (max-width:1024px){
+}
+@media (max-height:992px) and (min-height:769px){	
+}
+.btn_list a{
+    font-family: "Cocon-en","Cocon",Arial,Helvetica,sans-serif !important
+}
+@media (max-width:790px) 
+{
+    .text h3
+    {
+        margin-right: 20px;
+    }
+}

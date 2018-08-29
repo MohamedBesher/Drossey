@@ -1,0 +1,115 @@
+﻿@model List<Drossey.Data.Core.Dto.QuestionDto>
+
+@{
+    ViewData["Title"] = "تفاصيل الأختبار الدراسى";
+    Layout = "../Shared/_Layout.cshtml";
+    Drossey.Data.Core.Dto.QuizDetailsDto quiz = ViewBag.Quiz;
+
+}
+
+<h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+<div class="row">
+    <div class="col-md-12">
+
+
+
+
+        <div class="profile-info-name">
+
+            <div class="profile-info-detail">
+                <div class="form-group">
+                    <label asp-for="@quiz.Description" class="control-label"></label> :
+                    @quiz.Description
+                </div>
+
+                @if (!string.IsNullOrEmpty(quiz.LessonName))
+                {
+                    <div class="form-group">
+                        <label asp-for="@quiz.LessonName" class="control-label"></label> :
+                        @quiz.LessonName
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(quiz.BookName))
+                {
+                    <div class="form-group">
+                        <label asp-for="@quiz.BookName" class="control-label"></label> :
+                        @quiz.BookName
+                    </div>
+                }
+
+                @if (!string.IsNullOrEmpty(quiz.SubjectName))
+                {
+
+                    <div class="form-group">
+                        <label asp-for="@quiz.SubjectName" class="control-label"></label> :
+                        @quiz.SubjectName
+                    </div>
+                }
+
+
+
+
+
+                <div class="form-group">
+                    <label asp-for="@quiz.TermName" class="control-label"></label> :
+                    @quiz.TermName
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@quiz.GradeName" class="control-label"></label> :
+                    @quiz.GradeName
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="@quiz.CountryName" class="control-label"></label> :
+                    @quiz.CountryName
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+@*@if (!string.IsNullOrEmpty(quiz.LessonName))
+{
+    <div class="row">
+        <div class="col-md-12">
+
+            <a asp-action="Create"
+               asp-controller="Questions"
+               asp-area="admin" asp-route-QuizId="@quiz.Id"
+               class="btn btn-primary waves-effect w-md waves-light pull-right m-b-20">
+                اضف سؤال
+            </a>
+        </div>
+        <div class="col-md-12" id="searchResult">
+            @await Component.InvokeAsync("SearchQuestions", new { page = ViewBag.page, pageSize = ViewBag.pageSize, keyword = ViewBag.Keyword, quizId = ViewBag.quizId })
+        </div>
+    </div>
+}*@
+
+
+<div class="pull-right m-t-30">
+    <a asp-action="Edit" asp-area="admin" asp-route-id="@quiz.Id" class="btn btn-primary btn-rounded waves-effect waves-light m-b-5">تعديل</a>
+
+    <a asp-action="Index" asp-area="admin" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الاختبارات  >></a>
+</div>

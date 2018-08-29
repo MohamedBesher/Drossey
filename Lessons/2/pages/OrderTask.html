@@ -1,0 +1,92 @@
+<html dir="rtl" lang="ar">
+<head>
+<title>
+</title>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drag Cards</title>
+    <!--bootstrap links-->
+     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl-theme.min.css">
+    <!--tark css graid  links-->
+    <link type="text/css" rel="stylesheet" href="css/new_grid.css">
+    <!--font-awesome links-->
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/animate.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/Orderstyle.css">
+
+     <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/JquerySortable.js"></script>
+    <script src="js/Orderscript.js"></script> 
+  
+    
+
+</head>
+<body>
+    
+    <div class="alhaytham_head">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="title_font" id="lesson_title"></h1><!--end lesson_title-->
+                    <a href="#" id="repeat_btn"><i class="fa fa-repeat fa-2x"></i></a>
+                    <div class="clearfix"></div>
+                </div><!--end col-xs-12-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div><!--end alhaytham_head-->
+    
+<div class="container">
+   <div id="title">
+    
+    </div>
+<div class="bootstrap snippet">
+  <div class="row">
+        <div class="col-md-12 text-center text-primary"><h3><span class="fa fa-sort"></span>
+            رتب <span id="temp_title"></span> </h3></div>
+      	<div class="col-md-6 col-md-offset-3 " id="lists" >
+            
+      <div class="span4" >
+              <ol class="simple_with_animation vertical list-group">
+         
+              </ol>
+            </div>
+            
+            <input type="button" value="تأكيد" class="btn btn-Primary col-md-8 col-md-offset-2 col-xs-12"  id="correctbtn"/>
+      </div>
+      
+     
+  </div>
+</div>
+  
+   
+</div>
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">النتيجة</h4>
+      </div>
+      <div class="modal-body" id="result_here">
+        
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+    <div class="notification_msg wow rubberBand" style="margin-right:15%; margin-bottom:5%;"><a class="close_msg" href="javascript:void(0)"><i class="fa fa-close"></i></a>
+        <p id="noti_msg"> </p>
+    </div> 
+
+<audio id="noise"></audio>
+<audio id="narration"></audio>
+</body>
+</html>

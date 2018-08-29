@@ -1,0 +1,200 @@
+﻿@model IEnumerable<Drossey.Data.Core.Dto.SubjectDto>
+@{
+    ViewData["Title"] = "سلة التسوق";
+    ViewData["nav-list-Active"] = "Cart";
+
+}
+
+
+
+
+
+<main>
+    <section class="Profile__breadcrumbs  overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="bread-list">
+                        <li>
+                            <a asp-controller="Home" asp-action="Index">
+                                الرئيسية
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href=""> / السله</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- My cart details -->
+    <main>
+        <div class="container">
+            <div class="row" id="cartContainer">
+                @if (Model.Count() > 0)
+                {
+                    <div class="col-sm-12  table-responsive Cart__table">
+                        <table class="table table-hover Courses__table">
+                            <thead class="header__cart">
+                                <tr>
+                                    <th>اسم الكتاب</th>
+                                    <th>السعر</th>
+                                    <th class="text-center">الخصم</th>
+                                    <th class="text-center">السعر بعد الخصم</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr id="tr-@item.Id">
+                                    <td class="col-sm-8 col-md-6">
+                                        <div class="media">
+                                            <a class="thumbnail pull-right" href="#">
+                                                <img class="media-object" src="/uploads/@item.PhotoUrl"
+                                                     alt="@item.Name"
+                                                     onerror="this.src='/images/default.png'"
+                                                     style="width:100px; height: 100px;">
+                                            </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading Subject__name">
+                                                    <a href="#">@Html.DisplayFor(modelItem => item.Name)</a>
+
+                                                </h4>
+                                                <h5 class="media-heading Class__name">
+                                                    <a href="#">@Html.DisplayFor(modelItem => item.TermName)</a>
+                                                </h5>
+                                                <span class="text-success Term__name">
+                                                    <strong>@Html.DisplayFor(modelItem => item.GradeName) </strong>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-right">
+                                        <strong> @Html.DisplayFor(modelItem => item.Price)</strong>
+                                    </td>
+                                    <td class="col-sm-1 col-md-1 text-right">
+                                        <strong>@Html.DisplayFor(modelItem => item.DiscountPercentage) %</strong>
+                                    </td>
+                                    @{
+                                        int PriceAfter = Convert.ToInt32(item.Price - ((item.Price * item.DiscountPercentage) / 100));
+                                    }
+                                <td class="col-sm-1 col-md-1 text-right">
+                                    <strong>@PriceAfter</strong>
+                                </td>
+                                <td class="col-sm-1 col-md-1">
+                                    <button type="button" class="btn btn-danger" onclick="deleteFromCart(@item.Id)">
+                                        <img src="assets/img/rubbish-bin (2).png" style="width:20px; height: 20px;"> مسح
+                                    </button>
+                                </td>
+                                </tr>
+                                }
+                       
+
+                            </tbody>
+                        </table>
+                        <div class="col-md-6 col-md-offset-6 col-xs-12 Cart__total">
+                            <table class="table ">
+
+                                <tbody>
+                                    <tr>
+
+                                        <td>
+                                            <h5>مبلغ إجمالي</h5>
+                                        </td>
+                                        <td class="text-left">
+                                            <h5>
+                                                <strong id="totalPtice"> @ViewBag.TotalPtice رس </strong>
+                                            </h5>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+                                            <h3>الاجمالي بعد الخصم</h3>
+                                        </td>
+                                        <td class="text-left">
+                                            <h3>
+                                                <strong id="total">@ViewBag.total رس</strong>
+                                            </h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td class="pull-left">
+                                            <a class="btn btn-default" asp-action="Index" asp-controller="Library">
+                                                العوده الي كل الدورات
+                                            </a>
+                                            <a  class="btn btn-purpule" asp-action="Index" asp-controller="Payment">
+                                                أستكمال
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-success">
+                        <strong></strong> لا يوجد نتائج.
+                    </div>
+                }
+            </div>
+
+        </div>
+    </main>
+</main>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        function deleteFromCart(id) {
+          
+            $.ajax({
+                type: "POST",
+                url: "/Cart/Delete/" + id,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    $("#tr-" + id).fadeOut(300, function () {
+                        var total = Number($("#total").html().split("رس")[0]) - Number(response.price - ((response.price * response.discountPercentage) / 100));
+                        var totalPtice = Number($("#totalPtice").html().split("رس")[0]) - response.price;
+                        $("#tr-" + id).remove();
+                        var itemCount = $("tbody:nth(0)").children().length;
+                        $(".cartDiv").html(` <i class="glyph-icon flaticon-commerce-1 nav-right__item__icon"></i>
+                                <span class="nav-right__item__notification">`+ itemCount + `</span>`);
+                        if (itemCount == 0)
+                            $("#cartContainer").html(`<div class="alert alert-success">
+                                                            <strong></strong> لا يوجد نتائج.
+                                                        </div>`);
+                        $("#total").html(total+ " رس");
+                        $("#totalPtice").html(totalPtice + " رس")
+                       
+
+                    });
+               
+
+                },
+                failure: function (response) {
+                    alert("حدث خطا أثناء حذف المادة الدراسية");
+                },
+                error: function (response) {
+                    alert("حدث خطا أثناء حذف المادة الدراسية");
+                }
+            });
+        }
+    </script>
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,196 @@
+﻿
+@model int
+@{
+    Layout = null;
+    ViewData["Title"] = "خطأ";
+    var statusCode = Model;
+    var statusmessage = "";
+    switch (statusCode)
+    {
+        case 400:
+            statusmessage = "حدث خطأ اثناء طلب الصفحة";
+            break;
+        case 401:
+            statusmessage = "ليس لديك الصلاحية للوصول لهذة الصفحة";
+            break;
+        case 403:
+            statusmessage = "ليس لديك الصلاحية للوصول لهذة الصفحة";
+            break;
+        case 404:
+            statusmessage = "هذة الصفحة غير موجودة";
+            break;
+        case 408:
+            statusmessage = "لقد انقطع الاتصال بينك وبين الخادم";
+            break;
+        case 500:
+            statusmessage = "لا يمكنك الوصول الى هذة الصفحة . حدث خطأ اثناء طلب الصفحة";
+            break;
+        default:
+            statusmessage = "حدث خطأ اثناء طلب الصفحة";
+            break;
+    }
+        }
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Drossy website">
+    <meta name="author" content="DeltaSoft Development Team">
+    <title>Drossy</title>
+    <link rel="shortcut icon" href="~/Favicon.png">
+
+    <!-- StyleSheets -->
+    <link href="~/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="~/assets/css/icomoon.css" rel="stylesheet">
+    <link href="~/assets/css/animate.css" rel="stylesheet">
+    <link href="~/style.css" rel="stylesheet">
+   <link href="~/assets/css/main.css" rel="stylesheet">
+    <link href="~/assets/css/rtl.css" rel="stylesheet">
+     
+    <!-- FontsOnline -->
+    <link href="https://fonts.googleapis.com/css?family=Katibeh|Mirza:400,500,600,700" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Wrapper -->
+    <div class="wrapper push">
+
+        <!-- Header -->
+        <header id="header" class="header">
+
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="container">
+
+                    <!-- News -->
+                    <div class="announcements" style="direction: ltr;">
+                        <p>
+                            <span>:اتصل بنا</span>info@drossey.com, 002-050-4031500
+
+
+                        </p>
+                    </div>
+                    <!-- News -->
+                 
+
+                </div>
+            </div>
+            <!-- Top Bar -->
+            <!-- Nav Holder -->
+            <div class="nav-holder">
+                <div class="container">
+                    <div class="p-relative has-layout">
+
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a asp-action="Index" asp-controller="Home" asp-area="">
+                                <img src="~/assets/images/logo.png" alt="">
+                            </a>
+                        </div>
+                        <!-- Logo -->
+                        <!-- Navigation -->
+                        <nav class="navigation">
+                            <a class="toggleMenu" href="#menu">
+                                <i class="icon-navicon"></i>
+                            </a>
+                            
+                        </nav>
+
+                        <!--<div class="top-cart-holder pull-left hidden-sm hidden-xs">
+                                <div class="basket">
+                                    <a class="CartBtn">
+                                        <div class="basket-item-count">
+                                            <span class="count">3</span>
+                                            <img src="icon-cart.png" alt="">
+                                        </div>
+
+                                        <div class="total-price-basket">
+                                            <span class="lbl">السله:</span>
+                                            <span class="total-price">
+                                                <span class="value">3219,00</span><span class="sign">ريال</span>
+                                            </span>
+                                        </div>
+                                    </a>
+
+
+                                </div>
+                            </div>-->
+                        
+
+                      
+                      
+
+                    </div>
+                </div>
+            </div>
+            <!-- Nav Holder -->
+
+        </header>
+        <!-- Header -->
+        <!-- Main -->
+        <main id="main">
+
+            <!-- Contact -->
+            <section class="contact-holder gray-bg tc-padding-bottom">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-12 text-center">
+                            <img src="~/assets/images/girl.svg" class="img-responsive center-block" style="width: 277px; margin-top: 130px; padding-bottom: 51px;">
+                            <h2>@statusmessage</h2>
+                            <h3>لمزيد من المعلومات يمكنك الاتصال بشركة دلتا سوفت   </h3>
+                            <h4>info@drossey.com</h4>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- Contact -->
+
+
+        </main>
+        <!-- Main -->
+      
+
+    </div>
+    <!-- Wrapper -->
+  
+  
+  
+    
+</body>
+
+</html>
+
+
+
+
+@*<header>
+
+    <div class="jumbotron">
+        <h2 class="text-danger">@ViewData["Title"]</h2>
+        <p class="text-danger">
+
+            @statusmessage
+        </p>
+
+        <br />
+        <p>اتصل بشركة  DeltaSoft  </p>
+
+        </div>
+</header>*@
+
+
+        @*<div class="jumbotron">
+            <h1>Error @Model</h1>
+            <h3>@statusmessage</h3>
+        </div>*@

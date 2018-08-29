@@ -1,0 +1,113 @@
+﻿@model Drossey.PaginatedList<Drossey.Data.Core.Models.Setting>
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+
+    //Pager Parameter
+    ViewData["action"] = "Search";
+    ViewData["controller"] = "Settings";
+    ViewBag.routeValues = new Dictionary<string, string>
+            {
+                {"Keyword", (ViewBag.Keyword== null?"" : ViewBag.Keyword).ToString()},
+                {"page",(ViewBag.page).ToString()},
+                {"pageSize", (ViewBag.PageSize).ToString()}
+            };
+
+}
+
+@if (Model.Count > 0)
+{
+    int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+        <tr>
+            <th>#</th>
+            @*<th>
+                @Html.DisplayNameFor(model => model[0].Name)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model[0].NameAr)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model[0].key)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model[0].Value)
+            </th>
+
+
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            counter++;
+            <tr>
+                <td>@counter</td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameAr)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.key)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Value)
+                </td>
+                <td class="actions">
+
+                    <a asp-action="Edit" asp-controller="Settings" asp-route-id="@item.Id" class="on-default edit-row"><i class="fa fa-pencil"></i></a>
+
+
+
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+
+
+
+
+
+    Html.RenderPartial("_pagerPartial");
+
+
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+
+
+
+<script>
+    function onsuccessDeletion(data) {
+
+        NotificationService.displaySuccess("تم الحذف بنجاح","تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+
+        if (jqXHR.responseText === "NotFound")
+            NotificationService.displayError("هذا العنصر غير موجود"," !تحذير");
+        else if (jqXHR.responseText === "Error")
+            NotificationService.displayError("هذا العنصر مستخدم لا يمكن حذفه .", " !تحذير");
+
+        else if (jqXHR.responseText === "UserUsedCity") {
+            NotificationService.displayError("هذا العنصر مستخدم لا يمكن حذفه .", " !تحذير");
+
+        }
+
+
+
+    }
+
+</script>

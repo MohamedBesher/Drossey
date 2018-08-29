@@ -1,0 +1,89 @@
+﻿@{
+    Layout = "_Layout";
+}
+<main>
+    <section class="Profile__breadcrumbs  overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="bread-list">
+                        <li>
+                            <a asp-controller="Home" asp-action="Index">
+                                الرئيسية
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href=""> / @ViewData["Title"] </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <!-- Right side user  -->
+        <div class="col-lg-4 col-xs-12">
+
+
+            @await Component.InvokeAsync("ProfileNav")
+
+
+
+        
+        </div>
+        <!--./ Right side user  -->
+        <!-- Left side tabs -->
+        <div class="col-lg-8 col-xs-12">
+            <div class="tabbable-panel margin-tops4 ">
+                <div class="tabbable-line">
+
+                    <!-- tab-content -->
+                    <div class="tab-content margin-tops">
+                        <!-- personal nfo && Edit profile -->
+                        <div class="tab-pane active fade in" id="tab_default_1">
+
+                           <div class="col-md-12">
+                                @RenderBody()                            
+                            </div>
+                        </div>
+                        <!--./ personal nfo && Edit profile  -->
+                        <!-- my courses  -->
+                        <div class="tab-pane fade" id="tab_default_2">
+
+                            <div class="col-md-12">
+                                
+                            </div>
+                        </div>
+                        <!--./ my courses  -->
+                        <!-- my favourit -->
+                        <div class="tab-pane fade" id="tab_default_3">
+
+                            
+                        </div>
+                        <!--./ my favourit -->
+
+
+                    </div>
+                    <!--./ tab-content -->
+                </div>
+            </div>
+
+        </div>
+        <!--./ Left side tabs -->
+
+
+    </div>
+</main>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/js/app/Register.js"></script>
+
+    @{Html.RenderPartial("_FileInputPartial");}
+    <script>
+   var str = '@ViewData["Active"]';
+   $("#" + str).addClass("active");
+    </script>
+}

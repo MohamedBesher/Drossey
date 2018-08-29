@@ -1,0 +1,167 @@
+﻿
+@model Drossey.PaginatedList<QuestionViewModel>
+
+@{
+    ViewData["Title"] = "الأسئلة";
+    Layout = null;
+    ViewData["action"] = "SearchQuestions";
+    ViewData["controller"] = "Questions";
+
+    ViewBag.routeValues = new Dictionary<string, string>
+{
+{"keyWord", (ViewBag.KeyWord == null ? "" : ViewBag.KeyWord).ToString()},
+{"page", ViewBag.page.ToString()},
+{"pageSize", ViewBag.PageSize.ToString()}
+
+
+};
+}
+<style>
+    table.dataTable thead > tr > th {
+        padding-right: 4px !important;
+        padding-left: 4px !important;
+    }
+</style>
+
+@if (Model.Count > 0)
+{
+    int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th> السؤال</th>
+                <th>
+                    نوع السؤال
+                </th>
+                <th>الأجابه الصحيحة</th>
+
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                counter++;
+                <tr>
+
+                    <td>@counter</td>
+
+                    <td>
+                        <div style="width:100px;word-break:break-word">
+                            @*<a asp-action="Details" asp-controller="Questions" asp-route-id="@item.Id">*@
+
+                            @Html.DisplayFor(modelItem => item.Body)
+                            @*</a>*@
+                        </div>
+                    </td>
+
+
+                    <td>
+
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+
+                    <td>
+                        @if (item.Type == Drossey.Data.Core.Enum.QuestionType.Choose)
+                        {
+                            foreach (var i in item.Answers)
+                            {
+                                if (i.IsCorrect)
+                                {
+
+                                    @Html.DisplayFor(modelItem => i.Answer)
+                                }
+
+
+
+                            }
+
+                        }
+                        else if (item.Type == Drossey.Data.Core.Enum.QuestionType.TrueFalse)
+                        {
+
+                            if (item.Answers[0].IsCorrect)
+                            {
+                                item.Answers[0].Answer=  "اجابة صحيحة";
+
+                            }
+                            else
+                            {
+
+                                item.Answers[0].Answer = "اجابة خاطئة";
+                            }
+                            @Html.DisplayFor(modelItem => item.Answers[0].Answer)
+
+                        }
+                        else if (item.Type == Drossey.Data.Core.Enum.QuestionType.Complete)
+                        {
+
+                            @Html.DisplayFor(modelItem => item.Answers[0].Answer)
+
+                        }
+
+
+                    </td>
+
+
+
+                    <td class="actions">
+
+                        <a asp-action="Edit" asp-controller="Questions" asp-route-id="@item.Id"
+                           class="on-default edit-row"><i class="fa fa-pencil"></i></a> |
+
+                        <a asp-action="Delete"
+                           asp-controller="Questions"
+                           asp-route-id="@item.Id"
+                           asp-route-keyWord="@ViewBag.KeyWord"
+                           asp-route-PageSize="@ViewBag.PageSize"
+                           asp-route-page="@ViewBag.page"
+                           data-ajax-confirm="هل انت متأكد انك تريد حذف السؤال ؟"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           data-ajax-success="onsuccessDeletion"
+                           data-ajax-failure="onFailureDeletion"
+                           data-ajax-loading="#ajaxLoaderDiv" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    Html.RenderPartial("_pagerPartial");
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+<script>
+    function onsuccessDeletion(data) {
+
+        NotificationService.displaySuccess("تم الحذف بنجاح", "تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+
+        if (jqXHR.responseText === "NotFound")
+            NotificationService.displayError("هذا السؤال غير موجود", " !تحذير");
+
+        else if (jqXHR.responseText === "Error")
+            NotificationService.displayError("هذا السؤال مستخدمة لا يمكن حذفها .", " !تحذير");
+
+        else if (jqXHR.responseText === "OrdersUsedLesson") {
+            NotificationService.displayError("يوجد أجابات داخل هذة الدرس.", " !تحذير");
+
+        }
+
+
+
+    }
+
+</script>

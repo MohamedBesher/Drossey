@@ -1,0 +1,210 @@
+﻿@using Drossey.Data.Core.Enum
+@model List<SubjectBookViewModel>
+
+@{
+    ViewData["Title"] = "تفاصيل المادة الدراسية ";
+    Layout = "../Shared/_Layout.cshtml";
+    Drossey.Data.Core.Models.Subject subject = ViewBag.Subject;
+}
+
+
+
+<div class="row">
+
+        <div class="col-sm-12">
+            <div class="profile-info-detail col-lg-6">
+                <h3 class="m-t-0 m-b-0">@subject.Name</h3>
+                <p class="text-muted m-b-20">
+                    <i>
+                        @subject.Price
+                    </i>
+                </p>
+                <div class="form-group">
+                    <label class="control-label">الترم الدراسى	</label> :
+                    @subject.Term.Name
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label class="control-label">الص الدراسى</label> :
+                    @subject.Term.Grade.Name
+
+
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label">البلد</label> :
+                    @subject.Term.Grade.Country.Name
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">حالة النشر</label> :
+                    @if (subject.IsPuplished)
+                    {
+                        <span class="label label-success">مفعل</span>
+
+                    }
+                    else
+                    {
+                        <span class="label label-danger">غير مفعل</span>
+                    }
+
+
+
+                </div>
+
+            </div>
+
+            <div class="profile-info-name col-lg-6">
+                <img src="@ViewData["Uploads"]@subject.PhotoUrl" class="img-thumbnail" alt="profile-image" onerror="this.src ='/images/default.png'">
+            </div>
+                    
+
+                    <div class="clearfix"></div>
+               
+         
+
+         
+
+            
+                
+          
+
+
+            <!--/ meta -->
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+<div class="row">
+    <div class="col-md-12">
+        <a asp-action="Create"
+           asp-controller="SubjectTeachers"
+           asp-area="admin" asp-route-subjectId="@subject.Id"
+           class="btn btn-primary waves-effect w-md waves-light pull-right m-b-20">
+            اضف مدرس
+        </a>
+    </div>
+    <div class="col-md-12" id="searchResult">
+
+        @await Component.InvokeAsync("SearchSubjectTeachers", new { subjectId = subject.Id })
+
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 m-t-30">
+
+        <a asp-action="Create"
+           asp-controller="Modules"
+           asp-area="admin" asp-route-subjectId="@subject.Id"
+           class="btn btn-primary waves-effect w-md waves-light pull-right m-b-20">
+            اضف وحدة دراسية
+        </a>
+    </div>
+    <div class="col-md-12">
+        @if (Model.Count > 0)
+        {
+            <form asp-action="Details">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th> اسم الوحدة</th>
+                            <th>
+                                ترتيب الوحدة
+                            </th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Count(); i++)
+                {
+                    int n = i + 1;
+                            <tr>
+                                <input type="hidden" asp-for="@Model[i].SubjectId" />
+
+                                <input type="hidden" asp-for="@Model[i].Id" />
+                                <input type="hidden" asp-for="@Model[i].Name" />
+
+                                <td>@n</td>
+                                <td style="word-wrap: break-word;white-space: normal;width:60%">
+                                    <a asp-action="Details" asp-area="admin" asp-controller="Modules" asp-route-id="@Model[i].Id" >
+                                        @Model[i].Name
+                                    </a>
+                                </td>
+                                <td>
+                                    <input asp-for="@Model[i].Order" type="number" min="1" max="@Model.Count()">
+                                    <span asp-validation-for="@Model[i].Order" class="text-danger"></span>
+                                </td>
+                            </tr>
+
+
+                        }
+                       
+
+
+                    </tbody>
+                </table>
+                <div class="form-group m-t-10">
+                    <div class="col-lg-9">
+                        <p class="pull-right text-muted font-13 m-b-30"> اعد ترتيب الواحدات </p>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <input type="submit" value="حفظ" class="btn btn-primary" />
+                    </div>
+
+                </div>
+            </form>
+        }
+
+        else
+        {
+            <div class="alert alert-success">
+                <strong></strong> لا يوجد وحدات دراسية.
+            </div>
+        }
+
+
+
+
+
+    </div>
+</div>
+
+
+    <div class="pull-right">
+        <a asp-action="Index" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل المواد الدراسية >></a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

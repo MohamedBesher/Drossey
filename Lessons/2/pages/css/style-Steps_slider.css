@@ -1,0 +1,124 @@
+.btns{
+    width: 100%;
+    border-bottom: 1px solid #DDDDDD;
+/*    text-align: left;*/
+/*    padding-bottom: 9px;*/
+}
+.btns span{
+    position: relative;
+    padding: 10px 15px;
+    margin-left: 2px;
+    line-height: 1.42857143;
+    border-radius: 4px 4px 0 0;
+    display: inline-block;
+}
+.btns span:hover{
+    border-color:#eee #eee #ddd;
+    background-color: #F5F1E6;
+    border-bottom: 1px solid #F5F1E6;
+    cursor: pointer;
+}
+.btns .active{
+    position: relative;
+    padding: 10px 15px;
+    margin-left: 2px;
+    line-height: 1.42857143;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 1px solid #FFF;
+}
+.btns .active:hover{
+    border-color:#eee #eee #ddd;
+    background-color: #FFF;
+    border-bottom: 1px solid #FFF;
+    cursor: default;
+}
+.page_desc{
+/*    margin-bottom: -30px;*/
+}
+.page_title{
+    margin-top: 12px;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img{
+    max-height: 400px;
+}
+.notification_msg {
+    bottom: 5px;
+}
+
+
+
+
+
+@media (max-height:768px){
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img{
+        max-height: 300px;
+    }
+    p{
+        margin: 0 0 0;
+    }
+    .contents article{
+        padding: 10px;
+        height: 205px;
+    }
+}
+@media (max-height:600px) {
+    .page_desc{
+        margin-top: -5px;
+    }
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img{
+        margin-top: 5px;
+        max-height: 200px;
+    }
+    .btns .active {
+        position: relative;
+        padding: 2px 15px;
+        margin-left: 2px;
+        line-height: 1.428571;
+        border: 1px solid #DDDDDD;
+        border-radius: 4px 4px 0 0;
+        border-bottom: 1px solid #FFF;
+    }
+    .btns span{
+        position: relative;
+        padding: 2px 15px;
+        margin-left: 2px;
+        line-height: 1.42857143;
+        border-radius: 4px 4px 0 0;
+        display: inline-block;
+    }
+    .media_cont{
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
+    .carousel-inner{
+        margin-top: -7px;
+    }
+    .contents article{
+        padding: 0px;
+    }
+    p{
+        margin-bottom: -9px;
+    }
+    .carousel-control .fa{
+        top: 100px;
+    }
+    
+}
+
+
+/*
+@media (min-height:601px) and (min-width:999px){
+         
+}
+*/
+/*
+@media (max-height:600px) and (max-width:1024px){
+    
+}
+*/
+/*
+@media (max-height:992px) and (min-height:769px){	
+}
+*/

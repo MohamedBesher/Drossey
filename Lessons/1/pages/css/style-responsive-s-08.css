@@ -1,0 +1,97 @@
+a.refresh_page{
+    padding-left: 86px;
+}
+#myModalLabel,.modal_text p{
+/*    font-family: 'GESS_Two_Bold';*/
+}
+.image_title img{
+    cursor: pointer;
+}
+.row div img{
+    max-height: 256px;
+}
+.modal_text .row div img,.contentpic{
+    max-height: 330px;
+    display: block;
+    margin: auto;
+}
+.notification_msg{
+    bottom: 5px;
+}
+.image_title a{
+    font-size: 16px;
+}
+
+@media(min-width:436px ) and (max-width:768px)
+{
+   .image_title a{
+       width:50%;
+       margin: 0 auto;
+   }
+
+}
+.image_title{
+    padding-bottom: 0px;
+}
+@media (max-height:768px){
+    .row div img{
+        /*max-height: 160px;*/
+        width: 70%;
+    }
+}
+
+
+@media (max-height:600px) {
+    .image_title a{
+        padding: 0px;
+    }
+    .row div img, .image_title{
+        padding: 0 0 ;
+    }
+    .contents{
+        margin: 0 0;
+    }
+    .row div{
+        padding-bottom: 2px;
+    }
+    .row div img{
+        max-height: 125px;
+    }
+    .container{
+        width: 100%;
+    }
+    .alhaytham_head{
+        height: 43px;
+    }
+    .alhaytham_head h1 {
+        font-size: 19px;
+        float: right;
+        line-height: 45px;
+        margin: 0 17px;
+    }
+    .alhaytham_head a {
+        float: left;
+        border-right: 1px solid rgba(255,255,255,0.24);
+        padding: 0 21px;
+        height: 43px;
+        line-height: 56px;
+        color: #FFF;
+    }
+}
+
+
+
+@media (max-height:768px) and (max-width:900px){
+    .row div img{
+        width: 70%;
+    }
+}
+@media (max-height:600px) and (max-width:1024px){
+}
+@media (max-height:992px) and (min-height:769px){	
+
+}
+
+.image_title a{
+    font-family: "Cocon-en","Cocon",Arial,Helvetica,sans-serif !important
+}

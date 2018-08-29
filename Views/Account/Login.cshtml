@@ -1,0 +1,41 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@using Drossey.Data.Core.Models
+@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "تسجيل الدخول";
+    Layout = "../Shared/_LoginLayout.cshtml";
+}
+<div class="Sign__in">
+    <h3 class="signin-form__body__title">تسجيل الدخول إلى حسابك</h3>
+    <p class="signin-form__body__sub">
+        حساب الطالب الخاص بك هو بوابتك لجميع خدمات دروسي: الفصول الدراسية ، والمشاريع ، والمنتديات
+        ، والموارد الوظيفية ، وأكثر!
+    </p>
+
+
+    <form method="POST" asp-action="Login" asp-controller="Account" asp-area="">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="signin-form__form__inputs">
+            <input class="input-item" asp-for="Email" type="text" placeholder="البريد الالكتروني">
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <input class="input-item" asp-for="Password" type="password" placeholder="كلمة المرور">
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn-green list-link__btn">تسجيل الدخول</button>
+        <a class="signin-form__link" asp-action="ForgotPassword" asp-route-returnurl="@ViewData["ReturnUrl"]">نسيت كلمة المرور ؟</a>
+        <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]" class="Sign__up__link">ليس لديك حساب ؟! سجل الان</a>
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+}

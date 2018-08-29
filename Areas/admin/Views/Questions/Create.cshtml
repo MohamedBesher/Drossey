@@ -1,0 +1,228 @@
+﻿@model QuestionViewModel
+@{
+    ViewData["Title"] = "اضافة سؤال";
+    if (Model.IsAjax)
+    {
+
+        Layout = null;
+
+    }
+    else
+    {
+        Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+
+    }
+}
+
+<div id="UpdateDiv">
+
+
+    <h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Create">
+                @*<input asp-for="QuizId" type="hidden" />*@
+
+                <div class="row">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="col-lg-12">
+                        <a asp-action="ChangeQuestionType"
+                           asp-controller="Questions"
+                           asp-route-QuestionType=@Model.Type
+                           asp-route-CountryId=@Model.CountryId
+                           asp-route-GradeId=@Model.GradeId
+                           asp-route-TermId=@Model.TermId
+                           asp-route-SubjectId=@Model.SubjectId
+                           asp-route-BookId=@Model.BookId
+                           asp-route-LessonId=@Model.LessonId
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#UpdateDiv"
+                           data-ajax-success="loadselect"
+                           data-ajax-mode="replace"
+                           id="LnkchangeLevel">
+
+                        </a>
+                        <div class="form-group">
+                            <label asp-for="CountryId" class="control-label"></label>
+                            <select asp-for=" CountryId" class="form-control" asp-items="ViewBag.countries">
+                                <option value="">اختر البلد</option>
+
+
+                            </select>
+                            <span asp-validation-for="CountryId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+
+                            <label asp-for="GradeId" class="control-label"></label>
+                            <select asp-for="GradeId" class="form-control" asp-items="ViewBag.grades">
+                                <option value="">----اختر ----</option>
+
+
+                            </select>
+                            <span asp-validation-for="GradeId" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="TermId" class="control-label"></label>
+                            <select asp-for="TermId" class="form-control" asp-items="ViewBag.terms">
+                                <option value="">----اختر ----</option>
+
+                            </select>
+                            <span asp-validation-for="TermId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SubjectId" class="control-label"></label>
+                            <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.subjects">
+                                <option value=""> ----اختر---- </option>
+                            </select>
+                            <span asp-validation-for="SubjectId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BookId" class="control-label"></label>
+                            <select asp-for="BookId" class="form-control" asp-items="ViewBag.books">
+                                <option value="">----اختر ----</option>
+                            </select>
+                            <span asp-validation-for="BookId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LessonId" class="control-label"></label>
+                            <select asp-for="LessonId" class="form-control" asp-items="ViewBag.lessons">
+                                <option value="">----اختر ----</option>
+                            </select>
+                            <span asp-validation-for="LessonId" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Type" class="control-label"></label>
+                            <select asp-for="Type" class="form-control" onchange="ChangeLevels()">
+                                @*<option value="0">اختر نوع السؤال</option>*@
+                                <option value="1">أختر الأجابة الصحيحة</option>
+                                <option value="2">حدد الجملة صحيحة أم خاطئة</option>
+                                <option value="3">أكمل ما يأتي</option>
+                            </select>
+                            <span asp-validation-for="Type" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Body" class="control-label"></label>
+                            <input asp-for="Body" class="form-control" />
+                            <span asp-validation-for="Body" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="grade" class="control-label"></label>
+                            <input asp-for="grade" class="form-control" />
+                            <span asp-validation-for="grade" class="text-danger"></span>
+                        </div>
+
+
+                        @if (Model.Type == Drossey.Data.Core.Enum.QuestionType.Choose)
+                        {
+                            @for (int i = 0; i <3; i++)
+                            {
+                                int count = i + 1;
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label class="control-label"> الاجابة @count</label>
+
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-1">
+                                            <div class="">
+                                                <input asp-for="Answers[i].IsCorrect" class="checkbox-circle" />
+                                                @*<input type="radio" class="IsCorrect" name="IsCorrect" asp-for="Answers[i].IsCorrect"  value="flase">*@
+                                                <span asp-validation-for="Answers[i].IsCorrect" class="text-danger"></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-11">
+                                            <input asp-for="Answers[i].Answer" class="form-control" />
+                                            <span asp-validation-for="Answers[i].Answer" class="text-danger"></span>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            }
+
+                        }
+
+                        else if (Model.Type == Drossey.Data.Core.Enum.QuestionType.TrueFalse)
+                        {
+                            <div class="form-group">
+                                <label asp-for="IsCorrect" class="control-label"></label>
+                                <select asp-for="IsCorrect" class="form-control">
+
+                                    <option value="true">اجابة صحيحة</option>
+                                    <option value="false">اجابة خاطئة</option>
+
+                                </select>
+                            </div>
+
+                        }
+                        else if (Model.Type == Drossey.Data.Core.Enum.QuestionType.Complete)
+                        {
+                            <div class="form-group">
+                                <label asp-for="Answer" class="control-label"></label>
+                                <input asp-for="Answer" class="form-control" />
+
+
+
+                            </div>
+
+                        }
+
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="حفظ" class="btn btn-primary" />
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+    <div class="pull-right">
+        @*<a asp-action="Index" asp-controller="Questions" asp-area="admin"  asp-route-QuizId="@Model.QuizId"  class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الأسئلة>></a>*@
+        <a asp-action="Index" asp-controller="Questions" asp-area="admin" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الأسئلة>></a>
+    </div>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ Html.RenderPartial("_FileInputPartial");}
+
+
+    <script src="~/js/app/question.js"></script>
+    <script>
+       function ChangeLevels() {
+
+                var count = $("#Type").val();
+                var lnk = $('#LnkchangeLevel');
+                lnk.attr('href', '@Url.Action("ChangeQuestionType", "Questions")?QuestionType=' + count + '&CountryId=' + $("#CountryId").val() + '&GradeId=' + $("#GradeId").val() + '&TermId=' + $("#TermId").val() + '&SubjectId=' + $("#SubjectId").val() + '&BookId=' + $("#BookId").val() + '&LessonId=' + $("#LessonId").val() );
+
+                lnk.click();
+
+                }
+
+    </script>
+}
+
+

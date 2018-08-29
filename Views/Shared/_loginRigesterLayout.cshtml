@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Drossy website , design and developed by aliaa hosny">
+    <meta name="author" content="Aliaa Hosny , aliaahosny77@gmail.com">
+    <title>Drossy</title>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/FrontEnd/css/icomoon.css" rel="stylesheet">
+        <link rel="stylesheet" href="~/FrontEnd/css/style.css" />
+        <link href="~/FrontEnd/css/rtl.css" rel="stylesheet">
+        <link href="~/FrontEnd/css/responsive.css" rel="stylesheet">
+    </environment>
+</head>
+<body id="login_bg">
+
+    <nav id="menu" class="fake_menu"></nav>
+
+    <div id="preloader">
+        <div data-loader="circle-side"></div>
+    </div>
+    <!-- End Preload -->
+
+    <div id="login">
+        <aside>
+            <figure>
+                <a href="index.html"><img src="~/FrontEnd/images/logo-2.png" width="149" height="42" data-retina="true" alt=""></a>
+            </figure>
+            @RenderBody()
+            @*<form>
+                    <div class="access_social">
+                        <a href="#0" class="social_bt facebook"> <i class="icon-facebook"></i>  سجل عبر الفيس بوك</a>
+                        <a href="#0" class="social_bt google"> <i class="icon-google-plus"></i> سجل عبر الجي ميل</a>
+                        <a href="#0" class="social_bt linkedin"> <i class="icon-linkedin2"></i> سجل عبر اللينكد ان</a>
+                    </div>
+                    <div class="divider"><span>أو</span></div>
+                    <div class="form-group">
+                        <span class="input">
+                            <input class="input_field" type="email" autocomplete="off" name="email">
+                            <label class="input_label">
+                                <span class="input__label-content">البريد الالكتروني</span>
+                            </label>
+                        </span>
+                        <span class="input">
+                            <input class="input_field" type="password" autocomplete="new-password" name="password">
+                            <label class="input_label">
+                                <span class="input__label-content">كلمة المرور</span>
+                            </label>
+                        </span>
+                        <small><a href="#0">هل نسيت كلمة المرور?</a></small>
+                    </div>
+                    <a href="#0" class="btn_1 rounded full-width add_top_60">دخول</a>
+                    <div class="text-center add_top_10">لا يوجد لديك حساب <strong><a href="register.html">حساب جديد!</a></strong></div>
+                </form>*@
+            <div class="copy">© 2018 دلتا سوفت</div>
+        </aside>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+    </environment>
+
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+@*<h2>@ViewData["Title"]</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <section>
+                <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="RememberMe">
+                                <input asp-for="RememberMe" />
+                                @Html.DisplayNameFor(m => m.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default">Log in</button>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <a asp-action="ForgotPassword">Forgot your password?</a>
+                        </p>
+                        <p>
+                            <a asp-action="Register" asp-route-returnurl="@ViewData["ReturnUrl"]">Register as a new user?</a>
+                        </p>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="col-md-6 col-md-offset-2">
+            <section>
+                <h4>Use another service to log in.</h4>
+                <hr />
+                @{
+                    var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+                    if (loginProviders.Count == 0)
+                    {
+                        <div>
+                            <p>
+                                There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                for details on setting up this ASP.NET application to support logging in via external services.
+                            </p>
+                        </div>
+                    }
+                    else
+                    {
+                        <form asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in loginProviders)
+                                    {
+                                        <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.Name</button>
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
+                }
+            </section>
+        </div>
+    </div>*@

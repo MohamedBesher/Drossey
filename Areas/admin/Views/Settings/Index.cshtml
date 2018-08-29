@@ -1,0 +1,68 @@
+﻿@model SearchModel
+@{
+    ViewBag.Title = "الاعدادت الاساسية";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+<div class="header-title m-t-0 m-b-30">
+
+    @ViewBag.Title
+   
+
+</div>
+
+
+
+<form id="SearchForm" asp-controller="Settings" asp-action="Search" data-ajax="true" data-ajax-method="POST" data-ajax-update="#searchResult" data-ajax-mode="replace" data-ajax-loading="#ajaxLoaderDiv">
+
+    <div class="row row m-b-5">
+
+        <div class="form-group">
+
+            <div class="col-sm-10">
+
+                @Html.TextBox("Keyword", (string)ViewBag.Name, new { @class = "form-control", placeholder = "البحث" })
+
+            </div>
+
+
+            <div class="col-xs-2 pull-left">
+                <button type="submit" class="btn btn-success pull-left waves-effect w-md waves-light m-b-5" id="SearchButton"><i class="fa fa-search"></i> بحث</button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="row m-b-10">
+        <div class="col-sm-2 pull-right">
+            <div class="dataTables_length">
+
+
+                <label>
+                    عدد العناصر
+                    <select id="PageSize" name="PageSize" onchange="document.getElementById('SearchButton').click();">
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="25">25</option>
+                    </select>
+                </label>
+            </div>
+
+
+        </div>
+    </div>
+</form>
+
+
+<div id="searchResult">
+
+    @await Component.InvokeAsync("SearchSetting", new { page = ViewBag.page, pageSize = ViewBag.pageSize })
+
+</div>
+
+
+
+

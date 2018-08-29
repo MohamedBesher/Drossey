@@ -1,0 +1,130 @@
+﻿
+@model Drossey.PaginatedList<Drossey.Data.Core.Models.Term>
+@{
+    ViewData["Title"] = "الترم";
+    Layout = null;
+    //Pager Parameter
+    ViewData["action"] = "Search";
+    ViewData["controller"] = "Terms";
+
+    ViewBag.routeValues = new Dictionary<string, string>
+    {
+        {"keyWord", (ViewBag.KeyWord == null ? "" : ViewBag.KeyWord).ToString()},
+        {"page", ViewBag.page.ToString()},
+        {"pageSize", ViewBag.PageSize.ToString()},
+        {"gradeId", ViewBag.gradeId.ToString()}
+    };
+}
+
+@if (Model.Count > 0)
+{
+    int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+            <tr>
+                <th>#</th>
+
+                <th>
+                    اسم الترم
+                </th>
+                <th>
+                    اسم الصف
+                </th>
+                <th>
+                    اسم البلد
+                </th>
+
+                <th> الحالة</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                counter++;
+                <tr>
+
+                    <td>@counter</td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Grade.Name)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Grade.Country.Name)
+                    </td>
+                    <td>
+
+
+                        @if (item.IsPuplished)
+                    {
+                            <span class="label label-success">مفعل</span>
+                        }
+                        else
+                        {
+                            <span class="label label-danger">غير مفعل</span>
+
+
+                        }
+
+
+                    </td>
+                    <td class="actions">
+
+                        <a asp-action="Edit" asp-controller="Terms" asp-route-id="@item.Id" class="on-default edit-row"><i class="fa fa-pencil"></i></a> |
+                        <a asp-action="Delete" asp-controller="Terms" asp-route-id="@item.Id"
+                             asp-route-keyWord="@ViewBag.KeyWord" 
+                            asp-route-PageSize="@ViewBag.PageSize" 
+                            asp-route-page="@ViewBag.page"
+                             asp-route-gradeId="@ViewBag.gradeId"
+                           data-ajax-confirm="هل انت متأكد انك تريد حذف الترم ؟"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           data-ajax-success="onsuccessDeletion"
+                           data-ajax-failure="onFailureDeletion"
+                           data-ajax-loading="#ajaxLoaderDiv" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    Html.RenderPartial("_pagerPartial");
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+<script>
+    function onsuccessDeletion(data) {
+
+        NotificationService.displaySuccess("تم الحذف بنجاح", "تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+
+        if (jqXHR.responseText === "NotFound")
+            NotificationService.displayError("هذا الترم غير موجود", " !تحذير");
+
+        else if (jqXHR.responseText === "Error")
+            NotificationService.displayError("هذا الترم مستخدم لا يمكن حذفها .", " !تحذير");
+
+        else if (jqXHR.responseText === "SubjectUsedTerms") {
+            NotificationService.displayError("يوجد مواد داخل هذة الترم.", " !تحذير");
+
+        }
+
+
+
+    }
+
+</script>

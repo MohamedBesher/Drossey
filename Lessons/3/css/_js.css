@@ -1,0 +1,400 @@
+.img_cont,
+.video_cont {
+
+	height:100%;
+}
+.img_cont img,
+.video_cont video{ 
+    max-height: 100%;
+}
+.obj_cont{
+	width:100%;
+}
+.obj_cont object {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* start css for player index*/
+/*canvas css*/
+#can {
+    /*bottom: 50px;*/
+    /*height: calc(100% - 110px);*/
+    position: absolute;
+    /*top: 60px;*/
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.demed{
+    background-color: gray !important;
+}
+.pencil_cursor{
+     cursor:url('../cursor/red_pencil.png')0 48,     /* Modern browsers    */
+            url('images/EraserCou.cur')20 20,/* Internet Explorer  */
+            pointer;  /* Older browsers     */
+}
+.brush_cursor{
+     cursor:url('../cursor/marker.png')0 48,     /* Modern browsers    */
+            url('../images/EraserCou.cur')20 20, 
+            url('images/EraserCou.cur')20 20,/* Internet Explorer  */
+            pointer;  /* Older browsers     */
+}
+
+.eraser_cursor{
+     cursor:url('../cursor/eraser.png')20 0,     /* Modern browsers    */
+            url('../images/EraserCou.cur')20 20, 
+            url('images/EraserCou.cur')20 20,/* Internet Explorer  */
+            pointer;  /* Older browsers     */
+}
+#small_menu{
+    z-index: 50 !important;
+}
+.main_content{
+    width: 100%;
+
+}
+/*end of modal css*/
+/*Search*/
+#searchpart{
+    background-color: #EBEBEB;
+    /*border-radius: 5px;*/
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+.searchicontitle i{
+      font-size: 28px;
+    padding-left: 8px;
+    
+    
+}
+.boxbody{
+    background-color: #EBEBEB;
+    width: 100%;
+}
+.searchead{
+  background-color: #149FD3;
+  height: 45px;
+  width: 100%;
+  /*border-radius: 5px 5px 0 0;*/
+}
+.boxtitle{
+  float: right;
+  margin: 1px 15px 0 0;
+ font-weight: bold;
+  color: #FAF7F0;
+  font-size: 22px;
+  padding-right: 8px;
+  height: 33px;
+  padding-top: 5px;
+}
+#nav-tabs{
+  /*font-family: 'Droid Arabic Naskh', serif;*/
+ font-weight: bold;
+  font-size: 20px;
+/*  padding-right: 40px;*/
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+   /* border: medium none;*/
+    /*border-radius: 2;*/
+    color: #707070;
+     background-color: #EBEBEB;
+    
+}
+.nav-tabs > li > a{
+   
+background-color: #149fd3;
+border-radius: 0px;
+color: #fff;
+     padding: 5px 20px;
+    margin-left: 5px;
+
+}
+.nav-tabs > li > a:hover{
+   
+color: #707070;
+     background-color: #EBEBEB;
+
+}
+
+.bookicontitle {margin: 5px 10px 0 0;}
+   
+.bookicontitle i{
+   margin-left: 3px;
+}
+.noteicontitle{
+   margin: 3px 10px 0 0;
+}
+.noteicontitle i{
+   margin-left: 5px;
+    font-size: 26px;
+    font-weight: normal;
+}
+.searchbox{
+  width: 95%;
+  margin: 4% 2.5%;
+  height: 50px;
+    border-style: solid;
+  border-width: 1px;
+ 
+  background-color: #FFFFFF;
+  padding: 0 10px;
+    color: #F7941D;
+  font-size: 16px;
+}
+.closebox{
+  float: left;
+  margin: 12px;
+   color: #FFFFFF; 
+    cursor: pointer;
+    opacity: 1;
+}
+.closebox:hover{
+color: #C9C6CD; 
+}
+
+.modal-content {
+    border-radius: 0px !important;
+    }
+.modal-tranperant{
+    background: none;
+    box-shadow: none;
+    border: 0;
+}
+.submitbutton{
+  width: 130px;
+  margin: 0 auto;
+  transition: background-color 0.4s ease;
+   box-shadow: 0 5px 0px #d59201;
+}
+.submitbutton:hover{
+  background-color: #F7941D;
+    box-shadow: 0px 5px 0px #DB841B;
+}
+.submitcont {
+  width: 90px;
+  height: 30px;
+  margin: 0 auto ;
+}
+.submitbutton{
+  background-color: #F3A806;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+#bookNoteNav{
+    background-color: transparent;
+}
+
+#myimg{
+    width: 100%;
+    height: 97%;
+}
+
+.search_list{
+    display: none;
+    list-style-type:none;
+    margin: 0 10px 25px;
+    background-color: #EBEBEB;
+    -webkit-margin-before: 0;
+   -webkit-margin-after: 0;
+   -webkit-margin-start: 0;
+   -webkit-margin-end: 0;
+   -webkit-padding-start: 0;
+   
+   padding: 10px;
+}
+.search_list li{
+    background-color: #fff;
+    border: 1px solid #f6bf48;
+    height: 40px;
+    line-height: 27px;
+    margin: 2px 20px;
+    overflow: hidden;
+    padding: 10px;
+}
+.tab-content{
+    padding: 20px 0px;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.2);
+    border-image: none;
+    border-style: none solid solid;
+    border-width: 0 1px 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    
+      
+}
+.tab-content .add-item{
+    background-color: #f3a806;
+    color: #fff;
+    font-size: 21px;
+      text-align: right;
+    width: 155px;
+    box-shadow: 0 3px 0 #d59201;
+    cursor: pointer;
+    margin: 0px;
+    
+}
+.tab-content .closebox{
+  float: left;
+  margin: -13px 7px;
+    color: #616161;
+    cursor: pointer;
+    opacity: 1;
+}
+.tab-content .closebox:hover{
+ color:#149FD3; 
+}
+#noteee >.modal-footer,#bookkk >.modal-footer{
+ 
+    padding-bottom: 0px;
+    padding-top: 10px;
+}
+.tab-content .add-item:hover {
+     background-color: #F7941D;
+}
+.tab-content .add-item .fa-plus{
+    background-color: #414242;
+    /*height: 100%;*/
+    padding: 5px;
+    box-shadow: 0 3px 0 #363838;
+    
+}
+
+.bookm_and_note {
+    font-size: 18px;
+    padding: 10px !important;
+    margin: 5px !important;
+    color: #414242;
+    font-weight: lighter;
+    /*box-sizing: border-box;*/
+}
+.bookm_and_note >.fa-trash-o,.bookm_and_note >.fa-pencil-square-o{
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 27px;
+    color: #787878;
+    float: left;
+}
+.bookm_and_note > .fa-pencil-square-o{
+    padding-top: 2px;
+
+    margin-left: 10px;
+}
+.bookm_and_note > .fa-trash-o{
+    
+    margin-left: 10px;
+}
+.bookm_and_note > p {
+    float: right;
+    width: 85%;
+    cursor: pointer;
+}
+.bookm_and_note:hover >.fa-pencil-square-o:hover{
+       color: #00854A ;
+}
+.bookm_and_note:hover >.fa-trash-o:hover{
+   color: #D80000;
+}
+.search_list li:hover, .mynoteee:hover,.mybookkk:hover{
+  background-color: #ccc;
+}
+.arrowsbar{
+  height: 50px;
+  width: 100%;
+  background-color:#85c1e9;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+}
+.tab-content{
+    background-color: #EBEBEB;
+}
+#result1,#result2{
+    list-style-type:none;
+    margin: 0;
+    background-color: #EBEBEB;
+    -webkit-margin-before: 0;
+   -webkit-margin-after: 0;
+   -webkit-margin-start: 0;
+   -webkit-margin-end: 0;
+   -webkit-padding-start: 0;
+      padding: 10px;
+}
+.mynoteee,.mybookkk{
+    background-color: #FFF;
+    margin: 3px 0;
+    padding: 2px;
+}
+/*#noteee a, #bookkk a{
+    margin: 10px;
+    color: white;
+}*/
+
+ #status {
+	width:150px;
+	height:150px;
+	position:absolute;
+	left:50%; /* centers the loading animation horizontally one the screen */
+	top:50%; /* centers the loading animation vertically one the screen */
+	background-image:url(../images/modals/loading.gif); /* path to your loading animation */
+	background-repeat:no-repeat;
+	background-position:center;
+	margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+
+#myCloseApp .modal-dialog .modal-content {
+    background-color: #ebebeb;
+    font-size: 20px;
+    height: 124px;
+    margin: 99px 0;
+    text-align: center;
+    width: 325px;
+}
+#myCloseApp .modal-dialog .modal-content .closeurapp {
+    margin: 20px;
+}
+#myCloseApp .submitbutton2 {
+    height: 26px;
+    margin-top: 9px;
+    width: 70px;
+    color: #FEF;
+    border: 0px solid transparent;
+
+}
+#myCloseApp .submitbutton2:nth-child(1) {
+   background-color: #C21F24;
+   box-shadow: 0 3px 0 #9F1318;
+}
+#myCloseApp .submitbutton2:nth-child(2) {
+  background-color: #208538;
+    box-shadow: 0 3px 0 #176D2B;
+}
+#myCloseApp .submitbutton2:nth-child(1):hover {
+   background-color: #B01116;
+   box-shadow: 0 3px 0 #850D11;
+}
+#myCloseApp .submitbutton2:nth-child(2):hover {
+  background-color: #197B30;
+    box-shadow: 0 3px 0 #0D551E;
+}
+
+
+
+/*end of modal css*/
+/*end of player index */

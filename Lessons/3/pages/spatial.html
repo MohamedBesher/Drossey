@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Game</title>
+    <!--bootstrap links-->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl-theme.min.css">
+    <link type="text/css" rel="stylesheet" href="css/w3.css">
+    <!--tark css graid  links-->
+    <link type="text/css" rel="stylesheet" href="css/new_grid.css">
+    <!--font-awesome links-->
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/animate.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+  
+    <link type="text/css" rel="stylesheet" href="css/spatialstyle.css">
+
+    
+    
+
+    <!--js files-->
+    <script src="js/jquery-2.2.0.min.js"></script>
+    <!-- <script src="js/jquery-ui.js"></script> -->
+    <script src="js/bootstrap.min.js"></script>  
+    <script src="js/d3Library.js"></script>  
+   <script src="js/spatialscript.js"></script>
+  
+       
+  </head>
+
+<body>
+<div class="alhaytham_head">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="title_font" id="lesson_title">العنوان هنا</h1><!--end lesson_title-->
+                  <a href="#" id="repeat_btn" onclick="history.go(0)"><i class="fa fa-repeat fa-2x"></i></a>
+                <!--     <a href="#"  id="question_btn"><i class="fa fa-question fa-flip-horizontal fa-2x"></i></a> -->
+                    <div class="clearfix"></div>
+              
+                </div><!--end col-xs-12-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div>
+    
+    <!--end alhaytham_head-->
+    <div id="title" class="col-md-11" style=" margin-right:3%">
+        
+        </div>
+  
+<div class="container col-md-10">
+            <div id="choices">
+              
+        </div>
+        <div id="question">
+     
+             <div class="part" id="ones">
+                
+                   <svg height="300" width="140"></svg> 
+
+              
+                 <div class="define">
+                     آحاد
+                </div>
+
+            </div> 
+            <div class="part" id="scores">
+                               
+                <svg height="300" width="140"></svg> 
+
+  
+                <div class="define">
+           عشرات
+                </div>
+
+            </div> 
+            <div class="part" id="hundreds">
+                              
+                <svg height="300" width="140"></svg> 
+ 
+                <div class="define">
+                    مئات
+                </div>
+
+            </div> 
+            <div class="part" id="thousands">
+                               
+                <svg height="300" width="140"></svg> 
+
+                <div class="define">    آلاف
+                </div>
+
+            </div> 
+            <div class="part" id="tenOfThousand">
+                             
+                <svg height="300" width="140"></svg> 
+  
+
+
+              
+                <div class="define">
+                    عشرات الآلاف
+                </div>
+
+            </div> 
+    <a class="w3-btn-floating-large w3-teal" style=""><i class="fa fa-arrow-left"></i></a>
+            
+        </div>
+
+  
+    </div>
+    
+    
+  <!-- pop up  -->  
+  <div id="myModal" class="modal fade" role="dialog"  data-keyboard="false" data-backdrop="static">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      <!--  <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+        <h4 class="modal-title">النتيجة</h4>
+      </div>
+      <div class="modal-body" id="result_here">
+        
+      </div>
+     
+    </div>
+
+  </div>
+</div>
+    
+    <!-- notification msg -->
+<div class="notification_msg wow rubberBand" style="margin-right:15%; margin-bottom:5%;"><a class="close_msg" href="javascript:void(0)"><i class="fa fa-close"></i></a>
+        <p id="noti_msg"> </p>
+    </div> 
+<audio id="noise"></audio>
+<audio id="narration"></audio>
+ 
+ 
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿@model IndexViewModel
+@{
+    ViewData["Title"] = "البيانات الشخصية";
+    ViewData["Active"] = "user_Data";
+    Layout = "_ProfileLayout";
+}
+
+
+<div class="ProfileImage">
+    <img src="@Model.PhotoUrl" onerror="this.src='/images/default.png'" alt="student" class="center-block">
+   
+</div>
+<!-- personal information  && Edit -->
+<form action="" class="control-group EditInfo">
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="icon-custom icon-connect flaticon-profile-2"></i>
+            الاسم الاول:
+        </span>
+        <label for="name" class="control-label">@Model.FirstName</label>
+
+    </div>
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="icon-custom icon-connect flaticon-profile-2"></i>
+            الاسم الاخير:
+        </span>
+        <label for="name" class="control-label">@Model.LastName  </label>
+
+    </div>
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+
+            <i class="glyphicon glyphicon-envelope icon-custom icon-connect" alt="Student"></i>
+            البريد الالكتروني:
+        </span>
+        <label for="email" class="control-label">
+            @Model.Email
+        </label>
+
+    </div>
+
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="glyphicon glyphicon-phone icon-custom icon-connect"></i>
+
+            الجوال :
+        </span>
+        <label for="name" class="control-label">
+            @Model.PhoneNumber
+        </label>
+
+      
+    </div>
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="glyphicon glyphicon-map-marker icon-custom icon-connect"></i>
+
+            العنوان :
+        </span>
+        <label for="name" class="control-label">
+            @Model.Address
+        </label>
+
+     
+    </div>
+    <div class="form-group col-md-6 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="glyphicon glyphicon-map-marker icon-custom icon-connect"></i>
+
+            البلد :
+        </span>
+        <label for="name" class="control-label ">
+           @Model.CountryName
+        </label>
+
+       
+    </div>
+    @*<div class="form-group col-md-12 col-xs-12 paddingInput">
+        <span class="text-info">
+            <i class="icon-custom icon-connect 
+        "></i>
+            الصف :
+        </span>
+        <label for="name" class="control-label">
+            الصف الثالث الثانوي
+        </label>
+
+     
+    </div>*@
+
+
+
+    <div class="controls col-md-6">
+        <a class="edit btn button-default design-sprint__item__button"  asp-controller="Manage" asp-action="Index">تعديل</a>
+    </div>
+    <div class="controls col-md-6">
+        <a class=" btn button-default design-sprint__item__button Edit__password__button" asp-controller="Manage" asp-action="ChangePassword">تغيير كلمة المرور</a>
+    </div>
+</form>
+<!-- personal information  && Edit -->
+
+
+
+
+
+
+
+
+

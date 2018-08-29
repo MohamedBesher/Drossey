@@ -1,0 +1,78 @@
+.box_text{
+    height: 340px;
+}
+.notification_msg {
+    bottom: 5px;
+}
+.carousel-inner{
+    padding-top: 10px;
+}
+.front_box p{
+    text-align: center;
+    font-family: "Cocon-en","Cocon",Arial,Helvetica,sans-serif !important
+}
+.row div img{
+    /* max-width: 210px; */
+    position: relative;
+    text-align: center;
+}
+.back_box p{
+    margin-top: 10px;
+    overflow: auto;
+    padding-left: 10px;
+    font-family: "Cocon-en","Cocon",Arial,Helvetica,sans-serif !important;
+}
+.row div img{
+	/* max-height: 210px; */
+}
+
+@media (max-height:768px){
+    .row div img{
+        /* max-width: 175px; */
+    }
+}
+.front_box >img {
+    width: 80%;
+    height: 290px;
+}
+
+@media (max-height:600px) {
+    .item div{
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.alhaytham_head{
+    height: 45px;
+}
+.alhaytham_head h1{
+    line-height: 45px;
+}
+.alhaytham_head a{
+    height: 45px;
+    line-height: 58px;
+}
+.title_font{
+    margin-top: 3px;
+    margin-bottom: 2px;
+}
+.hotspot_slider_control a{
+    margin: 5px 5px;
+}
+.row div img{
+    max-width: 160px;
+    padding-left: 10px;
+    position: relative;
+    text-align: center;
+}
+
+}
+
+/*
+@media (max-height:768px) and (max-width:900px){
+}
+@media (max-height:600px) and (max-width:1024px){
+}
+@media (max-height:992px) and (min-height:769px){	
+}*/

@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Drossey.Data.Core.Models
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+
+
+
+@if (SignInManager.IsSignedIn(User))
+
+{
+    <!-- User -->
+    <div class="user-box">
+        <div class="user-img">
+            <img src="~/images/users/dummy.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+            <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
+        </div>
+        <h5>مرحبا  @UserManager.GetUserName(User) </h5>
+        <ul class="list-inline">
+            <li>
+                <a  asp-area="Admin" asp-controller="Manage" asp-action="ChangePassword">
+                    <i class="fa fa-key"></i>
+                </a>
+            </li>
+
+            <li>
+               <form asp-area="Admin" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" >
+                    <a href="javascript:document.getElementById('logoutForm').submit()"><i class="zmdi zmdi-power"></i></a>
+
+                </form>
+                
+
+              
+            </li>
+        </ul>
+    </div>
+    <!-- End User -->
+}
+
+
+
+
+
+

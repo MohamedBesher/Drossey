@@ -1,0 +1,430 @@
+/*to can transport any template alone */
+.notification_msg
+{
+	background: #3169AA;
+}
+
+.temp_19 .drag_ques {
+    display: block;
+    line-height: 25px;
+}
+.temp_19 p {
+    margin: 0;
+}
+.temp_19 .panal_desc {
+    background: #bf3a2b none repeat scroll 0 0;
+    color: #fff;
+    display: block;
+    height: 50px;
+    line-height: 27px;
+    padding: 10px;
+    width: 100% ;
+}
+/*.blue_bg span {
+    border: 1px solid #149fd3;
+    display: block;
+    padding: 10px;
+    position: absolute;
+    width: 150px;
+}
+.blue_bg span.pos_left::before {
+    left: 100%;
+    right: auto;
+}
+.blue_bg span::before {
+    background: #149fd3 none repeat scroll 0 0;
+    content: "";
+    height: 1px;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    width: 150px;
+}*/
+
+.temp_28  #media_img {
+    display: block;
+    text-align: center;
+}
+.temp_28  #media_slider {
+    display: block;
+    margin: 0 auto;
+}
+.temp_28  #media_slider .item{
+    text-align: center;
+}
+.temp_28 #media_video video,.temp_28  #media_img img,.temp_28  #media_slider img{
+        max-height: 500px;
+    }
+/*  temp_crossword */
+
+.temp_crossword{
+    margin: 0;
+}
+.temp_crossword .feed_back{
+    background: #149fd3 none repeat scroll 0 0;
+}
+
+.temp_crossword #rf-searchgamecontainer{
+     margin: 10px auto 0;
+}
+
+.temp_crossword .cross_menu {
+    margin: 0;
+}
+ .temp_crossword .cross_menu > li {
+    font-size: 16px;
+    padding: 2px 5px;
+     text-align: justify;
+}
+ .temp_crossword .size_xl .rf-tgrid {
+    height: 50px;
+     width: 50px;
+    line-height: 50px;
+}
+
+.temp_crossword .size_2xl .rf-tgrid {
+    height: 40px;
+     width: 40px;
+    line-height: 40px;
+     font-size: 19px;
+}
+ 
+.temp_crossword .size_3xl .rf-tgrid {
+    height: 33px;
+     width: 33px;
+    line-height: 33px;
+     font-size: 16px;
+}
+.temp_crossword.size_3xl  .page_desc {
+    padding: 4px;
+}
+.temp_crossword.size_3xl .page_title {
+    padding-bottom: 5px;
+    /*margin: 5px;*/
+}
+  /*   ------------------------------- temp_drag_drop_image -------------------------------   */
+.temp_drag_drop_image {
+    margin: 0;
+}
+.temp_drag_drop_image .page_desc{
+    font-size: 18px;
+     padding: 0px 15px 5px;
+}
+
+
+.temp_drag_drop_image .drop-place{
+     width: auto;
+}  
+.temp_drag_drop_image .card_drop{
+    text-align: center;
+     float: none;
+    max-width: 100%;
+    line-height:normal;
+    margin: 0 auto;
+} 
+.temp_drag_drop_image .card-desc{
+    padding: 10px;
+      float: none;
+    width: auto;
+}
+.temp_drag_drop_image .correct img {
+    border: none;
+    height: 100%;
+    width: 100%;
+    
+}
+.temp_drag_drop_image .img_drag #cardPile {
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+/* ---------------------------------- template drag_drop_word---------------------------*/
+.temp_drag_drop_word .page_desc{
+    font-size: 18px;
+}
+.temp_drag_drop_word #cardSlots .card_word.correct{
+    background: #008c27 none repeat scroll 0 0;
+    color: #fff;  
+}
+/* ---------------------------- template temp_drag_drop_defintion---------------------*/
+.temp_drag_drop_defintion .page_desc{
+    font-size: 18px;
+}
+.temp_drag_drop_defintion #cardPile .card_number{
+    padding: 5px;
+    max-height: 60px;
+    max-width: 190px;
+    margin : 0px auto  ;
+    display:block;
+    font-size:18px;
+    line-height:25px;
+    background: #BF3A2B;
+    color:#FFF;
+    
+}
+/* Individual slots */
+
+.temp_drag_drop_defintion #cardPile{
+	color:#FFF;
+    margin: 25px 0;
+}
+.temp_drag_drop_defintion #cardSlots .card_word.hovered {
+  background: #E6F4FF;
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+.temp_drag_drop_defintion #cardPile .card_number.ui-draggable-dragging {
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+.temp_drag_drop_defintion #cardSlots  .drop-place{
+    background-color: #E6F4FF;
+    max-width: 100%;
+    padding: 5px;
+    margin: 10px;
+}
+.temp_drag_drop_defintion #cardSlots .card_word {
+  padding: 5px;
+  margin: 5px auto;
+  background: #fff;
+  display:block;
+  font-size:18px;
+    width: 60%;
+    line-height:normal;
+   min-height: 55px ;
+     max-height: 45px;
+    max-width: 160px;
+    border: 2px solid #BF3A2B;
+}
+.temp_drag_drop_defintion #cardSlots .card-desc{
+    padding: 5px;
+    margin: 20px auto 0;
+    display: block;
+    font-size: 16px;
+}
+.temp_drag_drop_defintion #cardSlots .card_word.correct{
+    background: #bf3a2b none repeat scroll 0 0;
+    border: none;
+    color: #fff;
+}  
+.temp_drag_drop_defintion [class^="grid-"] {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*------------------------- temp temp_hotspot_click_reveal ------------------------------*/
+.temp_hotspot_click_reveal .page_title{
+  margin: 0;
+}
+.temp_hotspot_click_reveal .page_desc{
+    font-size: 18px;
+    margin: 0;
+    padding: 5px 15px 0px;
+    line-height: 28px;
+}
+.temp_hotspot_click_reveal .map_content{
+        padding: 0px;
+}
+.temp_hotspot_click_reveal #div_content img{
+    width: 100%;
+}
+/*------------------------- temp temp_hotspot_click_tabs  ------------------------------*/
+.temp_hotspot_click_tabs{
+     margin-top: 5px;
+}
+.temp_hotspot_click_tabs #hotspot{
+    margin-top: 15px;
+}
+.temp_hotspot_click_tabs .page_desc {
+    font-size: 18px;
+}
+.temp_hotspot_click_tabs .map_content {
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.temp_hotspot_click_tabs .dropdown button{
+     background: #3169aa none repeat scroll 0 0;
+    border-radius: 0;
+    color: #fff ;
+    display: block;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 0;
+    padding: 10px 5px;
+    text-align: center;
+    width: 100%;
+} 
+.temp_hotspot_click_tabs #dropdownMenu span{
+    border-right: 1px solid rgba(255, 255, 255, .5);
+    bottom: 0;
+    font-size: 1.6em;
+    left: 0;
+    line-height: 34px;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    width: 32px;
+}
+.temp_hotspot_click_tabs #dropdownMenu:hover {
+    background-color: #149fd3;
+}
+.temp_hotspot_click_tabs .dropdown ul{
+    /* background: transparent  ;*/
+    left: 0;
+    float: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 300px;
+    
+} 
+.temp_hotspot_click_tabs .dropdown-menu > li > a{
+    background-color: #149fd3;
+     display: block;
+    font-size: 17px;
+    margin-bottom: 4px;
+    padding: 5px 5px;
+    text-align: center;
+     color: #fff ;
+}
+.temp_hotspot_click_tabs .curr_hotspot,.temp_hotspot_click_tabs .dropdown-menu > li > a:hover{
+    background: #bf3a2b none repeat scroll 0 0 !important;
+    color: #e8f6f7;
+   
+}
+.temp_hotspot_click_tabs .hotspot_zoomin {
+    padding: 0px;
+}
+.temp_hotspot_click_tabs .hotspot_zoomin img{
+    max-height: 200px;
+}
+.temp_hotspot_click_tabs .hotspot_zoomin div{
+}
+.temp_hotspot_click_tabs .hotspot_text {
+    font-size: 16px;
+}
+/*---------------------------- template code : temp_glossary  ----------------------------*/
+.temp_glossary .gloss_data{
+    margin-top: 20px;
+}
+.temp_glossary .gloss_menu, .temp_glossary .gloss_content {
+    margin-top: 0px;
+}
+.temp_glossary .gloss_menu > ul {
+    list-style: outside none none;
+    margin: 0;
+    max-height: 460px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0;
+}
+.temp_glossary .dropdown{
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.temp_glossary .dropdown button{
+    background: #3169aa none repeat scroll 0 0;
+    border-radius: 0;
+    color: #fff ;
+    display: block;
+    font-size: 15px;
+    padding: 15px 5px;
+    text-align: center;
+    border: none;
+    line-height: 1.1;
+}
+.temp_glossary .dropdown button:hover{
+    background-color: #4180BF;
+}
+.temp_glossary .dropdown_items{
+    width: calc(100% - 50px);
+}
+.temp_glossary .dropdown_caret{
+     width: 50px;
+  border-right: 1px solid rgba(255, 255, 255, .5) !important;
+}
+.temp_glossary .open .dropdown_caret{ 
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125) inset;
+    background-color: #149fd3;
+}
+.temp_glossary .dropdown-menu{
+    float: none;
+    left: 0;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.temp_glossary .dropdown-menu a{
+    background-color: #149fd3;
+    color: #fff;
+    display: block;
+    font-size: 17px;
+    margin-bottom: 4px;
+    padding: 5px;
+    text-align: center; 
+}
+.temp_glossary a.current_lesson ,.temp_glossary .dropdown-menu > li > a:hover{
+    background: #bf3a2b none repeat scroll 0 0;
+    color: #fff;
+}
+/*------------- custom media style ------------*/
+.custom_media .just_desc .media_desc{
+    padding: 15px;
+    font-size: 17px;
+    
+}
+.custom_media .media_and_desc .media_desc{
+    padding: 0 15px;
+    font-size: 17px;
+}
+.custom_media .carousel-control:hover, .carousel-control:focus {
+    color: #bf3a2b;
+}
+.custom_media .carousel-control {
+    color: #bf3a2d;
+}
+.carousel-indicators .active {
+    background-color: #bf3a2b;
+}
+.carousel-indicators li {
+    border: 1px solid #bf3a2b;
+}
+.all-media img, .all-media video{
+   max-height: 100%;
+}
+/*------------- end custom media style ------------*/
+.temp_glossary .all-media{
+    height: 460px;
+}
+/*----------------- temp temp_drag_drop_operators ----------------------------------*/
+.temp_drag_drop_operators .blue_bg{
+    overflow: hidden;
+    position: relative;
+}
+
+.temp_drag_drop_operators .temp_23 .temp_tools {
+    display: table;
+    margin: 0 auto;
+    transform: translateY(-55px);
+    position: relative;
+    top:auto;
+    right: auto;
+    z-index: 50;
+}
+.temp_drag_drop_operators .expression{
+    display: block;
+    margin: 10px 0;
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: top;
+}
+.temp_drag_drop_operators .temp_method span{
+    color: #fff;
+    line-height: 45px;
+    margin: 0 auto;
+}
+.temp_drag_drop_operators .correct span{
+    color: #fff;
+    line-height: 50px;
+    background-color: #008C27;
+    font-size: 25px;
+}

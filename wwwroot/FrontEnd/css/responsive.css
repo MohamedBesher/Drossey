@@ -1,0 +1,678 @@
+@media (max-width: 1500px) {
+    .scrollup{ left: 30px;} 
+    }
+    
+    @media (max-width: 1400px) {
+    .banner-caption span{ margin: 0;}
+    .banner-caption h1{ font-size: 50px; line-height: 50px;}
+    .banner-caption p{ line-height: 23px; margin: 0 0 20px;}
+    .scrollup img{ width: 70%;} 
+    }
+    @media (max-width:1800px){
+        .announcements p,
+        .topbar-address p,
+        .topbar-address a{ font-size: 13px;}
+        .topbar-address a{ line-height: 20px;}
+        .banner-caption h1{ font-size: 45px; line-height: 45px;}
+        .caption-text{ left: 135px !important; top: 100px!important;}
+        .layer-img-1,
+        .layer-img-2{ width: 33%;}
+        .layer-img-1{ left: 700px!important;}
+        .layer-img-2{ left: 682px!important;}
+        .alert-1 p{ font-size: 16px;}
+        .services-holder{ margin: -66px 0 0;}
+        .services-figure figcaption h2{ font-size: 26px;}
+        .school-area-heading::after{ right: 80px;}
+        .school-area-heading::before{ left: 80px;}
+        .scho-services-figure{ padding: 60px 40px; height: 412px;}
+        .scho-services-figure p{ font-size: 13px;}
+        .about-img{ margin: 0 0 0 -140px; width: 56%;}
+        .about-text h4{ font-size: 19px; line-height: 24px;}
+        .about-text p{ font-size: 12px; line-height: 22px;}
+        .check-list li{ font-size: 18px; margin: 2px 0;}
+        .classes-column figcaption h2{ font-size: 24px; margin: 0 0 5px;}
+        .classes-column figcaption span{ font-size: 14px;}
+        .featured-box p{ font-size: 13px;}
+        .featured-box .check-list li{ font-size: 13px;}
+        .news-widget .widget{ padding: 30px 25px;}
+        .twitter-box p{ font-size: 16px;}
+        .gallery-figure figcaption h4{ font-size: 16px;}
+        .blog-detail h4{ font-size: 18px;}
+        .meta-post ul li{ font-size: 13px; margin: 0 0 0 8px;}
+        .blog-detail p{ font-size: 12px;}
+        .address-list li{ font-size: 12px;}
+        .nav-holder .p-relative{ padding: 15px 0;}
+        .banner-slider .sp-thumbnails-container{ left: 20px !important;}
+        
+        .about-text.style-2 p{ line-height: 24px; margin: 0 0 17px;}
+        .our-mission-holder .check-list li{ font-size: 14px;}
+        .school-area-heading h3{ font-size: 21px;}
+        .scho-services-figure h4{ font-size: 20px;}
+        
+        .single-blog-detail blockquote span{ margin: 0;}
+        .fecility-figure span{ font-size: 14px;} 
+        .see-also-list li{ font-size: 13px;}
+        .teacher-quotes{ padding: 30px;}
+        .teacher-quotes .quotes p{ font-size: 14px; line-height: 25px;}
+        .teacher-quotes .girl-layer{ right: 10px; top: 53px; width: 30%;}
+        .teacher-quotes .quotes{ width: 74%;}
+        
+        .session-rates-imgs li{ width: 25%;}
+        .session-rates .rate{ padding: 20px 0;}
+        .class-size-detail li strong{ font-size: 11px;}
+        .weekly-classes-list li{ width: 31.03%;}
+        .class-detail-btm p{ font-size: 18px;}
+        .session-rates .rate strong{ font-size: 30px; line-height: 29px;}
+        .class-detail-holder{ padding: 40px 20px;}
+        .class-pattren-icons ul li{ margin: 0 0 0 14px;}
+        .class-pattren-detail{ padding: 30px;}
+        .class-pattren-detail article{ padding: 0;}
+        .weekly-classes-list li{ width: 30.23%;}
+        .tc-accordians .panel-heading h4{ font-size: 15px;}
+        .testimonial-detail .testimonial-slider .img{ display: none;}
+        .testimonial-detail .testimonial-slider .text{ padding: 0;}
+        .testimonial-detail .testimonial-slider .slick-arrow{ top: 250px;}
+        .class-detail-content .teacher-quotes .quotes{ width: 100%;}
+        .class-detail-content .teacher-quotes .girl-layer{ display: none;}
+        .class-detail-btm{ text-align: center;}
+        .class-detail-btm p{ float: none; margin: 0 0 10px;}
+        .class-detail-btm .tc-btn{ float: none;}
+        .class-pattren-icons{ text-align: center;}
+        .class-pattren-icons ul{ display: inline-block;}
+        .class-pattren-icons ul li{ width: 20%;}
+        .weekly-classes-list{ margin: 0;}
+        .weekly-classes-list li{ width: 100%; margin: 0 0 10px;}
+        .weekly-classes-column{ min-height: 234px;}
+        .weekly-classes.style-2{ margin: 0 0 40px;}
+        
+        .product-alerts{ padding: 20px;}
+        .product-alerts > ul > li{ margin: 0 10px 0 0; font-size: 10px;} 
+        .single-product-detail .btn-nd-shares .tc-btn{ height: 45px; line-height: 47px; font-size: 14px; padding: 0 25px;}
+        
+        .tc-pagination ul li:first-child a{ margin: 0 20px 0 0; width: 40px;}
+        .tc-pagination ul li:last-child a{ margin: 0 0 0 20px; width: 40px;}
+        .post-widget h2{ font-size: 30px; line-height: 30px;}
+        
+        .class-figure figure{ float: left; position: absolute;}
+        .class-figure .class-detail{ float: right; box-shadow: none; background: rgba(255,255,255,0.8); padding: 20px 0px 20px 20px;
+        border-radius: 40px 0px 0 40px;}
+        .class-figure .class-detail > span{ margin: 0 0 10px;}
+        .class-trainer{ margin: 0 0 10px;}
+        
+        .gallery-tabs-nav ul li{ width: 21.2%;}
+        .name-nd-location h3{ font-size: 21px;}
+        .event-aurthor .share-btn.btn-list li .tc-btn{ font-size: 9px; margin: 5px 0 0;}
+        .event-lineup-list li { padding: 20px; min-width: 248px;}
+        .event-lineup-list li h4{ font-size: 18px;}
+        .event-lineup-list li span{ font-size: 12px;}
+        
+        .timeline-figure h4{ font-size: 20px;}
+        .search-bar .form-group{ width: 77%;}
+    }
+    @media (max-width: 1199px) {
+    .announcements p,
+    .topbar-address p,
+    .topbar-address a{ font-size: 13px;}
+    .topbar-address a{ line-height: 20px;}
+    .nav-list > li > a{ font-size: 19px; padding: 18px 15px;}
+    .banner-caption h1{ font-size: 45px; line-height: 45px;}
+    .caption-text{ left: 135px !important; top: 100px!important;}
+    .layer-img-1,
+    .layer-img-2{ width: 33%;}
+    .layer-img-1{ left: 700px!important;}
+    .layer-img-2{ left: 600px!important;}
+    .alert-1 p{ font-size: 16px;}
+    .services-holder{ margin: -66px 0 0;}
+    .services-figure figcaption h2{ font-size: 26px;}
+    .school-area-heading::after{ right: 80px;}
+    .school-area-heading::before{ left: 80px;}
+    .scho-services-figure{ padding: 60px 40px;}
+    .scho-services-figure p{ font-size: 13px;}
+    .about-img{ margin: 0 0 0 -140px; width: 56%;}
+    .about-text h4{ font-size: 19px; line-height: 24px;}
+    .about-text p{ font-size: 12px; line-height: 22px;}
+    .check-list li{ font-size: 18px; margin: 2px 0;}
+    .classes-column figcaption h2{ font-size: 24px; margin: 0 0 5px;}
+    .classes-column figcaption span{ font-size: 14px;}
+    .featured-box p{ font-size: 13px;}
+    .featured-box .check-list li{ font-size: 13px;}
+    .news-widget .widget{ padding: 30px 25px;}
+    .twitter-box p{ font-size: 16px;}
+    .gallery-figure figcaption h4{ font-size: 16px;}
+    .blog-detail h4{ font-size: 18px;}
+    .meta-post ul li{ font-size: 13px; margin: 0 0 0 8px;}
+    .blog-detail p{ font-size: 12px;}
+    .address-list li{ font-size: 12px;}
+    .nav-holder .p-relative{ padding: 15px 0;}
+    .banner-slider .sp-thumbnails-container{ left: 20px !important;}
+    
+    .about-text.style-2 p{ line-height: 24px; margin: 0 0 17px;}
+    .our-mission-holder .check-list li{ font-size: 14px;}
+    .school-area-heading h3{ font-size: 21px;}
+    .scho-services-figure h4{ font-size: 20px;}
+    
+    .single-blog-detail blockquote span{ margin: 0;}
+    .fecility-figure span{ font-size: 14px;} 
+    .see-also-list li{ font-size: 13px;}
+    .teacher-quotes{ padding: 30px;}
+    .teacher-quotes .quotes p{ font-size: 14px; line-height: 25px;}
+    .teacher-quotes .girl-layer{ right: 10px; top: 53px; width: 30%;}
+    .teacher-quotes .quotes{ width: 74%;}
+    
+    .session-rates-imgs li{ width: 25%;}
+    .session-rates .rate{ padding: 20px 0;}
+    .class-size-detail li strong{ font-size: 11px;}
+    .weekly-classes-list li{ width: 31.03%;}
+    .class-detail-btm p{ font-size: 18px;}
+    .session-rates .rate strong{ font-size: 30px; line-height: 29px;}
+    .class-detail-holder{ padding: 40px 20px;}
+    .class-pattren-icons ul li{ margin: 0 0 0 14px;}
+    .class-pattren-detail{ padding: 30px;}
+    .class-pattren-detail article{ padding: 0;}
+    .weekly-classes-list li{ width: 30.23%;}
+    .tc-accordians .panel-heading h4{ font-size: 15px;}
+    .testimonial-detail .testimonial-slider .img{ display: none;}
+    .testimonial-detail .testimonial-slider .text{ padding: 0;}
+    .testimonial-detail .testimonial-slider .slick-arrow{ top: 250px;}
+    .class-detail-content .teacher-quotes .quotes{ width: 100%;}
+    .class-detail-content .teacher-quotes .girl-layer{ display: none;}
+    .class-detail-btm{ text-align: center;}
+    .class-detail-btm p{ float: none; margin: 0 0 10px;}
+    .class-detail-btm .tc-btn{ float: none;}
+    .class-pattren-icons{ text-align: center;}
+    .class-pattren-icons ul{ display: inline-block;}
+    .class-pattren-icons ul li{ width: 20%;}
+    .weekly-classes-list{ margin: 0;}
+    .weekly-classes-list li{ width: 100%; margin: 0 0 10px;}
+    .weekly-classes-column{ min-height: 234px;}
+    .weekly-classes.style-2{ margin: 0 0 40px;}
+    
+    .product-alerts{ padding: 20px;}
+    .product-alerts > ul > li{ margin: 0 10px 0 0; font-size: 10px;} 
+    .single-product-detail .btn-nd-shares .tc-btn{ height: 45px; line-height: 47px; font-size: 14px; padding: 0 25px;}
+    
+    .tc-pagination ul li:first-child a{ margin: 0 20px 0 0; width: 40px;}
+    .tc-pagination ul li:last-child a{ margin: 0 0 0 20px; width: 40px;}
+    .post-widget h2{ font-size: 30px; line-height: 30px;}
+    
+    .class-figure figure{ float: left; position: absolute;}
+    .class-figure .class-detail{ float: right; box-shadow: none; background: rgba(255,255,255,0.8); padding: 20px 0px 20px 20px;
+    border-radius: 40px 0px 0 40px;}
+    .class-figure .class-detail > span{ margin: 0 0 10px;}
+    .class-trainer{ margin: 0 0 10px;}
+    
+    .gallery-tabs-nav ul li{ width: 21.2%;}
+    .name-nd-location h3{ font-size: 21px;}
+    .event-aurthor .share-btn.btn-list li .tc-btn{ font-size: 9px; margin: 5px 0 0;}
+    .event-lineup-list li { padding: 20px; min-width: 248px;}
+    .event-lineup-list li h4{ font-size: 18px;}
+    .event-lineup-list li span{ font-size: 12px;}
+    
+    .timeline-figure h4{ font-size: 20px;}
+    .search-bar .form-group{ width: 77%;}
+    
+    }
+    
+    @media (max-width: 1024px) {
+    .caption-text{ left: 115px !important; top: 60px !important;}
+    .banner-caption h1{ font-size: 30px; line-height: 30px; letter-spacing: -1px; margin: 0 0 10px;}
+    .banner-caption p{ line-height: 22px;}
+    .banner-caption p span{ display: none;}
+    .banner-caption .tc-btn{ height: 42px; line-height: 43px; font-size: 13px; padding: 0 25px;}
+    .timeline-figure h4{ font-size: 18px;}
+    }
+    
+    @media (max-width: 1023px) {
+    .announcements{ display: none;}
+    .alert-1{ padding: 20px;}
+    .alert-1 p{ font-size: 13px;}
+    .tc-btn{ height: 45px; line-height: 45px; padding: 0 25px;}
+    .alert-1 i{ vertical-align: middle;}
+    .services-holder{ margin: -7px 0 0;}
+    .caption-text{ left: 127px !important; top: 37px!important;}
+    .layer-img-2{ left: 550px !important;}
+    .layer-img-1{ left: 630px !important; top: 15px!important;}
+    .service-img{ width: 80%;}
+    .services-figure{ padding: 30px 0 0; min-height: 300px;}
+    .services-figure figcaption h2{ font-size: 18px;}
+    .services-figure figcaption span{ font-size: 11px;}
+    .search-bar .form-group{ width: 76%;}
+    .timeline-figure span{ font-size: 13px;}
+    .timeline-figure h4{ font-size: 16px;}
+    .school-area-heading h3{ font-size: 20px;}
+    .school-area-heading p{ font-size: 14px;}
+    .scho-services-figure{ padding: 30px 20px;}
+    .scho-services-figure h4{ font-size: 18px;}
+    .scho-services-figure p{ font-size: 13px; line-height: 22px;}
+    .facts-lsit li strong{ font-size: 13px;}
+    .facts-lsit li h2{ font-size: 60px; line-height: 60px;}
+    .facts-lsit li::before{ margin: -28px 0 0 -10px;}
+    .curve-heading{ padding: 17px 30px 15px;}
+    .about-text p{ font-size: 14px; margin: 0 0 20px;}
+    .about-img{ position: absolute; opacity: 0.1;}
+    .classes-column figcaption h2{ font-size: 20px; letter-spacing: -1px;}
+    .classes-column figcaption span{ font-size: 12px;}
+    .aurthor-name h3{ font-size: 18px;}
+    .aurthor-name span{ font-size: 14px;}
+    .classes-detail ul li span{ font-size: 16px;}
+    .classes-detail ul li strong{ font-size: 16px;}
+    .team-figure .aurthor-name h3{ font-size: 20px;}
+    .team-figure .aurthor-name span{ font-size: 13px;}
+    .testimonial-slider{ padding: 50px;}
+    .testimonial-slider .text p{ font-size: 18px;}
+    .testimonial-slider .slick-next{ right: 60px; top: 180px;}
+    .testimonial-slider .slick-prev{ right: 115px; top: 181px;}
+    .news-widget h3{ font-size: 24px;}
+    .news-widget .widget{ overflow: hidden;}
+    .news-letter{ padding: 90px 0;}
+    
+    .about-text.style-3{ padding: 40px 40px;}
+    .about-text.style-3 h4{ font-size: 20px; line-height: 36.8px;}
+    .enroll-now p{ font-size: 17px; margin: 14px 0 0;}
+    .about-img-2{ position: absolute; opacity: 0.1;}
+    .about-text.style-2{ padding: 40px; padding-bottom: 0; overflow: hidden;}
+    .about-text.style-2 h5{ margin: 0 0 10px;}
+    .about-text.style-2 h3{ font-size: 50px; margin: 0 0 10px;}
+    .about-text.style-2	.kids-img{ text-align: initial; overflow: hidden;}
+    .about-text.style-2	.kids-img ul{ margin: 0 0 -15px;}
+    .about-text.style-2 p{ line-height: 17px;}
+    .our-mission{ display: none;}
+    .our-mission-holder .about-text{ padding: 40px;}
+    .scho-services-figure.style-2{ padding: 30px;}
+    .scho-services-figure h4{ font-size: 15px;}
+    .rating-sec-img{ display: none;}
+    .facts-lsit.style-2 li > div{ padding: 36px 0; min-height: auto;}
+    .facts-lsit li h2{ font-size: 40px; line-height: 40px;}
+    .facts-lsit li strong{ font-size: 13px;}
+    .facts-lsit li span{ font-size: 40px;}
+    .aside-widget.add a img{ width: 88%;}
+    
+    .shop-grid-column .detail h3{ font-size: 20px;}
+    .tc-pagination ul li a{ height: 50px; line-height: 50px; min-width: 33px;}
+    .tc-pagination ul li:first-child a{ margin: 0 20px 0 0; width: 40px;}
+    .tc-pagination ul li:last-child a{ margin: 0 0 0 20px; width: 40px;}
+    .inner-banner.shop-grid .inner-heading h2{ font-size: 40px; line-height: 30px;}
+    .inner-banner.shop-grid .discount-batch{ margin: 0 0 30px;}
+    .inner-banner.shop-grid .inner-heading p{ font-size: 16px; line-height: 20px;}
+    .shop-grid-column .detail{ padding: 30px 20px;}
+    .tc-pagination ul li.active a::before{ background-size: 100% 100%!important; height: 5px; width: 65px; left: -16px;} 
+    
+    .thumbnail-slider{ margin: 0 auto 40px; width: 63%;}
+    .produc-detail-aside{ margin: 0 auto 40px; width: 50%;}
+    .aside-widget.add a img{ width: 100%;}
+    
+    .blog-aside{ width: 50%; margin: 0 auto;}
+    
+    .aside-classes{ width: 50%; margin: 0 auto;}
+    .class-figure .class-detail h3{ font-size: 24px;}
+    .class-trainer{ margin: 0 0 16px;}
+    
+    .comment-form.contact{ padding: 0;}
+    .address-list.style-2 li p{ font-size: 17px; line-height: 24px;}
+    
+    .gallery-tabs-nav{ padding: 30px;}
+    .gallery-tabs-nav ul li{ width: 20.6%;}
+    .gallery-panel .main-heading h2{ font-size: 24px; line-height: 30px;}
+    .gallery-panel .main-heading p{ font-size: 13px; line-height: 17px;}
+    .gallery-slides li span{ padding: 10px; font-size: 12px;}
+    
+    .sceduled-tab-nav li{ padding: 15px;}
+    .name-nd-location h3{ font-size: 16px;}
+    .sceduled-title > h3{ font-size: 18px;}
+    .location span:last-child{ font-size: 9px;}
+    .event-location .tc-btn{ padding: 0 10px; font-size: 11px; height: 40px; line-height: 40px;}
+    .event-aurthor .btn-nd-shares{ float: left!important; margin: 10px 0 0;}
+    .event-aurthor .btn-nd-shares .share-btn li{ float: right;}
+    .event-lineup-list li h4{ font-size: 14px;}
+    .event-lineup-list li { padding: 20px 17px; min-width: 175px;}
+    
+    .team-figure.style-2 .aurthor-name{ padding: 15px 0;}
+    .team-figure.list-view .team-detail p{ line-height: 24px; font-size: 12px; margin: 0 0 20px;}
+    .tc-social-icons ul li.email{ padding: 0 15px; font-size: 11px;}
+    .team-figure.list-view .team-detail{ padding: 30px 50px 0 20px;}
+    .curve-up::before{ bottom: -40px;}
+    
+    }
+    
+    @media (max-width: 991px) {
+    .nav-list{ display: none;}
+    .toggleMenu{ display: block;}
+    
+    }
+    
+    @media (max-width: 800px) {
+    .banner-caption p{ display: none;}
+    .layer-img-2{ left: 450px !important; top: 10px!important;}
+    .layer-img-1{ left: 550px !important; top: -5px !important;}
+    .caption-text{ left: 70px !important;}
+    .main-heading h2{ font-size: 30px; line-height: 30px;}
+    .main-heading p{ line-height: 22px; font-size: 13px;}
+    }
+    
+    @media screen and (max-width: 768px) {
+    .caption-text{ left: 100px !important;}
+    }
+    
+    @media screen and (max-width: 767px) {
+    .alert-1{ -webkit-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.28);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.28);
+    box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.28);}
+    .services-holder{ margin: -3px 0 0;}
+    .alert-1{ padding: 15px;}
+    .alert-1 p{ font-size: 12px;}
+    .alert-1 p i{ margin: 0 10px 0 0;}
+    .caption-text{ left: 110px !important;}
+    .banner-slider .sp-bottom-thumbnails.sp-has-pointer{ margin: -60px 0 0;}
+    .layer-img-2{ left: 390px !important; top: 30px !important;}
+    .layer-img-1{ left: 460px !important; top: 15px !important;}
+    .school-area-heading h3{ font-size: 16px; margin: 0 0 10px;}
+    .school-area-heading p{ font-size: 13px;}
+    .school-area-heading::after{ right: 40px;}
+    .school-area-heading::before{ left: 40px;}
+    .scho-services-figure{ min-height: 324px;}
+    .scho-services-figure.border-l-0{ border-left: 1px solid rgba(0,0,0,0.1); border-bottom: 1px solid rgba(0,0,0,0.1);}
+    .kids-img ul li img{ width: 80%;}
+    .kids-img ul li{ margin: 0 0 0 10px;}
+    .facts-lsit{ padding: 0 0 50px;} 
+    .testimonial-slider .text p{ font-size: 16px; line-height: 22px;}
+    .blog-grid figure > img{ width: 100%;}
+    .brands-slide{ padding: 60px 0 40px; position: relative;}
+    .about-img{ width: 96%;}
+    .seprate-petrn.mt-80{ margin: 60px 0 0;}
+    .tc-btn{ height: 40px; line-height: 40px; padding: 0 15px; font-size: 12px;}
+    
+    .timeline-figure h4{ font-size: 14px;}
+    .enroll-now p{ font-size: 13px; margin: 10px 0 0;}
+    .kg-rating-heading h2{ font-size: 24px; margin: 0 0 5px;}
+    .kg-rating-heading p{ font-size: 12px;}
+    .kg-rating{ padding: 30px 0 0;}
+    .statistics.style-2{ padding: 30px;}
+    .enroll-now p{ font-size: 10px; margin: 7px 0 0;}
+    
+    .gallery-tabs-nav ul li{ width: 44.8%;}
+    .gallery-tabs-nav ul li .gallery-figure img{ width: 100%;}
+    
+    .sceduled-events-aside::before{ height: 100%;}
+    .name-with-img{ float: none; overflow: hidden;}
+    .event-lineup-list li{ min-width: 239px;}
+    .inner-banner.event-banner .inner-heading h2 { font-size: 30px; line-height: 25px;}
+    .sceduled-tab-panels{ padding: 30px 0;}
+    .event-lineup-list li{ min-width: 189px;}
+    .event-time{ font-size: 12px;}
+    
+    .team-figure.list-view .team-detail{ padding: 30px 20px 0 0px;}
+    .tc-social-icons ul li.email{ padding: 0 9px; font-size: 10px;}
+    .inner-banner.team .inner-heading h2{ font-size: 30px; line-height: 25px;}
+    .inner-banner.team .inner-heading p{ font-size: 14px; line-height: 20px;}
+    .inner-banner.team{ padding: 65px 0;}
+    .team-slider .slick-arrow{ top: -60px;}
+    
+    .search-bar .form-group{ width: 74.8%;}
+    .featured-box p{ font-size: 12px;}
+    .featured-box .check-list li{ font-size: 10px!important;}
+    .announcements p, .topbar-address p, .topbar-address a{ font-size: 12px;}
+    
+    .alert-1{ position: static; margin: -30px 0 0;}
+    
+    }
+    
+    @media screen and (max-width: 639px) {
+    .alert-1{ display: none;}
+    .services-columns{ border: 0; margin: 5px 0 0;}	
+    .layer-img-2{ left: 240px !important; top: 41px!important;}
+    .layer-img-1{ left: 290px!important; top: 25px!important;}
+    .caption-text{ top: 40px!important; left: 50px!important;}
+    .banner-caption span{ font-size: 11px;} 
+    .banner-caption h1{ font-size: 25px; line-height: 25px; letter-spacing: 0;}
+    .curve-up::before{ height: 44px;} 
+    .banner-caption .tc-btn{ height: 40px; line-height: 40px; font-size: 11px; padding: 0 15px;}
+    .kids-img ul li img{ width: 60%;}
+    .kids-img ul li{ width: 18%;}
+    .facts-lsit li{ width: 50%; margin: 10px 0;}
+    .curve-heading{ margin: 0 0 45px; font-size: 16px;}
+    .curve-heading::before{ bottom: -5px; height: 16px;}
+    .curve-heading::after{ left: -5px; z-index: -1;}
+    .testimonial-slider{ padding: 50px 30px;}
+    .testimonial-slider .img{ display: none;}
+    .testimonial-slider .text{ padding: 0;}
+    .testimonial-slider .slick-prev{ top: 220px; right: 80px;}
+    .testimonial-slider .slick-next{ top: 220px; right: 25px;}
+    .testimonial-slider .text .aurthor-name h3{ font-size: 24px;}
+    .testimonial-slider .text .aurthor-name span{ font-size: 12px;}
+    .brands-slide .slick-arrow{ display: none!important;}
+    .radius-4.overflow-hidden .school-area-heading{ display: none;}
+    .session-news{ display: none;}
+    .about-text.style-2 h3::after,
+    .our-mission-holder h3::after{ height: 15px; width: 15px; margin: 12px 0 0 10px;}
+    .about-text.style-2 h3,
+    .our-mission-holder h3{ font-size: 30px;}
+    
+    .radius-4.overflow-hidden{ padding: 30px 0;} 
+    .scho-services-figure.style-2{ padding: 20px;}
+    .scho-services-figure{ border-bottom: 1px solid rgba(0,0,0,0.1);}
+    .scho-service-icon{ height: 100px; width: 100px; line-height: 100px;}
+    .scho-service-icon img{ width: 50%;}	
+    .scho-services-figure{ min-height: initial;}
+    .about-text.style-2,
+    .our-mission-holder .about-text{ padding: 20px;}  
+    .about-text h4{ font-size: 16px; line-height: 20px;}
+    .our-mission-holder .about-text p{ display: none;}
+    .check-list li::before{ font-size: 18px; margin: 0 0 0 10px;}
+    .check-list li{ font-size: 16px!important; line-height: 30px;}
+    .about-text.style-3{ padding: 20px;}
+    .about-text.style-3 h4{ margin: 0 0 10px; font-size: 14px; line-height: 19.8px;}
+    .timeline.style-2{ padding: 20px; padding-top: 0;}
+    .timeline.style-2 .timeline-figure span{ font-size: 12px;} 
+    .timeline.style-2 .timeline-figure h4{ font-size: 12px;}
+    .r-full-width2{ width: 100%;} 
+    
+    .single-blog-title h2{ font-size: 30px; line-height: 35px;}
+    .back-home{ display: none;}
+    
+    .tc-pagination ul li a{ min-width: 23px; font-size: 13px;}
+    .tc-pagination ul li:first-child a{ width: 30px; margin: 0 10px 0 0;}
+    .tc-pagination ul li:last-child a{ width: 30px; margin: 0 0 0 10px;}
+    
+    .thumbnail-slider,
+    .produc-detail-aside{ width: 100%;}
+    .quantity-box{ float: left; margin: 0 20px 0 0;}
+    .detail-tabs-nav li a{ height: 48px; line-height: 48px; padding: 0 20px; font-size: 11px;}
+    .green-wild-bg{ height: 48px;}
+    .rating-xs{ font-size: 1.3em;}
+    .add-rating-alert > strong{ font-size: 15px;}
+    
+    .breadcrumbs ul li:last-child{ display: none;}
+    .post-widget .meta-post ul li{ font-size: 10px;}
+    .post-widget .meta-post ul li::before{ margin: 0 10px;}
+    .play-icon{ font-size: 14px; padding: 10px 10px; margin: -20px 0 0 -66px;}
+    .play-icon i{ font-size: 20px; margin: 0px 10px 0 0;}
+    
+    .teacher-quotes .girl-layer{ display: none;}
+    .teacher-quotes .quotes{ width: 100%;}
+    .share-btn.btn-list li .tc-btn{ font-size: 10px;}
+    .comment{ padding: 0 0 0 80px;}
+    .sub-comment{ margin-left: 0 !important;}
+    .sub-comment .comment{ padding: 0 0 0 80px;}
+    .sub-comment .total-comment{ top: 6px!important; right: 0;}
+    .comment .total-comment{ top: 18px; right: 0;}
+    .total-comment{ height: 35px; width: 35px; line-height: 37px; font-size: 15px;}
+    .comment-form .form-group{ width: 100%;}
+    .comment-form .form-group label{ margin: 0 0 10px;}
+    .single-blog-detail blockquote p{ font-size: 18px; line-height: 20px;}
+    
+    .blog-center-slider{ display: none;}
+    .class-figure figure{ position: relative; float: none;}
+    .class-figure{ padding: 30px;}
+    .class-figure figure img{ width: 100%;} 
+    .aside-classes{ width: 100%;}
+    
+    .inner-banner.contact .inner-heading h2{ font-size: 30px; line-height: 30px;}
+    .form-heading{ padding: 20px 30px;}
+    .form-heading h5{ font-size: 18px;}
+    .comment-form .form-control{ font-size: 14px;}
+    
+    .gallery-tabs-nav ul li{ width: 42.8%;}
+    .r-full-width2{ width: 100%;}
+    .team-figure.list-view .team-detail{ padding: 20px;}
+    .team-figure.list-view .team-detail h3{ font-size: 30px;}
+    .team-figure.list-view .team-detail span{ font-size: 12px; margin: 0 0 10px;} 
+    .tc-social-icons ul li{ float: left; margin: 0px 10px 10px 0px !important;}
+    
+    .search-bar .form-control{ background: #fff; font-size: 12px; height: 40px; line-height: 40px;}
+    .search-bar .tc-btn{ float: right; font-size: 15px; height: 40px; line-height: 40px; text-transform: uppercase;}
+    .search-bar{ padding: 15px 40px;}
+    .search-bar .form-group{ width: 71.6%;}
+    .search-bar .form-group i{ left: 12px; top: 12px;}
+    .search-lable{ top: 0;}
+    .meta-post ul li{ font-size: 10px;}
+    .blog-detail::before{ left: 20px;}
+    .scrollup{ left: -20px;} 
+    .no-touch .scrollup:hover{ opacity: 1; bottom: 10px;}
+    .scrollup img{ width: 60%;} 
+    
+    .sp-padding{ padding: 0;}
+    .blog-detail::before{ left: -38px;}
+    .layer-img-1,
+    .layer-img-2{ width: 38%;}
+    .banner-slider .sp-thumbnails-container{ display: none;}
+    .caption-text{ left: 20px!important;}
+    }
+    
+    @media screen and (max-width: 479px) {
+    .r-full-width{ width: 100%;}
+    .kids-img{ display: none;}
+    .team-slider .slick-arrow{ display: none!important;}
+    .testimonial-slider .slick-arrow{ display: none!important;}
+    .brands-icon h3{ font-size: 14px; margin: 0 0 0 -120px; top: -43px;}
+    .contact-map{ height: 160px; margin: 0 0 30px;}
+    .sub-footer{ background: none; margin: 50px 0 0;}
+    .footer{ padding-bottom: 0;}
+    .sub-footer .tc-social-icons ul{ margin: 0 0 10px;}
+    .sub-footer > p{ font-size: 11px; margin: 0;}
+    .school-area-heading::after,
+    .school-area-heading::before{ display: none;}
+    .timeline-figure h4{ font-size: 15px;}
+    .topbar-address > p{ display: none!important;}
+    .banner-caption h1{ font-size: 18px; line-height: 20px; margin: 0 0 10px;}
+    .banner-caption span{ font-size: 8px;}
+    .curve-up::before{ height: 0;}
+    .sp-thumbnails-container{ display: none;}
+    .banner-caption .tc-btn{ height: 30px; line-height: 31px; font-size: 9px; padding: 0 11px;}
+    .layer-img-2{ left: 200px !important; top: 20px !important;}
+    .layer-img-1{ left: 220px !important; top: 15px !important;}
+    .toggleMenu{ font-size: 18px; line-height: 16px; margin: 2px 0 0; padding: 10px 15px;}
+    
+    .logo{ width: 60%;}
+    .class-pattren{ margin: 0;}
+    .class-pattren-detail .title h3{ font-size: 20px;}
+    .class-pattren-detail .title{ margin: 0 0 20px;}
+    .class-detail-content article p:first-child{ font-size: 14px;}
+    .faq.style-2{ padding: 0 20px;}
+    .aside-widget h3{ font-size: 18px;}
+    .tc-accordians .panel-heading h4::before{ position: absolute; left: 0; top: 5px;}
+    .tc-accordians .panel-heading h4{ padding: 0 0 0 40px; position: relative;}
+    
+    .single-product-detail h2{ font-size: 24px; color: #333;}
+    .product-alerts > ul > li{ width: 100%; margin: 5px 0;}
+    .quantity-nd-drop > div{ width: 100%; margin: 10px 0;}
+    .quantity-nd-drop .form-horizontal .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn){ width: 100%;}
+    .detail-tabs-nav li a{ padding: 0 15px; font-size: 9px;}
+    .product-description article p:first-child{ font-size: 16px; line-height: 23px;}
+    .product-description article p{ line-height: 24px; font-size: 12px;}
+    .product-reviews{ padding: 0; border: 0;}
+    .add-rating-alert > strong{ font-size: 13px; margin: 0;}
+    .rating-xs{ font-size: 1em;}
+    .product-description article{ padding: 30px 0;}
+    
+    .blog-aside{ width: 100%;}
+    .post-widget h2{ font-size: 19px; line-height: 24px;}
+    .post-detail p{ font-size: 13px; line-height: 24px;}
+    .blogs-list-holder{ padding: 30px 10px;}
+    .inner-banner.blog .inner-heading h2{ font-size: 40px; line-height: 30px;}
+    .inner-banner.blog{ padding: 70px 0 90px;}
+    
+    .breadcrumbs{ padding: 15px 10px;}
+    .breadcrumbs ul li{ font-size: 13px;}
+    .breadcrumbs ul li::after{ margin: 0 5px; font-size: 15px; line-height: 13px;}
+    .post-batch{ padding: 0 10px; height: 30px; line-height: 30px; font-size: 10px;}
+    .slider-post .slick-arrow.slick-prev{ right: 31px;}
+    .slider-post .slick-arrow.slick-next{ border-radius: 0 4px 0 0;}
+    .post-batch{ border-radius: 2px 0 10px 0;}
+    .slider-post .slick-arrow{ height: 30px; line-height: 30px; width: 30px;}
+    
+    .tag-nd-categories{ display: none;}
+    .blog-date{ border: 0;}
+    .single-blog-detail blockquote{ padding: 45px 10px 30px 20px;}
+    .fecility-figure{ margin: 10px 0;}
+    .comment{ padding: 0;}
+    .sub-comment .comment{ padding: 0;}
+    .comments-holder ul li img{ position: static; margin: 0 0 20px!important;}
+    .comment .total-comment{ top: 10px; right: 0;}
+    .fecility-figure span{ font-size: 12px;}
+    .comment p{ font-size: 12px;}
+    .single-blog-title{ padding: 20px;}
+    .single-blog-title h2{ font-size: 20px; line-height: 25px; margin: 0;}
+    .single-blog-detail article{ padding: 20px;}
+    .single-blog-detail article p:first-child{ font-size: 16px;}
+    .single-blog-detail blockquote{ margin: 0 20px 30px;}
+    
+    .class-figure .class-detail{ padding:20px 0;}
+    .class-trainer{ border-radius: 0;}
+    .class-trainer .trainer-name h5{ font-size: 16px;}
+    .class-trainer .trainer-rate{ width: 100%;}
+    
+    .comment-form button{ height: 60px; line-height: 60px;}
+    .contact-map.style-2{ height: 200px;}
+    .contact-map{ margin: 0;}
+    .inner-banner.contact{ padding: 90px 0;}
+    
+    .gallery-tabs-nav ul li{ width: 40%;}
+    .gallery-slides li span{ font-size: 10px;}
+    .gallery-panel .share-btn.btn-list li{ width: 28.1%;}
+    .inner-banner.gallery .inner-heading h2{ font-size: 30px; line-height: 30px;}
+    .inner-banner.gallery{ padding: 70px 0;}
+    
+    .gallery-figure figcaption h4{ font-size: 12px;}
+    .event-lineup-list li{ min-width: 100%; margin: 10px 0!important;}
+    .event-lineup-list{ padding: 10px 2px 0;}
+    .event-detail .detail article p{ font-size: 13px;}
+    .event-aurthor .btn-nd-shares .share-btn li{ float: left; width: 29%;}
+    .event-lineup-title .tc-btn{ padding: 0 15px; font-size: 19px;}
+    
+    .search-bar .form-group{ width: 66.6%;}
+    .search-bar .tc-btn{ font-size: 12px;}
+    .search-bar{ padding: 15px 15px 15px 42px;}
+    .blog-detail::before{ left: -30px;}
+    .footer-widget{ margin: 0 0 30px!important;}
+    .footer-widget:last-child{ margin: 0;}
+    .meta-post ul li{ font-size: 13px;}
+    .class-pattren-detail{ padding: 30px;}
+    .class-pattren-detail .class-article{ padding: 0;}
+    .sp-layer.caption-text{ left: 49px!important; top: 29px!important;}
+    .caption-text{ left: 16px!important;}
+    }
+    
+    @media screen and (max-width: 359px) {
+    .caption-text{ padding: 0; left: 60px!important}
+    .check-list li{ font-size: 13px!important;}
+    .timeline-figure h4{ font-size: 13px;}
+    .facts-lsit.style-2 ul li{ width: 100%;}
+    
+    .tc-pagination ul li:first-child a{ width: 30px; margin: 0;}
+    .tc-pagination ul li:last-child a{ width: 30px; margin: 0;}
+    .reviewer-nd-rating .rating-stars{ float: left; margin: 10px 0 0;}
+    .produc-detail-aside{ margin: 0;}
+    .single-product-detail > p{ font-size: 14px; line-height: 25px;} 
+    
+    .gallery-panel{ padding: 20px;}
+    .gallery-tabs-nav{ padding: 20px;}
+    .gallery-tabs-nav ul li{ width: 40%; margin: 0 10px;}
+    .search-bar .form-group{ width: 60.6%;}
+    .breadcrumbs ul li{ font-size: 11px;}
+    .scrollup img{ width: 50%;}
+    .featured-box .check-list li{ font-size: 10px!important;}
+    .facts-lsit li strong{ font-size: 10px;}
+    .check-list li{ font-size: 11px!important;}
+    .meta-post ul li{ font-size: 12px;}
+    }
+    

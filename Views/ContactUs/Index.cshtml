@@ -1,0 +1,152 @@
+﻿
+@model ContactUsViewModel
+
+@{
+    ViewBag.Title = "اتصل بنا";
+    ViewData["nav-list-Active"] = "ContactUs";
+
+}
+
+<div class="sc-contact-page">
+
+    <!--  -->
+    <section class="breadcrumbs2 overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>تواصل معنا</h2>
+                    <ul class="bread-list">
+                        <li>
+                            <a asp-controller="Home" asp-action="Index">
+                                الرئيسية
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href=""> / تواصل</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--  -->
+    <div class="container">
+        <div class="contact-page__wrapper">
+            <div class="cotact-page__box">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="contact-page__box__left">
+                            <div class="contact-header-l">
+                                <h4 class="title-text">نحب أن نسمع منك</h4>
+                                <p class="content-text">
+                                    يمكنك أيضا مراسلتنا، سنقوم بالرد عليك في 24 ساعة.
+                                </p>
+                            </div>
+                            <div class="contact-form-l">
+                                <form class="contact-form" asp-action="index" method="post">
+                                    
+                                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                                    <div class="contact-form__group-name">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="firstName"></label>
+                                                    <input class="form-control" type="text" placeholder="الاسم" asp-for="Name">
+                                                </div>
+                                            </div>
+                                            @*<div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="lastName"></label>
+                                                    <input class="form-control" type="text" placeholder="الاسم الثاني" id="lastName">
+                                                </div>
+                                            </div>*@
+                                        </div>
+                                    </div>
+                                    <div class="contact-form__group-contact">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="email" ></label>
+                                                    <input class="form-control" type="email" asp-for="Email" placeholder="user@gmail.com" style="direction:ltr">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label class="sr-only" for="phone"></label>
+                                                    <input class="form-control" type="text" asp-for="Phone" placeholder="+123 456 78910" style="direction:ltr">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contact-form__mess">
+                                        <textarea class="form-control" placeholder="رسالتك" asp-for="Message" rows="10" placeholder="أكتب الرسالة"></textarea>
+                                    </div>
+                                    <button class="btn button-normal-02 contact-form__button" type="submit">ارسال</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-page__box__right">
+                            <div class="contact-information-r">
+                                <h4 class="title-text">بيانات الإتصال</h4>
+                                <div class="contact-information__wrapper">
+                                    <ul class="contact-information">
+                                        <li> <span class="icon-custom icon-contact flaticon-tool-1"></span><span>0020502208847</span></li>
+                                        <li> <span class="icon-custom icon-contact flaticon-interface-2"></span><span>info@drossey.com</span></li>
+                                        <li><span class="icon-custom icon-contact flaticon-facebook-placeholder-for-locate-places-on-maps">
+                                            </span><span>
+                                                       فرع المنصورة <br />
+                                                       شارع الجمهورية <br />
+                                                        برج السوسن <br />
+                                                       35516 الدقهلية – جمهورية مصر العربية
+        
+                                                </span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="contact-connect-r">
+                                <h4 class="title-text">تواصل معنا عبر </h4>
+                                <div class="contact-connect__wrapper">
+                                    <ul class="contact-connect">
+                                        <li class="contact-connect__item"><a class="contact-connect__link" href="https://www.facebook.com/onlinedrossey"><span class="icon-custom icon-connect flaticon-social-media"></span></a></li>
+                                        <li class="contact-connect__item"><a class="contact-connect__link" href="https://www.facebook.com/onlinedrossey"><span class="icon-custom icon-connect flaticon-social-1"></span></a></li>
+                                        <li class="contact-connect__item"><a class="contact-connect__link" href="https://www.facebook.com/onlinedrossey"><span class="icon-custom icon-connect flaticon-twitter-logo-silhouette"></span></a></li>
+                                        <li class="contact-connect__item"><a class="contact-connect__link" href="https://www.facebook.com/onlinedrossey"><span class="icon-custom icon-connect flaticon-google-plus-symbol"></span></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+

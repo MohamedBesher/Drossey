@@ -1,0 +1,64 @@
+.container{
+       margin:10% auto;
+    margin-right: 3.5%;
+    
+}
+
+#numbers,#cards,#slots{
+    
+    min-height: 100px;
+    margin-bottom:1%;
+    margin-right: 8%;
+} 
+
+
+
+.card,.slot{
+     min-height: 70px;
+     width:15%;
+    border-radius:6%;      
+    display: inline-block;
+    margin: 0 1%;
+}
+
+.card{
+    background-color:#23A2DB;
+    color:white;
+    padding:2% 5%;
+    font-size:large;
+}
+
+.card:hover{
+cursor: pointer; cursor: hand;    
+}
+
+.slot{ background-color:#E6F4FF; }
+
+
+.number{
+    border: 2px solid #BF3A2B;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    color: white;
+    width: 5%;
+    height: 54px;
+    font-size: 1.6em;
+    color: white;
+    background-color:#BF3A2B;
+    display: inline-block;
+    padding: 1% 1.7%;
+    margin:0 6%;
+}
+
+hr {
+   height: 1px;
+    color: #cc0000;
+    background: #cc0000;
+    font-size: 0;
+    border: 0;
+}
+
+h4{
+      color:#cc0000;
+}
+

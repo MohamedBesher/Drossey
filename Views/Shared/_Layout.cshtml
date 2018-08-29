@@ -1,0 +1,364 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Drossey.Data.Core.Models
+@using Microsoft.AspNetCore.Mvc
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>دروسى  - @ViewData["Title"] </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <!-- favicon  -->
+    <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="~/assets/lib/css/bootstrap.min.css">
+    <!-- flaticon -->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/font/flaticon/flaticon.css">
+    <!-- slick >> slider -->
+    <link rel="stylesheet" type="text/css" href="~/assets/lib/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/lib/slick/slick-theme.css">
+    <!-- animate -->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/animate.css">
+    <!-- style vs style-rtl -->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style-rtl.css">
+</head>
+<body class="course-gird @ViewData["body-class"]">
+
+    <!-- Start header -->
+    <header class="header-content pages-header">
+        <div class="header-top hidden-sm hidden-xs" id="header-top">
+            <div class="container">
+                <nav class="navbar navbar-inverse header-top__top">
+                    <!-- logo -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand logo__link" asp-controller="Home" asp-action="Index">
+                            <img class="logo__image" src="~/assets/img/logo/Logo.png" alt="Logo Educef">
+                        </a>
+                    </div>
+                    <!--./ logo -->
+                    @{
+                        var logged = SignInManager.IsSignedIn(User);
+                    }
+                    <!-- Menu -->
+                    <nav class="menu-main">
+                        <ul class="nav navbar-nav menu-main__list ">
+                            <li class="menu-main__item  @ViewBag.main">
+                                <a class="menu-main__link color-1" id="home" asp-controller="Home" asp-action="Index">الرئيسية</a>
+                            </li>
+                            <li class="menu-main__item  @ViewBag.library">
+                                <a class="menu-main__link color-1" id="Library" asp-controller="Library" asp-action="Index">الدورات</a>
+                            </li>
+                            <li class="menu-main__item @ViewBag.AboutUs">
+                                <a class="menu-main__link color-1" id="AboutUs" asp-controller="AboutUs" asp-action="Index">من نحن</a>
+                            </li>
+
+                            @if (logged)
+                            {
+                                @await Component.InvokeAsync("ChargeNow")
+                            }
+
+
+                            <li class="menu-main__item @ViewBag.ContactUs">
+                                <a class="menu-main__link color-1" id="ContactUs" asp-controller="ContactUs" asp-action="Index">اتصل بنا</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+
+
+                    <!--./ Menu -->
+                    <!-- left side menu -->
+
+                    @await Component.InvokeAsync("Cart")
+
+
+
+                    <!-- left side menu -->
+                </nav>
+
+            </div>
+
+        </div>
+        <!-- bottom menu ' Scroll ' -->
+        <div class="bottom-header hidden-sm hidden-xs" id="scrollspy" data-spy="affix" data-offset-top="112">
+            <div class="container">
+                <div class="logo--menu">
+                    <a class="logo__link" asp-controller="Home" asp-action="Index">
+                        <img class="logo__image" src="~/assets/img/logo/Logo.png" alt="Logo Educef">
+                    </a>
+                </div>
+                <nav class="menu-main logo--menu">
+                    <ul class="nav navbar-nav menu-main__list ">
+                        <li class="menu-main__item @ViewBag.main">
+                            <a class="menu-main__link color-1 " id="home" asp-controller="Home" asp-action="Index">الرئيسية</a>
+                        </li>
+                        <li class="menu-main__item @ViewBag.library">
+                            <a class="menu-main__link color-1 " id="Library" asp-controller="Library" asp-action="Index">الدورات</a>
+                        </li>
+                        <li class="menu-main__item @ViewBag.AboutUs">
+                            <a class="menu-main__link color-1 " id="AboutUs" asp-controller="AboutUs" asp-action="Index">من نحن</a>
+                        </li>
+
+                        @if (logged)
+                        {
+                            @await Component.InvokeAsync("ChargeNow")
+                        }
+
+                        <li class="menu-main__item @ViewBag.ContactUs ">
+                            <a class="menu-main__link color-1 " id="ContactUs" asp-controller="ContactUs" asp-action="Index">اتصل بنا</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--./ bottom menu ' Scroll ' -->
+        <!-- Mobile style -->
+
+        <div class="header__mobile hidden-lg hidden-md">
+
+            @await Component.InvokeAsync("CartMobile")
+
+
+
+            <nav class="navbar" id="header-mobile" data-spy="affix" data-offset-top="75">
+                <div class="container">
+                    <button class="navbar-toggle nav-icon pull-right collapsed visible-sm visible-xs" id="menu-hamberger" data-toggle="collapse"
+                            data-target="#menu-main">
+                        <span class="bar"></span>
+                    </button>
+                    <div class="logo--mobile text-center">
+                        <a class="logo__link" href="">
+                            <img class="logo__image" src="~/assets/img/logo/Logo.png" alt="Logo Educef">
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-mobile">
+                    <ul class="menu-mobile__list ">
+                        <li class="menu-mobile__item @ViewBag.main">
+                            <a class="menu-mobile__link" asp-controller="Home" asp-action="Index">الرئيسية</a>
+                            <span class=" menu-mobile__icon" data-toggle="dropdown" onClick="void(0)"></span>
+                        </li>
+                        @if (logged)
+                        {
+                            <li class="menu-mobile__item">
+                                <a class="menu-mobile__link" asp-controller="Manage" asp-action="Profile"> الصفحة الشخصية</a>
+                                <span class="menu-mobile__icon" data-toggle="dropdown" onClick="void(0)"></span>
+                            </li>
+                        }
+                        <li class="menu-mobile__item @ViewBag.library">
+                            <a class="menu-mobile__link" asp-controller="Library" asp-action="Index">الدورات</a>
+                            <span class=" menu-mobile__icon" data-toggle="dropdown" onClick="void(0)"></span>
+                        </li>
+                        <li class="menu-mobile__item @ViewBag.AboutUs">
+                            <a class="menu-mobile__link" asp-controller="AboutUs" asp-action="Index">من نحن</a>
+                            <span class=" menu-mobile__icon" data-toggle="dropdown" onClick="void(0)"></span>
+                        </li>
+                        <li class="menu-mobile__item @ViewBag.ContactUs">
+                            <a class="menu-mobile__link" asp-controller="ContactUs" asp-action="Index"> اتصل بنا</a>
+                            <span class="menu-mobile__icon" data-toggle="dropdown" onClick="void(0)"></span>
+                        </li>
+                        @if (logged)
+                        {
+                            <li class="menu-mobile__item">
+                                <a class="menu-mobile__link"  href="javascript:{}" onclick="document.getElementById('logoutForm').submit();return false;"> تسجيل الخروج</a>
+                                <span class="menu-mobile__icon" data-toggle="dropdown" onClick="void(0)"></span>
+                            </li>
+                        }
+
+
+
+                     
+                       
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <div class="button-default btn-ontop" id="on-top">
+            <span class="glyph-icon flaticon-arrows-5"></span>
+        </div>
+        <!--./ Mobile style -->
+    </header>
+    <!--./ End header -->
+
+
+
+
+    @RenderSection("BannerSlider", required: false)
+
+
+    @RenderBody()
+
+
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <video id="video-background" playsinline autoplay muted loop preload="none">
+            <source src="https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&amp;profile_id=119&amp;oauth2_token_id=57447761"
+                    type="video/mp4">
+        </video>
+        <div class="container">
+            <div class="footer__top">
+                <div class="icon-video">
+                    <span class="glyph-icon flaticon-music icon-custom icon-video__icon"></span>
+                </div>
+                <h2 class="footer__top__title">ابدأ هدفك الجديد واجعل الحياة أفضل</h2>
+                <div class="footer__top__sub"></div>
+                @if (logged)
+                {
+                    <a class="btn button-default design-sprint__item__button" asp-controller="Account" asp-action="Register">سجل الان</a>
+                }
+            </div>
+            <div class="row footer__content">
+                <div class="col-lg-5 col-md-5">
+                    <a class="logo__link footer__logo" href="">
+                        <img class="logo__image" src="~/assets/img/logo/logo-footer.png" alt="Logo Educef">
+                    </a>
+                    <p class="footer__item__sub">
+                        فرع المنصورة                  
+                        <br /> شارع الجمهورية 
+                        <br /> برج السوسن 
+                        <br/>35516 الدقهلية – جمهورية مصر العربية 
+                    </p>
+                    <div class="asocials">
+                        <ul class="asocials__list">
+                            <li class="asocials__item">
+                                <a class="asocials__link" href="https://www.facebook.com/onlinedrossey">
+                                    <span class="glyph-icon icon-custom flaticon-social-media asocials__icon"></span>
+                                </a>
+                            </li>
+                            <li class="asocials__item">
+                                <a class="asocials__link" href="https://www.facebook.com/onlinedrossey">
+                                    <span class="glyph-icon icon-custom flaticon-social-1 asocials__icon"></span>
+                                </a>
+                            </li>
+                            <li class="asocials__item">
+                                <a class="asocials__link" href="https://www.facebook.com/onlinedrossey">
+                                    <span class="glyph-icon icon-custom flaticon-twitter-logo-silhouette asocials__icon"></span>
+                                </a>
+                            </li>
+                            <li class="asocials__item">
+                                <a class="asocials__link" href="https://www.facebook.com/onlinedrossey">
+                                    <span class="glyph-icon icon-custom flaticon-google-plus-symbol asocials__icon"></span>
+                                </a>
+                            </li>
+                            <li class="asocials__item">
+                                <a class="asocials__link" href="https://www.facebook.com/onlinedrossey">
+                                    <span class="glyph-icon icon-custom flaticon-social-4 asocials__icon"></span>
+                                </a>
+                            </li>
+                            <li class="asocials__item">
+                                <a class="asocials__link" href="https://www.facebook.com/onlinedrossey">
+                                    <span class="glyph-icon icon-custom flaticon-pinterest-logotype asocials__icon"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 footer__content__right">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 footer__item">
+                            <h3 class="footer__item__title">روابط سريعة</h3>
+                            <ul class="footer-link__list">
+                                <li class="footer-link__item">
+                                    <a asp-controller="AboutUs" asp-action="Privacy" class="footer-link__link ">الشروط والأحكام </a>
+                                </li>
+                                <li class="footer-link__item">
+                                    <a asp-controller="AboutUs" asp-action="Index" class="footer-link__link  ">عنا</a>
+                                </li>
+                                <li class="footer-link__item">
+                                    <a asp-controller="ContactUs" asp-action="Index" class="footer-link__link ">تواصل معنا</a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 footer__item">
+                            <h3 class="footer__item__title">اخري</h3>
+                            <ul class="footer-link__list">
+
+                                <li class="footer-link__item">
+                                    <a asp-controller="Library" asp-action="Index" class="footer-link__link ">الدورات</a>
+                                </li>
+                                @*<li class="footer-link__item">
+                                    <a class="footer-link__link ">الفصول الدراسية</a>
+                                </li>*@
+                                @if (!logged)
+                                {
+                                <li class="footer-link__item">
+                                    <a asp-controller="Account" asp-action="Login" class="footer-link__link ">تسجيل الدخول </a>
+                                </li>
+
+                                <li class="footer-link__item">
+                                    <a asp-controller="Account" asp-action="Register" class="footer-link__link ">حساب جديد</a>
+                                </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 footer__item">
+                            <h3 class="footer__item__title">اتصل بنا</h3>
+                            <div class="footer-link__link footer-link__link--phone">
+
+                                002-050-2208847
+                            </div>
+                            <div class="footer-link__link footer-link__link--phone">info@drossey.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">&copy; 2018 جميع الحقوق محفوظه بواسطه دلتا سوفت</div>
+        </div>
+    </footer>
+
+    <!-- ./footer -->
+    <!-- jquery v-3.3.1 -->
+    <script src="~/assets/lib/js/jquery-3.3.1.min.js"></script>
+
+
+    <!-- bootstrap -->
+    <script src="~/assets/lib/js/bootstrap.min.js"></script>
+    <!-- slider slick -->
+    <script src="~/assets/lib/slick/slick.min.js"></script>
+    <!-- wow animations -->
+    <script src="~/assets/js/wow.js"></script>
+    <script src="~/assets/js/slicks-2.js"></script>
+    <script src="~/assets/js/jquery-matchHeight.js"></script>
+    <script src="~/assets/js/script.js"></script>
+    <script src="~/lib/Microsoft.jQuery.Unobtrusive.Ajax/jquery.unobtrusive-ajax.js"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script>
+
+        $(document).ready(function () {
+             var str = '@ViewData["nav-list-Active"]';
+             console.log(str);
+
+            if (str!="") {
+                $("#" + str).addClass("active");
+
+            }
+
+
+            $("img").on("error", function () {
+                $(this).attr('src', '/images/default.png');
+            });
+        });
+    </script>
+
+
+    <!-- div to clear fixed design -->
+    @*<div class="positionfixed"></div>*@
+</body>
+</html>
+
+
+
+
+
+

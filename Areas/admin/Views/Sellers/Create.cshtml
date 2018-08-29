@@ -1,0 +1,61 @@
+﻿@model SellerViewModel
+@{
+    ViewData["Title"] = "اضافة موزع";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+
+
+            <h4 class="header-title m-t-0 m-b-30"> @ViewData["Title"]</h4>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="control-label"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox checkbox-primary">
+                                <input asp-for="IsActive" />
+                                <label>
+                                    @Html.DisplayNameFor(model => model.IsActive)
+                                </label>
+                            </div>
+                        </div>
+
+
+                       
+                        <div class="form-group">
+                            <input type="submit" value="حفظ" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+      
+
+
+<div class="pull-right">
+    <a asp-action="Index" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الموزعين >></a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+
+}

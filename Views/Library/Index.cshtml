@@ -1,0 +1,167 @@
+﻿@model LibrarySearchModel
+
+
+@{
+    ViewBag.Title = "الدورات الدراسية";
+    ViewData["nav-list-Active"] = "Library";
+    
+}
+
+
+<main>
+    <section class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>جميع الدورات المتاحة</h2>
+                    <ul class="bread-list">
+                        <li>
+                            <a asp-controller="Home" asp-action="Index">
+                                الرئيسية
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href=""> / الدورات</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+
+        <!-- Filter items -->
+        <div class="active-filter">
+            <div class="header-filter">
+                @*<div class="header-filter__title"> بحث سريع   :</div>*@
+
+            </div>
+
+        </div>
+        <!-- ./Fiter items -->
+        <!-- Filter sections -->
+        <form id="SearchForm" asp-controller="Library" asp-action="Search"
+              data-ajax="true" data-ajax-method="POST" data-ajax-update="#searchResult"
+              data-ajax-mode="replace" data-ajax-loading="#ajaxLoaderDiv"
+              class="hero-form form" autocomplete="off">
+
+
+            <div class="list-selector">
+                <div class="row">
+                    <div class="Width__20 col-xs-12">
+                        <div class="column-left__item">
+                            <div class="select list-selector column-left__button-drop">
+
+                                <select asp-for="CountryId" asp-items="ViewBag.countries" class="select__list">
+                                    <option value="0">اختر البلد</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Width__20 col-xs-12">
+                        <div class="column-left__item">
+                            <div class="select list-selector column-left__button-drop">
+                                <select asp-for="GradeId" class="select__list">
+                                    <option value="0">اختر الصف الدراسى</option>
+
+                                </select>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Width__20 col-xs-12">
+                        <div class="column-left__item">
+                            <div class="select list-selector column-left__button-drop">
+
+                                <select asp-for="TermId" class="select__list">
+                                    <option value="0">اختر الترم الدراسى</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Width__20 col-xs-12">
+                        <div class="column-left__item">
+                            <div class="select list-selector column-left__button-drop">
+
+                                <select asp-for="SubjectId" class="select__list">
+                                    <option value="0">اختر المادة الدراسية</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="Width__20 col-xs-12">
+                        <button type="submit" class="btn button-default design-sprint__item__button Search__Button">ابحث</button>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </form>
+
+
+
+
+
+        <!-- ./Filter section -->
+        <!--  -->
+        <div class="tabs-filter">
+            <div class="tabs">
+                <ul class="tabs__list">
+                    <li class="tabs__item">
+                        <a class="tabs__link active" href="#">جميع الدورات</a>
+                    </li>
+
+                </ul>
+            
+            </div>
+        </div>
+        <!--  -->
+        <!--  -->
+        <!-- Start course gride -->
+        <div class="list-grid">
+            <div class="courses-by-gird" id="searchResult">
+               
+                    @await Component.InvokeAsync("SearchLibrary", new
+                {
+                    page = ViewBag.page,
+                    pageSize = ViewBag.pageSize,
+                    keyword = ViewBag.Keyword,
+                    countryId = ViewBag.countryId,
+                    gradeId = ViewBag.gradeId,
+                    termId = ViewBag.termId,
+                    subjectId = ViewBag.subjectId,
+
+                })
+
+
+            </div>
+
+
+        </div>
+
+        <!-- End course grid -->
+    </div>
+</main>
+
+
+
+
+
+@section Scripts {
+    <script src="~/js/app/library.js"></script>
+    <script src="~/js/app/cartFavorite.js"></script>
+}
+
+
+
+

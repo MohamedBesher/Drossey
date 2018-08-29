@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Drossey.Data.Core.Models
+@using Microsoft.AspNetCore.Mvc
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("User"))
+{
+    var user = UserManager.GetUserAsync(User);
+    string firstName = user.Result?.FirstName;
+    string lastName = user.Result?.LastName;
+    string photoUrl = user.Result?.PhotoUrl;
+
+
+    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" style="position:absolute">     
+                <button type="submit" class="btn btn-link navbar-btn navbar-link"></button>
+    </form>
+
+
+    <div class="nav-right__profile">
+        <i class="glyph-icon flaticon-profile-2 nav-right__profile__icon"></i><span class="nav-right__profile__status"></span>
+        <div class="profile">
+            <div class="profile__avarta">
+                <img class="profile__image" src="@photoUrl" onerror="this.src = '/images/default.png'" alt="">
+
+            </div>
+            <a class="profile__user-name" asp-action="Profile" asp-controller="Manage" asp-area="">
+                @firstName @lastName
+            </a><a class="profile__course" asp-action="Profile" asp-controller="Manage" asp-area="">
+                <i class="glyph-icon flaticon-profile profile__icon"></i><span class="profile__text">
+                   الصفحة الشخصية
+                </span>
+            </a><a class="profile__course" asp-action="index" asp-controller="MyBooks" asp-area="">
+                <i class="glyph-icon flaticon-shield profile__icon"></i><span class="profile__text">دوراتى</span>
+            </a>
+            <a class="btn btn-default button-default profile__btn" href="javascript:{}" onclick="document.getElementById('logoutForm').submit();return false;">
+                تسجيل الخروج
+                </a>
+        </div>
+    </div>
+
+}
+else
+{
+
+
+    @*<div class="nav-right__signin">
+        <a class="nav-right__signin__link" href="#" data-toggle="modal" data-target="#modal-signin" data-modal-target="#sign-in">تسجيل الدخول</a>
+        <span>|</span>
+        <a class="nav-right__signin__link" href="#" data-toggle="modal" data-target="#modal-signin" data-modal-target="#sign-up">حساب جديد</a>
+    </div>*@
+
+
+    <div class="nav-right__signin">
+        <a class="nav-right__signin__link" asp-controller="Account" asp-action="login" >تسجيل الدخول</a>
+        <span>|</span>
+        <a class="nav-right__signin__link" asp-controller="Account" asp-action="Register" >حساب جديد</a>
+    </div>
+
+}

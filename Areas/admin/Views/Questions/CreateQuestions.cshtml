@@ -1,0 +1,274 @@
+﻿@model QuestionsViewModel
+@{
+    ViewData["Title"] = "اضافة سؤال";
+  
+   Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+
+   
+}
+
+<div id="UpdateDiv">
+
+
+    <h4 class="header-title m-t-0 m-b-30">@ViewData["Title"]</h4>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="CreateQuestions">
+                @*<input asp-for="QuizId" type="hidden" />*@
+
+                <div class="row">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="col-lg-12">
+
+                        <div class="form-group">
+                            <label asp-for="CountryId" class="control-label"></label>
+                            <select asp-for=" CountryId" class="form-control" asp-items="ViewBag.countries">
+                                <option value="">اختر البلد</option>
+
+
+                            </select>
+                            <span asp-validation-for="CountryId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+
+                            <label asp-for="GradeId" class="control-label"></label>
+                            <select asp-for="GradeId" class="form-control" asp-items="ViewBag.grades">
+                                <option value="">----اختر ----</option>
+
+
+                            </select>
+                            <span asp-validation-for="GradeId" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="TermId" class="control-label"></label>
+                            <select asp-for="TermId" class="form-control" asp-items="ViewBag.terms">
+                                <option value="">----اختر ----</option>
+
+                            </select>
+                            <span asp-validation-for="TermId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="SubjectId" class="control-label"></label>
+                            <select asp-for="SubjectId" class="form-control" asp-items="ViewBag.subjects">
+                                <option value=""> ----اختر---- </option>
+                            </select>
+                            <span asp-validation-for="SubjectId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="BookId" class="control-label"></label>
+                            <select asp-for="BookId" class="form-control" asp-items="ViewBag.books">
+                                <option value="">----اختر ----</option>
+                            </select>
+                            <span asp-validation-for="BookId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LessonId" class="control-label"></label>
+                            <select asp-for="LessonId" class="form-control" asp-items="ViewBag.lessons">
+                                <option value="">----اختر ----</option>
+                            </select>
+                            <span asp-validation-for="LessonId" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="TextData" class="control-label"></label>
+
+                            <textarea rows="20" cols="150" asp-for="TextData" class="form-control" style="direction:ltr"></textarea>
+
+                            <span asp-validation-for="TextData" class="text-danger"></span>
+
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="form-group" style="display:none">
+                        <label asp-for="TextJson" class="control-label"></label>
+
+                        <textarea rows="20" cols="150" asp-for="TextJson" class="form-control" style="direction:ltr"></textarea>
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="حفظ" class="btn btn-primary" />
+                </div>
+
+
+
+            </form>
+        </div>
+    </div>
+
+    <div class="pull-right">
+        @*<a asp-action="Index" asp-controller="Questions" asp-area="admin"  asp-route-QuizId="@Model.QuizId"  class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الأسئلة>></a>*@
+        <a asp-action="Index" asp-controller="Questions" asp-area="admin" class="btn btn-success btn-rounded waves-effect waves-light m-b-5" data-toggle="tooltip" title="">كل الأسئلة>></a>
+    </div>
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        @{ Html.RenderPartial("_FileInputPartial");}
+
+       
+
+
+        <script>
+        function ChangeLevels() {
+
+            var count = $("#Type").val();
+            var lnk = $('#LnkchangeLevel');
+            lnk.attr('href', '@Url.Action("ChangeQuestionType", "Questions")?QuestionType=' + count + '&CountryId=' + $("#CountryId").val() + '&GradeId=' + $("#GradeId").val() + '&TermId=' + $("#TermId").val() + '&SubjectId=' + $("#SubjectId").val() + '&BookId=' + $("#BookId").val() + '&LessonId=' + $("#LessonId").val() );
+
+            lnk.click();
+            
+            }
+        function loadselect(){
+                $("#UpdateDiv select").each(function () {
+                    if ($(this).find("option").length <= 1) {
+                        $(this).attr("disabled", "disabled");
+                    }
+                });
+
+            
+        }
+            $(function () {
+                loadselect();
+
+
+                $('#TextData').bind('input propertychange', function () {
+
+                    var headID = document.getElementsByTagName("head")[0];
+                    var newScript = document.createElement("script");
+                    newScript.type = "text/javascript";
+                    newScript.innerHTML = this.value;
+                    headID.appendChild(newScript);
+                    $('#TextJson').val(JSON.stringify(quiz));
+                    //var ff = this.value;
+                    //console.log(ff);
+                    //$('#TextJson').val(JSON.stringify(ff));
+                    //console.log(JSON.stringify(this.value));
+                });
+
+                $("#UpdateDiv").on("change", "select", function () {
+                    //  $( this ).toggleClass( "chosen" );
+                    //});
+                    //    $("select").change(function () {
+
+                    var value = 0;
+                    if ($(this).val() !== "") {
+                        value = $(this).val();
+                    }
+                    var id = $(this).attr("id");
+                    if (id === "Time_zone" || id === "Presenter_email" || id === "Language_culture_name" || id =="IsCorrect")
+                        return;
+
+                    $.ajax({
+                        type: "POST",
+                        url: "/admin/Lessons/LoadDrp",
+                        data: JSON.stringify({ "name": id, "id": value }),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response) {
+                            var dropDownId;
+                            var list;
+                            switch (id) {
+                                case "CountryId":
+                                    list = response;
+                                    DisableDropDown("#TermId");
+                                    DisableDropDown("#GradeId");
+                                    DisableDropDown("#SubjectId");
+                                    DisableDropDown("#BookId");
+                                    DisableDropDown("#LessonId");
+                                    PopulateDropDown("#GradeId", list);
+                                    break;
+                                case "GradeId":
+                                    list = response;
+                                    DisableDropDown("#TermId");
+                                    DisableDropDown("#SubjectId");
+                                    DisableDropDown("#BookId");
+                                    DisableDropDown("#LessonId");
+                                    PopulateDropDown("#TermId", list);
+                                    break;
+
+                                case "TermId":
+                                    list = response;
+                                    DisableDropDown("#SubjectId");
+                                    DisableDropDown("#BookId");
+                                    DisableDropDown("#LessonId");
+                                    PopulateDropDown("#Subject", list);
+                                    PopulateDropDown("#SubjectId", list);
+                                    break;
+
+
+                                case "SubjectId":
+                                    DisableDropDown("#BookId");
+                                    DisableDropDown("#LessonId");
+                                    DisableDropDown("#ModuleId");
+                                    PopulateDropDown("#ModuleId", response);
+                                    PopulateDropDown("#BookId", response);
+                                    break;
+
+                                case "Subject":
+                                    DisableDropDown("#BookId");
+                                    DisableDropDown("#LessonId");
+                                    DisableDropDown("#ModuleId");
+                                    PopulateDropDown("#ModuleId", response);
+                                    PopulateDropDown("#BookId", response.list);
+                                    PopulateDropDown("#Presenter_email", response.list2);
+                                    break;
+
+                                case "BookId":
+                                    list = response;
+                                    DisableDropDown("#LessonId");
+                                    PopulateDropDown("#LessonId", list);
+                                    break;
+
+                            }
+
+                        },
+                        failure: function (response) {
+                            console.log(response.responseText);
+                        },
+                        error: function (response) {
+                            console.log(response.responseText);
+                        }
+                    });
+                });
+            });
+
+            function DisableDropDown(dropDownId, type) {
+                $(dropDownId).attr("disabled", "disabled");
+                $(dropDownId).empty().append('<option selected="selected" value="0">----اختر--- </option>');
+            }
+
+            function PopulateDropDown(dropDownId, list) {
+                if (list != null && list.length > 0) {
+                    $(dropDownId).removeAttr("disabled");
+                    $.each(list, function () {
+                        $(dropDownId).append($("<option></option>").val(this['id']).html(this['name']));
+                    });
+                }
+            }
+
+
+
+
+        </script>
+
+    }
+</div>
+
+

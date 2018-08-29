@@ -1,0 +1,126 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Dtos\**" />
+    <Compile Remove="wwwroot\FrontEnd\**" />
+    <Content Remove="Dtos\**" />
+    <Content Remove="wwwroot\FrontEnd\**" />
+    <EmbeddedResource Remove="Dtos\**" />
+    <EmbeddedResource Remove="wwwroot\FrontEnd\**" />
+    <None Remove="Dtos\**" />
+    <None Remove="wwwroot\FrontEnd\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\admin\ViewComponents\SearchCouffierLevelsViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchCouffiersViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchLevelsViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchPlacesViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchRequestsViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchScheduleViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchServiceViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchSettingViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchTicketReplayViewComponent.cs" />
+    <Compile Remove="Areas\admin\ViewComponents\SearchTicketViewComponent.cs" />
+    <Compile Remove="Models\BooksViewModel.cs" />
+    <Compile Remove="Services\WizIQ\Cancel.cs" />
+    <Compile Remove="Services\WizIQ\Create.cs" />
+    <Compile Remove="Services\WizIQ\DownloadRecording.cs" />
+    <Compile Remove="Services\WizIQ\GetData.cs" />
+    <Compile Remove="Services\WizIQ\Modify.cs" />
+    <Compile Remove="Services\WizIQ\Teacher.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Manage\_Layout .cshtml" />
+    <Content Remove="Views\Payment\Delete.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Account\AccessDenied.cshtml" />
+    <None Include="Views\Account\ConfirmEmail.cshtml" />
+    <None Include="Views\Account\ExternalLogin.cshtml" />
+    <None Include="Views\Account\ForgotPassword.cshtml" />
+    <None Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <None Include="Views\Account\Lockout.cshtml" />
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\LoginWith2fa.cshtml" />
+    <None Include="Views\Account\LoginWithRecoveryCode.cshtml" />
+    <None Include="Views\Account\Register.cshtml" />
+    <None Include="Views\Account\ResetPassword.cshtml" />
+    <None Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <None Include="Views\Account\SignedOut.cshtml" />
+    <None Include="Views\Error\index.cshtml" />
+    <None Include="Views\Home\About.cshtml" />
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Library\Index_.cshtml" />
+    <None Include="Views\Manage\ChangePassword.cshtml" />
+    <None Include="Views\Manage\Disable2fa.cshtml" />
+    <None Include="Views\Manage\EnableAuthenticator.cshtml" />
+    <None Include="Views\Manage\ExternalLogins.cshtml" />
+    <None Include="Views\Manage\GenerateRecoveryCodes.cshtml" />
+    <None Include="Views\Manage\Index.cshtml" />
+    <None Include="Views\Manage\ResetAuthenticator.cshtml" />
+    <None Include="Views\Manage\SetPassword.cshtml" />
+    <None Include="Views\Manage\TwoFactorAuthentication.cshtml" />
+    <None Include="Views\Manage\_ManageNav.cshtml" />
+    <None Include="Views\Manage\_StatusMessage.cshtml" />
+    <None Include="Views\Manage\_ViewImports.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_LoginPartial.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+    <None Include="Views\_ViewStart.cshtml" />
+    <None Include="wwwroot\quiz\data_pages_quiz.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+   
+      <PackageReference Include="AutoMapper" Version="6.1.1" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+      <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.3" />
+      <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" PrivateAssets="All" />
+      <PackageReference Include="MotleyFlash.AspNetCore.MessageProviders" Version="0.2.0" />
+      <PackageReference Include="MotleyFlash.AspNetCore.ViewHelpers" Version="0.2.0" />
+      <PackageReference Include="Sakura.AspNetCore.Mvc.PagedList" Version="2.0.12" />
+      <PackageReference Include="Sakura.AspNetCore.PagedList" Version="2.0.2" />
+      <PackageReference Include="Sakura.AspNetCore.PagedList.Async" Version="1.0.0" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="2.3.0" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\Api\" />
+    <Folder Include="Lessons\2\" />
+    <Folder Include="Quiz\" />
+    <Folder Include="wwwroot\lib\jquery-ui\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Drossey.Data\Drossey.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Library\Details.cshtml">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\SharedResources.ar.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

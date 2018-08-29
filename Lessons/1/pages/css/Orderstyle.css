@@ -1,0 +1,54 @@
+
+.v-center {
+  min-height:200px;
+  display: flex;
+  justify-content:center;
+  flex-flow: column wrap;
+}
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ol.example li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+ol.example li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
+
+#lists{
+  margin-top: 2%;
+}
+
+hr {
+   height: 1px;
+    color: #cc0000;
+    background: #cc0000;
+    font-size: 0;
+    border: 0;
+}
+
+h4{
+      color:#cc0000;
+}
+
+#title{
+    padding-top:12px;
+}
+
+  .list-group a{  
+    max-height: 100%;
+    font-size:18px;
+    line-height:25px;
+    background: #BF3A2B;
+    color:#FFF;
+        }

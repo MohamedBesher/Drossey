@@ -1,0 +1,279 @@
+﻿@{
+    ViewData["Title"] = "الصفحة الرئيسية";
+}
+
+
+
+<div class="row">
+
+    <div class="col-lg-3 col-md-6">
+        <a asp-action="Index" asp-controller="Users" asp-area="admin">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">عدد المستخدمين</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-user" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.users </h2>
+                    </div>
+                </div>
+            </div>
+
+        </a>
+
+
+
+        
+    </div><!-- end col -->
+
+    <div class="col-lg-3 col-md-6">
+        <a asp-action="Index" asp-controller="Transactions" asp-area="admin">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">اجمالى المعاملات</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-money" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.transactions </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div>
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="Teachers">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">المدرسين</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-user-secret" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.teachers </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div>
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="Countries">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">البلاد</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-map-pin" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.countries </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div>
+</div>
+<div class="row">
+
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="Grades">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">الصفوف</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-user" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.grades </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div><!-- end col -->
+
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="Terms">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">الترمات</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-graduation-cap" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.terms </h2>
+                    </div>
+                </div>
+            </div>
+
+            </a>
+</div>
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="Subjects">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">المواد الدراسية</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-newspaper-o" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.subjects </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div>
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="Books">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">الكتب الدراسية</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-book" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.books </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="Lessons">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">الدروس</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-legal" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.lessons </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div><!-- end col -->
+
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="LiveLessons">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">الدروس المباشرة</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-television" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.livelessons </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div>
+    <div class="col-lg-3 col-md-6">
+        <a asp-area="admin" asp-action="Index" asp-controller="Codes">
+            <div class="card-box">
+
+
+                <h4 class="header-title m-t-0 m-b-30">كروت الشحن</h4>
+
+                <div class="widget-chart-1">
+                    <div class="widget-chart-box-1">
+                        <div style="display:inline;width:80px;height:80px;">
+
+                            <i class="fa fa-cc-mastercard" style="font-size:50px"></i>
+
+                        </div>
+                    </div>
+
+                    <div class="widget-detail-1">
+                        <h2 class="p-t-10 m-b-0"> @ViewBag.codes </h2>
+                    </div>
+                </div>
+            </div>
+            </a>
+</div>
+    
+</div>

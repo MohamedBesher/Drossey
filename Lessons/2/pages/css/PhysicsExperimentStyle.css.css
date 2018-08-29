@@ -1,0 +1,52 @@
+.container{
+       margin:0.3% 0;
+}
+        #maincontent{
+            background-color:#e6f3ff;
+            min-height: 400px;
+         
+        }
+        
+#tools{
+    
+    background-color:purple;
+     min-height: 80px;
+}
+
+#drop_here{
+     min-height:650px;
+    
+    z-index:1;
+}
+a{
+     text-decoration: none !important;
+    width:auto;
+}
+
+#mytools{
+    min-height: 850px;
+    background-color: #149fd3;
+    width:12%;
+    z-index:999;
+}
+
+
+img{
+    width:80px;
+z-index : 999;
+}
+
+
+          .item {
+               position: absolute;
+              margin:10%;
+              width:auto;
+        }	
+        
+         .endpointClass svg circle {
+             stroke:black;
+             z-index:2000;
+  
+        }
+        
+        img:hover { cursor: pointer; }

@@ -1,0 +1,173 @@
+﻿
+@model Drossey.PaginatedList<Drossey.Data.Core.Models.Quiz>
+@{
+    ViewData["Title"] = "الاختبارات";
+    Layout = null;
+    ViewData["action"] = "Search";
+    ViewData["controller"] = "Quiz";
+
+    ViewBag.routeValues = new Dictionary<string, string>
+    {
+        {"keyWord", (ViewBag.KeyWord == null ? "" : ViewBag.KeyWord).ToString()},
+        {"page", ViewBag.page.ToString()},
+        {"pageSize", ViewBag.PageSize.ToString()},
+        {"countryId", ViewBag.countryId.ToString()},
+        {"gradeId", ViewBag.gradeId.ToString()},
+        {"termId", ViewBag.termId.ToString()},
+        {"subjectId", ViewBag.subjectId.ToString()},
+        {"bookId", ViewBag.bookId.ToString()},
+        {"lessonId", ViewBag.lessonId.ToString()}
+
+
+    };
+}
+<style>
+    table.dataTable thead > tr > th {
+        padding-right: 4px !important;
+        padding-left: 4px !important;
+    }
+</style>
+
+@if (Model.Count > 0)
+{
+    int counter = 0;
+    <table class="table table-striped dataTable no-footer table-bordered m-0" id="datatable-editable">
+        <thead>
+            <tr>
+                <th>#</th>
+
+                <th>
+                    اسم الاختبار
+                </th>
+                <th> الاختيارى</th>
+                <th>صح او خطأ</th>
+
+                <th>
+                   التكملة
+                </th>
+               <th>
+                   الدرس /الوحدة /المادة
+                </th>
+                @*<th>
+        الترم الدراسى
+    </th>
+    <th>
+        الصف الدراسى
+    </th>
+    <th> البلد</th>*@
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                counter++;
+                <tr>
+
+                    <td>@counter</td>
+
+                    <td>
+                        <div style="width:100px;word-break:break-word">
+                            <a asp-action="Details" asp-route-id="@item.Id">
+                                @Html.DisplayFor(modelItem => item.Description)
+                                </a>
+</div>
+                    </td>
+
+                    <td class="inbox-item inbox-item-img">
+                        @Html.DisplayFor(modelItem => item.ChooseCount)
+
+
+                    </td>
+                    <td class="inbox-item inbox-item-img">
+                        @Html.DisplayFor(modelItem => item.TrueFalseCount)
+
+
+                    </td>
+                    <td class="inbox-item inbox-item-img">
+                        @Html.DisplayFor(modelItem => item.CompeleteCount)
+
+
+                    </td>
+
+                    <td>@if(item.Lesson!=null)
+                    {
+
+                        <p>@item.Lesson.Name</p>
+                    }
+                    else if (item.Book != null)
+                    {
+                        <p>@item.Book.Name</p>
+
+
+                    }
+                    else if(item.Subject != null)
+                    {
+
+                        <p>@item.Subject.Name  </p>
+                    }
+
+                    </td>
+              
+
+                    <td class="actions">
+
+                        <a asp-action="Edit" asp-controller="Quiz" asp-route-id="@item.Id" class="on-default edit-row"><i class="fa fa-pencil"></i></a> |
+                        <a asp-action="Delete" asp-controller="Quiz" asp-route-id="@item.Id"
+                            asp-route-keyWord="@ViewBag.KeyWord" 
+                            asp-route-PageSize="@ViewBag.PageSize" 
+                            asp-route-page="@ViewBag.page"
+                            asp-route-countryId="@ViewBag.countryId" 
+                            asp-route-gradeId="@ViewBag.gradeId" 
+                            asp-route-termId="@ViewBag.termId"
+                            asp-route-subjectId="@ViewBag.subjectId" 
+                            asp-route-bookId="@ViewBag.bookId" 
+                            asp-route-lessonId="@ViewBag.lessonId"
+                           data-ajax-confirm="هل انت متأكد انك تريد حذف الاختبار ؟"
+                           data-ajax="true"
+                           data-ajax-method="POST"
+                           data-ajax-update="#searchResult"
+                           data-ajax-mode="replace"
+                           data-ajax-success="onsuccessDeletion"
+                           data-ajax-failure="onFailureDeletion"
+                           data-ajax-loading="#ajaxLoaderDiv" class="on-default remove-row"><i class="fa fa-trash-o"></i></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    Html.RenderPartial("_pagerPartial");
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+<script>
+    function onsuccessDeletion(data) {
+
+        NotificationService.displaySuccess("تم الحذف بنجاح", "تنبية !");
+
+    }
+    function onFailureDeletion(jqXHR, textStatus, errorThrown) {
+
+        if (jqXHR.responseText === "NotFound")
+            NotificationService.displayError("هذا الدرس غير موجود", " !تحذير");
+
+        else if (jqXHR.responseText === "Error")
+            NotificationService.displayError("هذا الدرس مستخدمة لا يمكن حذفها .", " !تحذير");
+
+        else if (jqXHR.responseText === "OrdersUsedLesson") {
+            NotificationService.displayError("يوجد طلبات داخل هذة الدرس.", " !تحذير");
+
+        }
+
+
+
+    }
+
+</script>

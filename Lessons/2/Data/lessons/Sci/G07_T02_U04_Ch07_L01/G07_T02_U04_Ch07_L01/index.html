@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ar">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>القيمة المنزلية ضمن الملايين</title>    
+    
+	<!--font-awesome links-->
+	<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="css/animate.css">
+	<link type="text/css" rel="stylesheet" href="css/styles.css">
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="js/wow.min.js" type="text/javascript" ></script>
+
+    <script type="text/javascript" src="js/jquery-ui.min-1.11.4.js"></script>
+    <script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    
+    <script type="text/javascript" src="js/gameCannonTank.json"></script>
+	<script type="text/javascript" src="js/gameCannonTank_script.js"></script>
+		
+	<script type="text/javascript">
+	jQuery(document).ready(function(e) { 
+		new WOW().init();
+		init();
+        
+	});
+	</script>
+</head>
+
+<body>
+<div class="container unselectable">
+	<header>
+    	<div class="top_section">
+            <h1 class="top_title">القيمة المنزلية ضمن الملايين</h1>
+            <a href="first.html"  draggable="false" class="refresh_page wow rotateIn"></a>
+            <img class="line1" src="images/line.png"/>
+            <a href="#"  id="info"><img src="images/quiz.png"/></a>
+            <img class="line2" src="images/line.png"/>
+            <div class="clock"><span class="timer">00:15</span></div>
+            <div class="timer_counter"><span class="counter">00:00</span></div>
+        </div><!--end top_section-->
+    </header>
+	
+    <section>
+    	<div class="content unselectable">
+            
+            
+			<div class="level">
+<!--				<div class="answers_container"></div>-->				
+				<div class="tanks_container">
+					<div class="tank" id="tank_1"><div class="answers num " id="answer_1"></div></div>
+					<div class="tank" id="tank_2"><div class="answers num" id="answer_2"></div></div>
+					<div class="tank" id="tank_3"><div class="answers num" id="answer_3"></div></div>
+					<div class="tank" id="tank_4"><div class="answers num" id="answer_4"></div></div>
+				</div>
+            <div class="xs"> 
+				<div class="projectile"></div>
+				<div class="cannon_container">	
+					<div class="down_cannon"></div>
+					<div class="cannon_parts" id="cannon_parts_1">
+						<div class="cannon ca1" id="cannon_1"></div>
+						<div class="cannon_glass" id="cannon_glass_1"></div>
+					</div>
+					<div class="cannon_parts" id="cannon_parts_2">
+						<div class="cannon ca2" id="cannon_2"></div>
+						<div class="cannon_glass" id="cannon_glass_2"></div>
+					</div>
+					<div class="cannon_parts" id="cannon_parts_3">
+						<div class="cannon ca3" id="cannon_3"></div>
+						<div class="cannon_glass" id="cannon_glass_3"></div>
+					</div>
+					<div class="cannon_parts" id="cannon_parts_4">
+						<div class="cannon ca4" id="cannon_4"></div>
+						<div class="cannon_glass" id="cannon_glass_4"></div>
+					</div>
+				</div>
+				
+                
+                <div class="fire_button">اقذف</div>				
+                <div class="quest num"></div>                
+                <div class="btns_cont">                    
+                    <div class="right_button"></div>
+                    <div class="left_button"></div>
+                </div>
+            </div>
+            </div>
+            	
+        </div><!--end content-->
+		<div class="game_result unselectable">
+         <div class="result_box">
+			<div class="res_title">
+                <p>الوقتُ المستغرقُ:</p>
+                <p>نتيجتكَ هيَ:</p>				
+				<p>المستوى:</p>                    
+			</div><!--end res_title-->
+			<div class="res_content">                
+				<p class="established_time"></p>
+                <p class="result_rate"></p>
+                <div class="result_stars">
+					<span class="fa fa-star"id="star1" ></span>
+					<span class="fa fa-star" id="star2"></span>
+					<span class="fa fa-star" id="star3"></span>
+					<span class="fa fa-star" id="star4"></span>
+					<span class="fa fa-star" id="star5"></span>
+					<div class="clearfix"></div>
+				</div><!--end result_stars-->				
+			</div><!--end res_content-->
+		</div><!--end result_box-->
+        </div>
+    </section>
+	
+    <div class="total_score">
+    	<div class="total_score_box">
+        	<h2 class="title">مجموعُ النقاط</h2>
+            <p></p>
+            <a href="#" class="next_btn">إجمع أكثر</a>
+        </div><!--end total_score_box-->
+    </div><!--end total_score-->
+	
+    <div class="game_info">
+    	<h3 class="doc_title">تعليمات للمستخدم:</h3>
+        
+        <p>سيظهر في الشاشة مجموعة من الدبابات قم بتحريك المدفع باتجاه الدبابة التي تحمل الإجابات إلى اليمين واليسار. أطلق الصاروخ في اتجاه الدبابة التي تحمل الإجابة الصحيحة.</p>
+        
+        <a href="#" class="exit_info">عودة</a>
+    </div><!--end game_info-->
+    <div class="time_over"><span class="time_over_msg">لقد انتهى الوقت المحدد لإنهاء المرحلة.</span></div>
+</div><!--end container-->
+</body>
+</html>

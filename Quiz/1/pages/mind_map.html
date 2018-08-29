@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Game</title>
+    <!--bootstrap links-->
+    
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap-rtl-theme.min.css">
+    <!--tark css graid  links-->
+    <link type="text/css" rel="stylesheet" href="css/new_grid.css">
+    <!--font-awesome links-->
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/animate.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link type="text/css" rel="stylesheet" href="css/style-responsive.css">
+    <link type="text/css" rel="stylesheet" href="css/mind_map.css">
+    <style>
+        .footer{
+	width: 100%;
+	min-height: 30px;
+	background-color: #1A1A1A;
+                }
+    </style>
+
+    <!--js files-->
+    <script src="js/jquery-2.2.0.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/mind_mapScript.js"></script>
+ 
+       
+  </head>
+
+<body>
+<div class="alhaytham_head">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="title_font" id="lesson_title"></h1><!--end lesson_title-->
+                  <a href="#" id="repeat_btn" onclick="history.go(0)"><i class="fa fa-repeat fa-2x"></i></a>
+                <!--     <a href="#"  id="question_btn"><i class="fa fa-question fa-flip-horizontal fa-2x"></i></a> -->
+                    <div class="clearfix"></div>
+              
+                </div><!--end col-xs-12-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </div>
+    <!--end alhaytham_head-->
+    <div id="title" class="col-md-11" style="margin-top:12px; margin-right:3%">
+        
+        </div>
+ 
+<div class="container">
+  <div class="row">
+    <div class=" col-xs-12">
+         <!--<p id="flowchart_maintitle" class="lead text-center bg-info btn text-info center-block"></p>-->
+        <p id="flowchart_maintitle" class="btn btn-primary btn-lg center-block" style="width:100%;"></p>
+      <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
+      
+      <p class="bg-success text-success btn" style="width:100%"></p>
+      <div class="row sub_title_arrow">
+       <!-- <div class="col-xs-4 text-center">
+           <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
+        </div>
+        <div class="col-xs-4 text-center">
+          <p class="btn">
+          <span class="glyphicon glyphicon-arrow-down"></span></p>
+        </div>
+          <div class="col-xs-4 text-center">
+          <p class="btn">
+          <span class="glyphicon glyphicon-arrow-down"></span></p>
+        </div>-->
+      </div>
+
+    </div>
+  </div>
+  <div class="row sub_title">
+   <!-- <div class="col-xs-4 text-center">
+  <p class="center-block"><span class="btn btn-success btn-lg">السهل</span></p>
+      <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
+      
+      <p class="bg-success text-success btn" style="width:100%"></p>
+        <div class="row">
+        <div class="col-xs-6 text-center">
+           <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
+        </div>
+        <div class="col-xs-6 text-center">
+          <p class="btn">
+          <span class="glyphicon glyphicon-arrow-down"></span></p>
+        </div>
+      </div>
+      <div class="row">
+    <div class="col-xs-6">
+    <p class="center-block"><span class="btn btn-success btn-lg">السهل</span></p>-->
+          <!--<p class="btn">
+          <span class="glyphicon glyphicon-arrow-down"></span></p>
+      <p class="bg-success text-success btn text-wrap">Okay! After the data is in the system, proceed to step 2.</p>-->
+      
+  <!--  </div>
+    <div class="col-xs-6 text-center">
+             <p class="center-block"><span class="btn btn-danger btn-lg">السهل</span></p>-->
+      <!-- <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
+      <p class="btn bg-danger text-danger text-wrap">The data must be in the system to use this service.</p>-->
+   <!-- </div>
+      </div>
+    </div>
+    <div class="col-xs-4 text-center">
+  <p class="center-block"><span class="btn btn-success btn-lg">السهل</span></p>
+      <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
+      
+      <p class="bg-success text-success btn" style="width:100%"></p>
+        <div class="row">
+        <div class="col-xs-6 text-center">
+           <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
+        </div>
+        <div class="col-xs-6 text-center">
+          <p class="btn">
+          <span class="glyphicon glyphicon-arrow-down"></span></p>
+        </div>
+      </div>
+      <div class="row">
+    <div class="col-xs-6">
+    <p class="center-block"><span class="btn btn-success btn-lg">السهل</span></p>
+         
+      
+    </div>
+    <div class="col-xs-6 text-center">
+             <p class="center-block"><span class="btn btn-danger btn-lg">السهل</span></p>
+      
+    </div>
+      </div>
+    </div>
+ 
+    <div class="col-xs-4 text-center">
+      <p class="center-block"><span class="btn btn-danger btn-lg">السهل</span></p>
+       <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
+      <p class="bg-info text-info btn" style="width:100%"></p>
+      <div class="row">
+        <div class="col-xs-6 text-center">
+           <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
+        </div>
+        <div class="col-xs-6 text-center">
+          <p class="btn">
+          <span class="glyphicon glyphicon-arrow-down"></span></p>
+        </div>
+      </div>
+      <div class="row">
+    <div class="col-xs-6">
+    <p class="center-block"><span class="btn btn-success btn-lg">السهل</span></p>
+      
+    </div>
+    <div class="col-xs-6 text-center">
+             <p class="center-block"><span class="btn btn-danger btn-lg">السهل</span></p>
+       
+    </div>
+      </div>
+    </div>-->
+  </div>
+</div>
+<div class="row">
+     <div class="col-xs-12">
+        <div class="blue_bg">
+                    <div class="row">
+
+                        <!--<div class="col-md-8 col-sm-8 col-xs-12">
+                            <h4 class="text-line">ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد محتوى نصي" فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء. العديد من برامح النشر المكتبي وبرامح</h4>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-center" >
+                        <img src="pics/4.jpg" alt=""/>
+                        </div>-->
+
+                    </div><!--end row-->
+                </div><!--end blue_bg-->
+    </div>
+</div>
+    
+    
+    <!-- notification msg -->
+<div class="notification_msg wow rubberBand" style="margin-right:15%; margin-bottom:5%;"><a class="close_msg" href="javascript:void(0)"><i class="fa fa-close"></i></a>
+        <p id="noti_msg"></p>
+    </div> 
+<audio id="noise"></audio>
+<audio id="narration"></audio>
+ 
+ 
+</body>
+</html>

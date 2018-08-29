@@ -1,0 +1,25 @@
+﻿@model SearchMyBookModel
+
+
+@{
+    ViewBag.Title = "الكتب الدراسية";
+    Layout = "_ProfileLayout";
+    ViewData["Active"] = "my_books";
+
+    
+}
+
+
+
+<div id="searchResult">
+
+    @await Component.InvokeAsync("SearchMyBooks", new { page = ViewBag.page, pageSize = ViewBag.pageSize, keyword = ViewBag.Keyword, countryId = ViewBag.countryId, termId = ViewBag.termId, gradeId = ViewBag.gradeId, subjectId = ViewBag.subjectId })
+
+</div>
+
+
+
+
+
+
+

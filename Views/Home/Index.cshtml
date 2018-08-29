@@ -1,0 +1,267 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Drossey.Data.Core.Models
+@using Microsoft.AspNetCore.Mvc
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = "الرئيسية";
+    var logged = SignInManager.IsSignedIn(User);
+    ViewData["body-class"] = "home02";
+}
+
+<section class="banner" id="hero">
+    <div class="Header__background__video videoContainer hide-for-small-only ">
+        <div class="overlay"></div>
+        <video autoplay muted loop id="myVideo">
+            <source src="~/assets/video/e-Classroom_ The Future of Education.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <div class="container banner-container">
+        <div class="banner-wrapper">
+            <div class="banner-box">
+                <h2 class="title-text">ثقافة حديثة ومتميزة للتعلم عن بعد </h2>
+                <p class="content-text"> موقع دروسي يقدم ثقافة حديثة تسمح لطلابنا في المراحل الأساسية للتعليم بتلقي العلم الصحيح بطريقة مبتكرة وفعالة في أي وقت ومن أي مكان لمواكبة التحديات التي نواجهها في الحاضر والمستقبل.</p>
+                <div class="btn-play-group">
+                    <button class="button-play-video flex-center download__button" type="button">
+                        <span class="big">Google play</span>
+                        <img src="~/assets/img/playstore.png" class="btn__icon">
+                        <span class="mask"></span>
+                    </button>
+                    <button class="button-play-video flex-center download__button" type="button">
+                        <span class="big">App store</span>
+                        <img src="~/assets/img/apple.png" class="btn__icon">
+                        <span class="mask"></span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ./Banner -->
+  </section>
+<!-- End top section -->
+<!-- Sections  -->
+<section class="section-benefit">
+    <div class="container">
+        <h2 class="list-course__header__title FeauresTitle wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.002s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.002s;
+         animation-name:fadeInDown;">
+            المراحل الدراسية
+        </h2>
+        <p class="card-text padding__bottom text-center">
+            إن موقع دروسي يقدم أفضل الخدمات التعليمية الإلكترونية للطلاب في مختلف مراحل التعليم الأساسي.
+        </p>
+
+        <div class="card-main-list">
+            <div class="card-item wow fadeInUp animated  " style="visibility: visible; animation-name: fadeInUp;">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/icon-01.png" alt="card-01">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title">المرحلة الابتدائية</h4>
+                    <p class="card-text"> يغطي دروسي المناهج التعليمية من الصف الرابع إلى الصف السادس الابتدائي</p>
+                </div>
+            </div>
+            <div class="card-item  wow fadeInDown animated " style="visibility: visible; animation-name: fadeInDown;">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/icon-02.png" alt="card-02">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title">المرحلة المتوسطة</h4>
+                    <p class="card-text"> يغطي دروسي المناهج التعليمية من الصف الأول إلى الصف الثالث المتوسط  </p>
+                </div>
+            </div>
+            <div class="card-item wow fadeInUp animated   " style="visibility: visible; animation-name: fadeInUp;">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/icon-03.png" alt="card-03">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title">المرحلة الثانوية</h4>
+                    <p class="card-text"> يغطي دروسي المناهج التعليمية من الصف الأول إلى الصف الثالث الثانوي  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ./Sections -->
+<!-- responsive img -->
+<div class="section-feature-course">
+    <div class="container">
+        <div class="feature-wrapper">
+            <div class="row feature-boss">
+
+                <div class="feature-col-mid col-xs-12 ImagePadding wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.002s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.002s;
+            animation-name:fadeInDown;">
+                    <img class="img-responsive center-block" src="~/assets/img/img-4.png" alt="card-feature-02">
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--./responsive img  -->
+<!-- services -->
+<div class="section-carousel-slide bg-2 ">
+    <div class="container-fluid">
+        <div class="header__Title ">
+            <h2 class="list-course__header__title CurveTitle wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.002s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.002s;
+         animation-name:fadeInDown;">
+                اﻟﺨﺪﻣﺎت المقدمة
+            </h2>
+            <p class="card-text padding__bottom text-center">
+                يقدم موقع دروسي خدمات عديدة ومتنوعة في موقع واحد، تسمح للطالب بتعلم المعلومة في أي وقت والتفاعل المباشر مع المعلم والمحتوى، والتطبيق العملي لكل جزئية في المنهج. 
+            </p>
+        </div>
+
+        <div class="col-md-4 MB col-xs-12 text-center">
+            <div class="card-item hvr-float-shadow">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/1.png" alt="card-02">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title servicesTitle">ﺗﻌﻠﻢ ﻣﻊ أﻓﻀﻞ المعلمين</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 MB col-xs-12 text-center">
+            <div class="card-item hvr-float-shadow">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/2.png" alt="card-02">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title servicesTitle">ﺑﻨﻚ أﺳﺌﻠﺔ ﺗﻔﺎﻋﻠﯿﺔ</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4  MB col-xs-12 text-center">
+            <div class="card-item hvr-float-shadow">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/3.png" alt="card-02">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title servicesTitle"> اﻟﻄﺎﻟﺐ هو ﻣﺤﻮر اﻟﻨﻈﺎم </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 MB col-xs-12 text-center">
+            <div class="card-item hvr-float-shadow">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/4.png" alt="card-02">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title servicesTitle">ﻧﻈﺎم ﻣﺘﮑﺎﻣﻞ ﻹدارة المحتوى </h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 MB col-xs-12 text-center">
+            <div class="card-item hvr-float-shadow">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/5.png" alt="card-02">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title servicesTitle">تسهيل خدمات المعلم</h4>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 MB col-xs-12 text-center">
+            <div class="card-item hvr-float-shadow">
+                <div class="card-item__top">
+                    <img class="img-responsive center-block" src="~/assets/img/home/6.png" alt="card-02">
+                </div>
+                <div class="card-item__body text-center">
+                    <h4 class="card-title servicesTitle">أنشاء مجتمعات تعليمية</h4>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!--services  -->
+<!-- courses -->
+<div class="section-feature-course">
+
+    <div class="section-subscribe">
+        <div class="container">
+            <div class="section-subscribe-wrapper">
+                <div class="Courses-- text-center">
+                    <h3 class="title-text ">المقررات المتاحة</h3>
+                    <p>ﺗﻘﺪم اﻟﻤﻨﺼﺔ ﻓﻲ اﻟﻤﺮﺣﻠﺔ الأولى ﻋﺪد ﻣﺤﺪد ﻣﻦ اﻟﻤﻮاد اﻟﺘﻌﻠﻴﻤﻴﺔ وﻳﺘﻮﻗﻊ زﻳﺎدة ﻋﺪد ﻫﺬه اﻟﻤﻮاد ﺗﺒﺎﻋﺎ ﻓﻲ اﻟﻤﺮاﺣﻞ اﻟﻘﺎدﻣﺔ.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- courses -->
+<!--  -->
+
+
+<div id="weekly-classes-slider" class="weekly-classes-slider">
+
+
+    @await Component.InvokeAsync("TopAdded")
+
+
+
+
+
+</div>
+
+<!--  -->
+<!-- testmonial -->
+
+
+
+<div class="section-carousel-slide testmonial">
+
+    @*@await Component.InvokeAsync("TopTeachers")*@
+    <div class="container">
+        <div class="carousel-slide">
+            <div class="carousel-slide-item">
+                <div class="carousel-holder-img">
+                    <a class="link" href="#">
+                        <img class="img-responsive " src="~/assets/img/arabman-01.png"   onerror="this.src ='/images/default.png'">
+                    </a>
+                </div>
+                <div class="carousel-info">
+                    <div class="carousel-text-box">
+                        <h4 class="title-text">محمد سمير</h4>
+                        <p class="content-text">
+
+                            إن خدمات دروسي لا غنى عنها لكل طالب ومعلم وولي أمر في الفترة الحالية التي تشهد قفزات تكنولوجية هائلة في مجال التعليم.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-slide-item">
+                <div class="carousel-holder-img">
+                    <a class="link" href="#">
+                        <img class="img-responsive " src="~/assets/images/arabman-02.png"   onerror="this.src ='/images/default.png'">
+                    </a>
+                </div>
+                <div class="carousel-info">
+                    <div class="carousel-text-box">
+                        <h4 class="title-text">د.محمد أشرف </h4>
+                        <p class="content-text">
+                            دروسي هى نتاج خبرات تعليمية وتربوية وتكنولوجية وهو أكبر مكتبة مصادر عربية تعليمية في الوطن العربي، تهدف للارتقاء بعناصر العملية التعليمية ككل، ورفع المستوى العلمي والتحصيلي لكل الطلاب.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script src="~/js/app/cartFavorite.js"></script>
+}

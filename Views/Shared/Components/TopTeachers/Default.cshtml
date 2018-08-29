@@ -1,0 +1,42 @@
+﻿
+@model List<Drossey.Data.Core.Dto.TeacherDto>
+
+@if (Model.Count > 0)
+{
+    <div class="container">
+        <div class="carousel-slide">
+            @foreach (var item in Model)
+            {
+        <div class="carousel-slide-item">
+            <div class="carousel-holder-img">
+                <a class="link" href="#">
+                    <img class="img-responsive " src="~/assets/img/arabman-01.png" alt="slide-01">
+                </a>
+            </div>
+            <div class="carousel-info">
+                <div class="carousel-text-box">
+                    <h4 class="title-text">محمد سمير</h4>
+                    <p class="content-text">
+
+                        إن خدمات دروسي لا غنى عنها لكل طالب ومعلم وولي أمر في الفترة الحالية التي تشهد قفزات تكنولوجية هائلة في مجال التعليم.
+                    </p>
+                </div>
+            </div>
+        </div>
+            }
+      
+        </div>
+    </div>
+
+ 
+
+
+}
+else
+{
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد نتائج.
+    </div>
+}
+
+<!-- Classes Figure -->

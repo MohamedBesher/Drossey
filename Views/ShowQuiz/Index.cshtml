@@ -1,0 +1,376 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+
+    <!--bootstrap links-->
+    <link rel="stylesheet" href="~/assets/css/bootstrap-rtl.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/bootstrap-theme.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/bootstrap-select.min.css">
+    <!--font-awesome links-->
+    <link type="text/css" rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/blue.css">
+    <link type="text/css" rel="stylesheet" href="~/assets/css/quiz_style.css">
+
+</head>
+<body>
+    <div class="frame_content">
+        <div class="frame_head">
+            <div class="head_img"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAAH5FsI7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTEyNERGM0ZDOUE1MTFFNUE1ODNDMzk1OTJDRTE2QTAiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTEyNERGNDBDOUE1MTFFNUE1ODNDMzk1OTJDRTE2QTAiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxMTI0REYzREM5QTUxMUU1QTU4M0MzOTU5MkNFMTZBMCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxMTI0REYzRUM5QTUxMUU1QTU4M0MzOTU5MkNFMTZBMCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv7ho8UAAA+ASURBVHjaYvz//z8D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" alt=""></div>
+            <h1 id="q_head">أكمل ما يأتي:</h1>
+            <a onclick="location.reload();" class="pull-right frame_refresh"><i class="fa fa-repeat fa-2x"></i></a>
+            <span class="clearfix"></span>
+        </div><!--end frame_head-->
+        <div class="frame_body">
+            <!-- start quiz-body-->
+            <div id="quiz_body">
+               
+            </div>
+            <!-- end quiz-body-->
+
+            <nav class="quiz_nav">
+                <ul class="pagination bootpag">
+                    <li data-lp="1" class="first disabled">
+                        <a href="javascript:void(0);">⇥</a>
+                    </li>
+                    <li data-lp="1" class="prev disabled">
+                        <a href="javascript:void(0);">«</a>
+                    </li>
+                </ul>
+            </nav>
+        </div><!--end frame_body-->
+        <!-- text Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"> </h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                       
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- endtext Modal -->
+        <!-- true Modal -->
+        <div class="modal fade" id="true_modal" tabindex="-1">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body bg-info">
+                        <p class="text-center text-success"><i class="fa fa-check-circle fa-5x"></i></p>
+                        <br />
+                        <h5 class="alert bg-primary">أحسنت , الإجابة بالفعل صحيحة</h5>
+                    </div><!--end modal-body-->
+
+                </div>
+            </div>
+        </div><!--end true_modal-->
+        <!-- wrong Modal -->
+        <div class="modal fade" id="wrong_modal" tabindex="-1">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-body bg-danger">
+                        <p class="text-center text-danger"><i class="fa fa-times-circle fa-5x"></i></p>
+                        <br />
+                        <h5 class="alert bg-primary">للأسف الإجابة خاطئة , حاول مرة اخري</h5>
+                    </div><!--end modal-body-->
+
+                </div>
+            </div>
+        </div><!--end wrong_modal-->
+    </div>
+    <script src="~/assets/scripts/jquery.js"></script>
+    <script src="~/assets/scripts/bootstrap.js"></script>
+    <script>
+        var Question = @Html.Raw(Json.Serialize(ViewBag.Question));
+        
+        var index = 0;
+        var report = [];
+        var chooseflag = 0;
+        $(function () {
+            if (Question.length == 0) {
+                $("body").html(`<div id="searchResult">
+
+    <style>
+    table.dataTable thead > tr > th {
+        padding-right: 4px !important;
+        padding-left: 4px !important;
+    }
+</style>
+
+    <div class="alert alert-success">
+        <strong></strong> لا يوجد لديك صلاحية للدخول.
+    </div>
+`);
+                return;
+
+            }
+            console.log(Question);
+            //**************************fill report
+            $(Question).each(function (index, value) {
+                //var trueAnswer;
+                //$(Question[index].answers).each(function (i, v) {
+                //    if (v.isCorrect)
+                //        trueAnswer = v.answer;
+                //});
+                //report.push({ "Question": value.body, "userAnswer": "--", "grade": "لم يتم الحل", "trueAnswer": trueAnswer });
+                report.push({ "Question": value.body, "userAnswer": "--" , "grade": "لم يتم الحل", "trueAnswer": "--" });
+            });
+            console.log(report);
+             //**************************end fill report
+
+            //draw first question
+            drawQuestion();
+
+            //********************draw pagination 
+            for (let i = 1; i <= Question.length; i++) {
+                if (i == 1)
+                    $(".bootpag").append('<li data-lp="' + i + '" class="active"><a href="javascript:void(0);">' + i + '</a></li>');
+                else
+                    $(".bootpag").append('<li data-lp="' + i + '"><a href="javascript:void(0);">' + i + '</a></li>');
+                if (i == Question.length)
+                    $(".bootpag").append('<li data-lp="6" class="next"><a href="javascript:void(0);">»</a></li><li data-lp="11" class="last"><a href="javascript:void(0);">⇤</a></li>');
+            }
+            //********************enddraw pagination
+
+
+            //********************click on pagination 
+            $(".quiz_nav").on("click", "a", function () {
+               
+                if ($(this).text() == "«") {
+                    if (index > 0)
+                        index--;
+                }
+                else if ($(this).text() == "»"){
+                    if (index < Question.length-1)
+                        index++;
+                }
+                else if ($(this).text() == "⇥") {
+                        index=0;
+                }
+                else if ($(this).text() == "⇤") {
+                    index = Question.length - 1;
+                }
+                else {
+                    index = $(this).text() - 1;
+
+                }
+
+                $(".active").removeClass("active");
+                $(this).parent().addClass("active");
+                drawQuestion();
+
+            });
+            //********************end click on pagination
+
+            //********************click on chooseItem
+            $("#quiz_body").on("click", ".text-quiz", function (event) {
+                if (!chooseflag) {
+                    var that = $(this);
+                    //add user answer to report
+                    report[index].userAnswer = $(this).text();
+                    $(Question[index].answers).each(function (i, v) {
+                        if (v.isCorrect) {
+                            report[index].trueAnswer = v.answer;
+                            if (v.answer == that.text()) {
+                                that.addClass("alert-success");
+                                $("#true_modal").modal("show");
+                                report[index].grade = Question[index].grade;
+
+                            }
+                            else {
+                                that.addClass("alert-danger");
+                                report[index].grade = ".";
+                                $("#wrong_modal").modal("show");
+                            }
+
+                        }
+                    });
+                    chooseflag = 1
+
+                }
+             
+            });
+            //********************end click on chooseItem
+
+
+            //******************** click on true or false
+            $("#quiz_body").on("click", " .t_f_quiz button", function () {
+                report[index].trueAnswer = Question[index].answers[0].isCorrect;
+                report[index].userAnswer = $(this).attr("date-state");
+                if ((Question[index].answers[0].isCorrect).toString() == $(this).attr("date-state")) {
+                    //report[index].userAnswer = "صحيح";
+                    report[index].grade = Question[index].grade;
+                    $("#true_modal").modal("show");
+                    $(this).find("i").css("border", "4px solid #3CF200");
+                }
+                else {
+                   // report[index].userAnswer = "خطأ";
+                    report[index].grade = ".";
+                    $("#wrong_modal").modal("show");
+                    $(this).find("i").css("border", "4px solid #EC1F27");
+                }
+                $('.t_f_quiz button').attr("disabled", "disabled");
+            });
+            //********************end click on true or false
+
+
+
+            //********************click on تحقق complete
+            $("#quiz_body").on("click", "#btn_check", function () {
+                report[index].userAnswer = $('input').val();
+                report[index].trueAnswer = Question[index].answers[0].answer;
+                if (Question[index].answers[0].answer == $('input').val())
+                    report[index].grade = Question[index].grade;
+                else
+                    report[index].grade = ".";
+
+                $('input').attr("disabled", "disabled");
+                $("#myModal .modal-title").html('الإجابة');
+                $("#myModal .modal-body").html('<p>' + Question[index].answers[0].answer + '</p>');
+                $("#myModal").modal("show");
+            });
+            //********************end click on تحقق complete
+
+
+
+        });
+        function drawQuestion() {
+            //reset flag to other question
+            chooseflag = 0;
+            if (report[index].grade == "لم يتم الحل") {
+                //choose
+                if (Question[index].type == 1)
+                    drawChoose();
+                //TrueFalse
+                else if (Question[index].type == 2)
+                    drawTrueFalse()
+                //Complete
+                else
+                    drawComplete();
+                if (index == Question.length-1)
+                    $("#quiz_body").append('<button type="button" class="quiz_report pull-right"onclick="showReport()">عرض التقرير</button><div class="clearfix"></div>');
+             
+
+            }
+            else {
+                //choose
+                if (Question[index].type == 1)
+                    drawChoose(report[index].userAnswer);
+                //TrueFalse
+                else if (Question[index].type == 2)
+                    drawTrueFalse(report[index].userAnswer)
+                //Complete
+                else
+                    drawComplete(report[index].userAnswer);
+
+            }
+          
+
+
+        }
+        function drawChoose(userAnswer){
+            $("#q_head").html('أختر الأجابة الصحيحة');
+            $("#quiz_body").html('<h1 class="quiz_title" style="font-size: 20px; line-height: 1.5;">' + Question[index].body + '</h1>');
+            $(Question[index].answers).each(function (i, v) {
+                $("#quiz_body").append('<h4 class="text-quiz bg-primary ">' + v.answer + '</h4>');
+            });
+            if (userAnswer) {
+                //set flag to can't choose answer
+                chooseflag = 1;
+                $(".text-quiz").each(function (i, v) {
+                    if (userAnswer == $(v).text()) {
+                        if (userAnswer == report[index].trueAnswer) {
+
+                            $(v).addClass("alert-success");
+                        }
+                        else {
+
+                            $(v).addClass("alert-danger");
+                        }
+
+                    }
+
+                });
+                
+               // that.addClass("alert-success");
+
+            }
+        
+        }
+        function drawTrueFalse(userAnswer) {
+            $("#q_head").html('حدد الجملة صحيحة أم خاطئة');
+                $("#quiz_body").html(`<h1 class="quiz_title" style="font-size: 20px; line-height: 1.5;">` + Question[index].body + `</h1>
+                                      <div class="t_f_quiz"><button type="button" class="text-success" date-state="true">
+                                      <i class="fa fa-check "></i></button> <button type="button" class="text-danger" date-state="false">
+                                      <i class="fa fa-times"></i></button></div>`);
+                if (userAnswer) {
+
+                    $('button').attr("disabled", "disabled");
+                    if (userAnswer == report[index].trueAnswer)
+                        $("button[class='text-success'] i").css("border", "4px solid #3CF200");
+                    else
+                        $("button[class='text-danger'] i").css("border", "4px solid #EC1F27");
+
+            }
+
+
+        }
+        function drawComplete(userAnswer) {
+            $("#q_head").html('أكمل ما يأتي');
+            var queBody = "", queWordsArr = Question[index].body.split(" ");
+            var tempWord = '';
+            $.each(queWordsArr, function (index, value) {
+                tempWord = value;
+                if (value == "=====") {
+                    tempWord = '<input class="quiz_blank" type="text" name="FirstName" placeholder="..............................">'
+                }
+                queBody += tempWord + " "
+            })
+            $("#quiz_body").html('')
+            $('<h1 class="quiz_title">' + queBody + '</h1>').appendTo("#quiz_body").css({
+                "font-size": "20px",
+                "line-height": 1.5
+            });
+            $('<div class="clearfix"></div><button type="button" id="btn_check" class="btn view_quiz_btn" >تحقق  </button>').appendTo("#quiz_body");
+            if (userAnswer != undefined) {
+                $('input').val(userAnswer);
+                $("#myModal .modal-body").html('<p>' + Question[index].answers[0].answer +'</p>');
+                $("#myModal").modal("show");
+                $('input').attr("disabled", "disabled");
+            }
+
+        }
+        function showReport() {
+            $(".modal-title").html('تفاصيل التقرير ');
+            var reportTable = '<table class="table table-hover table-bordered"><thead><tr class="active" ><td> السؤال</td><td>إجابتك</td><td>الإجابة الصحيحة</td><td>درجة السؤال</td></tr></thead><tbody>';
+            $(report).each(function (index, value) {
+                reportTable += '<tr><td>' + value.Question + '</td><td>' + value.userAnswer + '</td><td>' + value.trueAnswer + '</td><td>' + value.grade + ' </td></tr>'
+
+            });
+            reportTable += '</tbody></table>';
+            $("#myModal .modal-body").html(reportTable);
+            $("#myModal").modal("show");
+
+
+        }
+    </script>
+</body>
+</html>

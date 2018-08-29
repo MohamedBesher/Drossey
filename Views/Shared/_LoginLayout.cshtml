@@ -1,0 +1,90 @@
+﻿
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Drossy website">
+        <meta name="author" content="DeltaSoft Development Team">
+        <title>دروسى - @ViewData["Title"]</title>
+
+        <link rel="icon" type="image/png" sizes="32x32" href="~/assets/img/favicon.png">
+
+        <link rel="stylesheet" type="text/css" href="~/assets/lib/css/bootstrap.min.css">
+                                                    
+        <link rel="stylesheet" type="text/css" href="~/assets/css/font/flaticon/flaticon.css">
+                                                    
+        <link rel="stylesheet" type="text/css" href="~/assets/lib/slick/slick.css">
+        <link rel="stylesheet" type="text/css" href="~/assets/lib/slick/slick-theme.css">
+                                                    
+        <link rel="stylesheet" type="text/css" href="~/assets/css/animate.css">
+                                                
+        <link rel="stylesheet" type="text/css" href="~/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="~/assets/css/style-rtl.css">
+    </head>
+
+    <body class="contact-page">
+
+
+
+
+
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-xs-12 Check__out ">
+
+                        <div class=" signin-form">
+                            <div class=" signin-form__dialog">
+
+                                <div class="signin-form__header">
+                                    <a class="signin-form__header__logo" asp-controller="Home" asp-action="Index">
+                                        <img src="~/assets/img/logo/Logo.png" alt="">
+                                    </a>
+                                    <p class="signin-form__sub">وصول عالمي إلى أفضل تعليم في العالم.</p>
+                                </div>
+                                <div class=" signin-form__content">
+                                    <div class=" signin-form__body">
+
+                                      
+
+                                            @RenderBody()
+
+
+
+                                    </div>
+                                </div>
+                         
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </main>
+
+
+        <footer class="footer Login_footer">
+            <div class="container">
+
+
+                <div class="footer__bottom">&copy; 2018 جميع الحقوق محفوظه بواسطه دلتا سوفت</div>
+            </div>
+        </footer>
+
+
+        <script src="~/assets/lib/js/jquery-3.3.1.min.js"></script>
+        <script src="~/assets/lib/js/bootstrap.min.js"></script>
+        <script src="~/assets/js/jquery-matchHeight.js"></script>
+        <script src="~/assets/js/script.js"></script>
+      @RenderSection("Scripts", required: false)
+        <div class="positionfixed"></div>
+
+    </body>
+
+    </html>

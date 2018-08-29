@@ -1,0 +1,120 @@
+﻿@model SearchLessonModel
+
+@{
+    ViewBag.Title = "الدورس";
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="header-title m-t-0 m-b-30">
+
+    @ViewBag.Title
+    <div class="pull-right">
+
+        <a type="button" href="@Url.Action("Create", "Lessons")" class="btn btn-primary waves-effect w-md waves-light m-b-5"> <i class="fa fa-plus"></i> اضافة</a>
+
+    </div>
+
+</div>
+
+
+
+<form id="SearchForm" asp-controller="Lessons" asp-action="Search" data-ajax="true" data-ajax-method="POST" data-ajax-update="#searchResult" data-ajax-mode="replace" data-ajax-loading="#ajaxLoaderDiv">
+    <div class="row m-b-5">
+
+
+        <div class="col-sm-12">
+
+            @Html.TextBox("Keyword", (string)ViewBag.Name, new { @class = "form-control", placeholder = "البحث" })
+
+        </div>
+
+
+    
+    </div>
+
+    <div class="row m-b-20">
+
+        <div class="col-sm-2">
+
+            <select asp-for="CountryId" asp-items="ViewBag.countries" class="form-control">
+                <option value="">اختر البلد</option>
+            </select>
+
+
+        </div>
+        <div class="col-sm-2">
+            <select asp-for="GradeId" class="form-control">
+                <option value="">اختر المادة الدراسية</option>
+
+            </select>
+        </div>
+
+        <div class="col-sm-2">
+            <select asp-for="TermId" class="form-control">
+                <option value="">اختر الترم الدراسى</option>
+
+            </select>
+        </div>
+        <div class="col-sm-2">
+            <select asp-for="SubjectId" class="form-control">
+                <option value="">اختر المادة الدراسى</option>
+
+            </select>
+        </div>
+
+        <div class="col-sm-2">
+            <select asp-for="BookId" class="form-control">
+                <option value="">اختر المادة الدراسية</option>
+
+            </select>
+        </div>
+
+        <div class="col-sm-2 pull-right">
+            <button type="submit" class="btn btn-success pull-right waves-effect waves-light m-b-5" id="SearchButton"><i class="fa fa-search"></i> بحث</button>
+
+
+
+
+        </div>
+
+</div>
+
+
+        <div class="row m-b-10">
+            <div class="col-sm-2 pull-right">
+                <div class="dataTables_length">
+
+
+                    <label>
+                        عدد العناصر :
+                        <select id="PageSize" name="PageSize" onchange="document.getElementById('SearchButton').click();">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="25">25</option>
+                        </select>
+                    </label>
+                </div>
+
+
+            </div>
+        </div>
+</form>
+
+
+<div id="searchResult">
+
+    @await Component.InvokeAsync("SearchLessons", new { page = ViewBag.page, pageSize = ViewBag.pageSize, keyword= ViewBag.Keyword, countryId = ViewBag.countryId, termId = ViewBag.termId, gradeId=ViewBag.gradeId,subjectId=ViewBag.subjectId,bookId=ViewBag.bookId })
+
+</div>
+
+
+
+@section Scripts {   
+<script src="~/js/app/lessons.js"></script>
+}
+
+
+

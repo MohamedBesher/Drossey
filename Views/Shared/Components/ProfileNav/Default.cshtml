@@ -1,0 +1,66 @@
+﻿
+
+<div class="sidebar-area theiaStickySidebar">
+    <div class="profile-3 side-navigation box">
+        <figure>
+            <img src="@ViewData["PhotoUrl"]"
+                 alt="student" width="93px" height="93px"
+                 onerror="this.src='/images/default.png';"
+                 class="rounded-circle user-image center-block">
+        </figure>
+
+        <div class="pull-right InfoStud">
+            <h3>@ViewData["userName"]</h3>
+            <span>@ViewData["Balance"] ريال</span>
+        </div>
+        <div class="links">
+            @*<!-- FACEBOOK-->
+            <a href="#" id="first_one" class="social btn-floating indigo">
+                <i class="icon-custom icon-connect flaticon-social-1"></i>
+            </a>
+
+            <!-- GOOGLE+-->
+            <a href="#" class="social  btn-floating red">
+                <i class="icon-custom icon-connect flaticon-google-plus-symbol"></i>
+            </a>
+            <!-- LINKEDIN-->
+            <a href="#" class="social  btn-floating blue darken-3">
+                <i class="icon-custom icon-connect flaticon-social-media"></i>
+            </a>*@
+
+        </div>
+
+        <!-- tabs -->
+        <ul class="nav nav-tabs tabtop  tabsetting menu">
+            <li class="menu-item" id="user_Data">
+                <span class="float-right">
+                    <a asp-controller="Manage" asp-action="profile">
+                        <i class="icon-profile"></i>
+                        البيانات الشخصية
+                    </a>
+                </span>
+            </li>
+            <li class=" menu-item" id="my_books">
+                <span class="float-right">
+                    <a asp-controller="MyBooks" asp-action="Index">
+                        <i class="icon-profile"></i> الدورات
+                    </a>
+                </span>
+            </li>
+            <li class=" menu-item" id="wish_List">
+                <span class="float-right">
+                    <a asp-controller="WishList" asp-action="Index">
+                        <i class="icon-profile"></i> المفضلة
+                    </a>
+                </span>
+            </li>
+
+
+        </ul>
+        <div class="ButtonsProfile">
+            <a class="btn button-default design-sprint__item__button" href="javascript:{}"
+               onclick="document.getElementById('logoutForm').submit();return false;"
+               style="width: 100%;">تسجيل الخروج</a>
+        </div>
+    </div>
+</div>
