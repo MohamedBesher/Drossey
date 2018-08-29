@@ -114,6 +114,32 @@ namespace Drossey.Api.Controllers
         }
 
 
+
+        [HttpGet("count")]
+        public async Task<IActionResult> GetUserCartCount()
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                var userId = await GetUserId();
+                if (string.IsNullOrEmpty(userId))
+                    return Unauthorized();
+
+                var u = await _userMgr.FindByIdAsync(userId);
+                var count = _unitOfWork.CartRepository.All().Where(u => u.UserId == userId).Count();
+
+
+                return Ok(count);
+            }
+            catch (Exception ex)
+            {
+                var msg = ex.Message;
+                return BadRequest("GetUserCart --- " + msg);
+            }
+        }
+
         //[HttpDelete("{id}")]
         //public async Task<IActionResult> Delete(long? id)
         //{
@@ -141,8 +167,8 @@ namespace Drossey.Api.Controllers
 
         //        return StatusCode(500, e.Message);
         //    }
-           
+
         //}
     }
 
-    }
+}
